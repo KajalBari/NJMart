@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "768919510448",
+    "project_id": "sonitixexchange-beb8d",
+    "storage_bucket": "sonitixexchange-beb8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:768919510448:android:c700e9435ae130cb75ca75",
+        "android_client_info": {
+          "package_name": "com.sonitix_mobility"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "768919510448-i3vcn3e8nnfbndl64gbqrmfd14qft6kc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqhOqUTynmbzX_NZbmeFkZilHf1IehWj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "768919510448-i3vcn3e8nnfbndl64gbqrmfd14qft6kc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
