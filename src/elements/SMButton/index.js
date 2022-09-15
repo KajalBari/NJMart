@@ -57,6 +57,13 @@ const ButtonColor = type => {
         textColor: '#07325f',
         borderColor: COLORS.TRANSPARENT,
       };
+    case 'nextbutton':
+      return{
+        backgroundColor: "#FF8C00",
+        textColor:"#fff",
+        borderColor: COLORS.TRANSPARENT,
+      };
+
     default:
       return {
         backgroundColor: COLORS.BRAND_BLUE,

@@ -9,9 +9,9 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: COLORS.WHITE,
   },
-  sonitixImage: {
-    width: normalize(300),
-    height: normalize(300),
+  njMartImage: {
+    width: normalize(200),
+    height: normalize(200),
     resizeMode: 'contain',
     justifyContent: 'center',
     alignItems: 'center',

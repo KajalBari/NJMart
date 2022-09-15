@@ -5,6 +5,7 @@ import {
   splashBottomVectorPNG,
   splashSonitixLogoPNG,
   splashIndiaFlagPNG,
+  NJMartLogo,
 } from '../../assets';
 import {SMImage, SMText, SMView} from '../../elements';
 import store from '../../services/storageServices';
@@ -20,23 +21,23 @@ function Splash(props) {
   }, []);
 
   const handleNavigation = async () => {
-    navigation.navigate('Login');
+    navigation.navigate('Register');
   };
 
   return (
     <SMView style={styles.mainContainer}>
-      <SMImage source={splashSonitixLogoPNG} style={styles.sonitixImage} />
+      <SMImage source={NJMartLogo} style={styles.njMartImage} />
 
-      <SMView style={styles.bottomImageText}>
+      {/* <SMView style={styles.bottomImageText}>
         <SMImage
           source={splashBottomVectorPNG}
           style={styles.bottomVectorImage}
         />
         <SMImage source={splashIndiaFlagPNG} style={styles.bottomIndiaFlag} />
         <SMText type="Paragraph" style={styles.bottomText}>
-          Made In India
+          Made In India 
         </SMText>
-      </SMView>
+      </SMView> */}
     </SMView>
   );
 }

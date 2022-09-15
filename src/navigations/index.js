@@ -37,6 +37,9 @@ import {SMImage} from '../elements';
 import {backButtonPNG, homeButtonPNG} from '../assets';
 import {styles} from './styles';
 import store from '../services/storageServices';
+import{
+  Register,
+} from '../screens';
 
 const Stack = createNativeStackNavigator();
 
@@ -77,6 +80,13 @@ export default function MainContainer(props) {
           component={Login}
           options={{headerTitle: '', gestureEnabled: false}}
         />
+
+        <Stack.Screen
+          name="Register"
+          component={Register}
+          options={{headerTitle: '', gestureEnabled: false}}
+        />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

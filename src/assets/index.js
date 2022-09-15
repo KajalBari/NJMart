@@ -18,6 +18,8 @@ const qrCodeScannerIcon = require('./icons/Wallet/qrCodeScannerIcon.png');
 const clipboardCopyIcon = require('./icons/Wallet/clipboardCopyIcon.png');
 
 // Images
+const NJMartLogo = require('./images/NJMart/NJMartLogo.png');
+
 const splashBottomVectorPNG = require('./images/Splash/splashBottomVector.png');
 const splashIndiaFlagPNG = require('./images/Splash/splashIndiaFlag.png');
 const splashSonitixLogoPNG = require('./images/Splash/splashSonitixLogo.png');
@@ -85,6 +87,10 @@ export {
   qrCodeScannerIcon,
   clipboardCopyIcon,
   //Images
+  NJMartLogo,
+
+
+
   splashSonitixLogoPNG,
   splashBottomVectorPNG,
   splashIndiaFlagPNG,
