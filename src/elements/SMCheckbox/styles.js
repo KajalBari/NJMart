@@ -8,19 +8,23 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   checkBoxSelected: {
-    width: normalize(16),
-    height: normalize(16),
+    width: normalize(25),
+    height: normalize(25),
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: COLORS.BRAND_BLUE,
+    backgroundColor: COLORS.SUB_COLOR_LIGHT_GREY,
+    // border:normalize(1),
+    // borderColor:"red,"
   },
   checkbox: {
     color: COLORS.WHITE,
   },
   checkBoxNotSelected: {
-    width: normalize(16),
-    height: normalize(16),
-    backgroundColor: COLORS.BRAND_BLUE,
+    width: normalize(25),
+    height: normalize(25),
+    backgroundColor: COLORS.SUB_COLOR_LIGHT_GREY,
+    // border:normalize(1),
+    // borderColor:"red,"
   },
   labelStyle: {
     fontSize: normalize(12),

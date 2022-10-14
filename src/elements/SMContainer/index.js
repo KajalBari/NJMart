@@ -170,4 +170,4 @@ SMContainer.propTypes = {
 
 SMContainer.defaultProps = {};
 
-export default withTheme(SMContainer);
+export default SMContainer;

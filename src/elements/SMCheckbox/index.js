@@ -30,7 +30,7 @@ function SMCheckBox(props) {
             {
               backgroundColor: disabled
                 ? COLORS.SUB_COLOR_DARK_GREY
-                : COLORS.BRAND_BLUE,
+                : COLORS. SUB_COLOR_LIGHT_GREY,
             },
             checkBoxStyle,
           ]}>
@@ -43,7 +43,7 @@ function SMCheckBox(props) {
               {
                 backgroundColor: disabled
                   ? COLORS.SUB_COLOR_DARK_GREY
-                  : COLORS.BRAND_BLUE,
+                  : COLORS.SUB_COLOR_LIGHT_GREY,
               },
               checkboxIconStyle,
             ]}

@@ -30,7 +30,7 @@ function SMTextInput(props) {
         styles.container,
         {
           backgroundColor:
-            type === 'primary' ? COLORS.BRAND_BLUE : COLORS.WHITE,
+            type === 'primary' ? COLORS. TEXTBOX_LIGHT_GREY: COLORS.SUB_COLOR_DARK_GREY,
         },
         style,
       ]}>
@@ -46,8 +46,8 @@ function SMTextInput(props) {
             styles.input,
             {
               backgroundColor:
-                type === 'primary' ? COLORS.BRAND_BLUE : COLORS.WHITE,
-              color: type === 'primary' ? COLORS.WHITE : COLORS.BRAND_BLUE,
+                type === 'primary' ? COLORS.TEXTBOX_LIGHT_GREY : COLORS.SUB_COLOR_DARK_GREY,
+              color: type === 'primary' ? COLORS.SUB_COLOR_DARK_GREY : COLORS.TEXTBOX_LIGHT_GREY,
             },
             ,
             inputStyle,
@@ -61,8 +61,8 @@ function SMTextInput(props) {
             placeholderTextColor
               ? placeholderTextColor
               : type === 'primary'
-              ? COLORS.WHITE
-              : COLORS.BRAND_BLUE
+              ? COLORS.SUB_COLOR_DARK_GREY
+              : COLORS.TEXTBOX_LIGHT_GREY
           }
           autoFocus={autoFocus}
           numberOfLines={numberOfLines}

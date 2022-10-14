@@ -5,41 +5,22 @@ import {
   CreateAccount,
   Login,
   Splash,
-  UIElements,
-  ForgotPassword,
-  Profile,
-  AddBankDetails,
-  KYC,
-  Appearance,
-  Support,
-  Logout,
-  ChangePassword,
-  ManualDeposit,
-  Withdrawal,
-  WalletTransactionHistory,
-  DepositOptions,
-  AllCoinsDeposit,
-  AllCoinsWithdraw,
-  QrCodeScanner,
-  ExchangeOrder,
-  ExchangeBuy,
-  ExchangeSell,
-  Notifications,
-  DepositWithdrawalFees,
-  ReferAndTeams,
-  ReferAndEarn,
-  ReferralProgram,
-  AppPassCode,
-  SetAppPassCode,
+  Register,
+  RegisterPersonalPage,
+  RegisterContactPage,
+  RegisterNomineePage,
+  RegisterBankInfoPage,
+  RegisterSecurityInfoPage,
+  TermsandConditions,
+  LoginPage,
+  Dashboard,
 } from '../screens';
 import {COLORS} from '../constants/Colors';
 import {SMImage} from '../elements';
 import {backButtonPNG, homeButtonPNG} from '../assets';
 import {styles} from './styles';
 import store from '../services/storageServices';
-import{
-  Register,
-} from '../screens';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -86,7 +67,55 @@ export default function MainContainer(props) {
           component={Register}
           options={{headerTitle: '', gestureEnabled: false}}
         />
+
+        <Stack.Screen
+          name="RegisterPersonalPage"
+          component={RegisterPersonalPage}
+          options={{headerTitle: '', gestureEnabled: false}}
+        />
+
+        <Stack.Screen
+          name="RegisterContactPage"
+          component={RegisterContactPage}
+          options={{headerTitle: '', gestureEnabled: false}}
+        />
+
+        <Stack.Screen
+          name="RegisterNomineePage"
+          component={RegisterNomineePage}
+          options={{headerTitle: '', gestureEnabled: false}}
+        />
+
+        <Stack.Screen
+          name="RegisterBankInfoPage"
+          component={RegisterBankInfoPage}
+          options={{headerTitle: '', gestureEnabled: false}}
+        />
+
+        <Stack.Screen
+          name="RegisterSecurityInfoPage"
+          component={RegisterSecurityInfoPage}
+          options={{headerTitle: '', gestureEnabled: false}}
+        />
+
+        <Stack.Screen
+          name="TermsandConditions"
+          component={TermsandConditions}
+          options={{headerTitle: '', gestureEnabled: false}}
+        />
+
+        <Stack.Screen
+          name="LoginPage"
+          component={LoginPage}
+          options={{headerTitle: '', gestureEnabled: false}}
+        />
         
+        <Stack.Screen
+        name="Dashboard"
+        component={Dashboard}
+        options={{headerTitle:'',gestureEnabled:false}}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -19,6 +19,11 @@ const clipboardCopyIcon = require('./icons/Wallet/clipboardCopyIcon.png');
 
 // Images
 const NJMartLogo = require('./images/NJMart/NJMartLogo.png');
+const ShoppingCart = require('./images/NJMart/ShoppingCart.png');
+const menu11 = require('./images/NJMart/menu11.png');
+//const ThinCircle = require('./images/NJMart/ThinCircle.png');
+const Profile = require('./images/NJMart/Profile.png');
+const Account = require('./images/NJMart/Account.png');
 
 const splashBottomVectorPNG = require('./images/Splash/splashBottomVector.png');
 const splashIndiaFlagPNG = require('./images/Splash/splashIndiaFlag.png');
@@ -88,7 +93,11 @@ export {
   clipboardCopyIcon,
   //Images
   NJMartLogo,
-
+  ShoppingCart,
+  menu11,
+  //ThinCircle,
+  Profile,
+  Account,
 
 
   splashSonitixLogoPNG,

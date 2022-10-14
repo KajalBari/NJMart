@@ -59,7 +59,7 @@ const ButtonColor = type => {
       };
     case 'nextbutton':
       return{
-        backgroundColor: "#FF8C00",
+        backgroundColor: "rgba(253, 101, 16, 0.83)",
         textColor:"#fff",
         borderColor: COLORS.TRANSPARENT,
       };

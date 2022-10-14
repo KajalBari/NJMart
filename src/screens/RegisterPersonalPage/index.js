@@ -1,0 +1,99 @@
+import React from "react";
+import { SMText, SMView, SMImage, SMContainer, SMButton, SMTextInput, SMCheckBox } from '../../elements';
+import {
+  NJMartLogo,
+} from '../../assets';
+import { styles } from './styles';
+import LinearGradient from 'react-native-linear-gradient';
+
+// import { ScrollView } from "react-native-gesture-handler";
+import { ScrollView, FlatList, Text } from 'react-native';
+
+function RegisterPersonalPage(props) {
+  const { navigation } = props;
+
+  // state={
+  //   myTextInput:'',
+  //   info:['title','applicantname','DOB','fatheName',]
+  // }
+  const handleRegisterContactPage = () => {
+    navigation.navigate('RegisterContactPage');
+  };
+
+    return(  
+      <LinearGradient colors={["#FD6510", "#FFBF43"]}
+      style={styles.gradient}
+      start={{ x: 1, y: 0.5 }}
+      end={{ x: 0, y: 0.5 }} >
+       
+      <SMImage source={NJMartLogo} style={styles.njMartImage} />
+
+  
+      {/* <ScrollView > */}
+      {/* <ScrollView style={styles.ScrollView}> */}
+      <SMView style={[styles.tableStyle, styles.elevation]}>
+    
+     
+        <SMText style={styles.registerStyle}>
+          Register
+        </SMText>
+        <SMText style={styles.mandatoryStyle}>
+          *Marks Are Mandatory
+        </SMText>
+        <SMText style={styles.personalInfoHeading}>
+          Personal Information
+        </SMText>
+{/* 
+        <ScrollView style={styles.scrollView}> */}
+        <SMView style={styles.divStyle}>
+
+        <ScrollView showsVerticalScrollIndicator={true}>
+        <SMTextInput
+          style={styles.titleStyle}
+          placeholder={"Title"}
+        />
+
+        <SMTextInput
+          style={styles.applicantNameStyle}
+          placeholder={"Applicant's Name*"}
+        />
+        
+
+        <SMTextInput
+          style={styles.dobStyle}
+          placeholder={"DOB"}
+        />
+
+        <SMTextInput
+          style={styles.fatherNameStyle}
+          placeholder={"Father's/Husband Name"}
+        />
+
+        <SMTextInput
+          style={styles.maritalStatusStyle}
+          placeholder={"Marital Status"}
+        />
+
+        <SMTextInput
+          style={styles.genderStyle}
+          placeholder={"Gender"}
+ 
+        />
+ 
+        <SMButton
+          buttonText="Next"
+          type="nextbutton"
+          buttonStyle={styles.nextButtonStyle}
+          onPress={handleRegisterContactPage}
+        />
+        </ScrollView>
+
+    </SMView> 
+    {/* </ScrollView> */}
+      </SMView>
+      {/* </ScrollView>   */}
+    </LinearGradient>
+    );
+}
+export default RegisterPersonalPage;
+

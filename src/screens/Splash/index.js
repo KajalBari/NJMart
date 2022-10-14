@@ -11,6 +11,7 @@ import {SMImage, SMText, SMView} from '../../elements';
 import store from '../../services/storageServices';
 import * as authAction from '../../actions';
 import {styles} from './styles';
+import LinearGradient from 'react-native-linear-gradient';
 
 function Splash(props) {
   const {navigation} = props;
@@ -25,7 +26,11 @@ function Splash(props) {
   };
 
   return (
-    <SMView style={styles.mainContainer}>
+    <LinearGradient colors={["#FD6510","#FFBF43"]} 
+    style={styles.gradient}  
+    start={{x: 0.5, y: 0}} 
+    end={{x: 1, y: 0.5}}>
+   
       <SMImage source={NJMartLogo} style={styles.njMartImage} />
 
       {/* <SMView style={styles.bottomImageText}>
@@ -38,7 +43,8 @@ function Splash(props) {
           Made In India 
         </SMText>
       </SMView> */}
-    </SMView>
+    
+    </LinearGradient>
   );
 }
 
