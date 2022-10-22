@@ -5,6 +5,8 @@ import {
 } from '../../assets';
 import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
+import { normalize } from '../../constants/Platform';
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { TextInput } from "react-native";
 import { Text } from "react-native-paper";
 
@@ -21,8 +23,15 @@ return(
     start={{x: 1, y: 0.5}} 
     end={{x: 0, y: 0.5}} >
 
-    <SMImage source={NJMartLogo}  style={styles.njMartImage} />   
+    <SMImage source={NJMartLogo}  style={styles.njMartImage} /> 
+{/* 
+    <KeyboardAwareScrollView
+  extraScrollHeight={normalize(100)}
+  nestedScrollEnabled>   */}
+
      <SMView style={[styles.tableStyle,styles.elevation]}>
+
+  
     
           <SMText style={styles.registerStyle}>
             Register
@@ -34,9 +43,16 @@ return(
             Bank Information
           </SMText>
 
+
+          <KeyboardAwareScrollView
+  extraScrollHeight={normalize(100)}
+  nestedScrollEnabled>  
+
+<SMView style={styles.divStyle1}>
+  
           <SMTextInput 
           style={styles.bankStyle}
-                placeholder={"Bank Name"}
+            placeholder={"Bank Name"}
           />
 
         <SMTextInput
@@ -49,7 +65,7 @@ return(
              placeholder={"Account Number"}
             />
 
-          <TextInput
+          <SMTextInput
            style={styles.pancardStyle}
               placeholder={"Pan Number*"}
           />
@@ -64,8 +80,12 @@ return(
           type="nextbutton"
           buttonStyle={styles.nextButtonStyle}
           onPress={handleRegisterSecurityInfoPage}
-          />   
-          </SMView>  
+          />  
+
+    </SMView>
+    </KeyboardAwareScrollView>
+          </SMView>
+          {/* </KeyboardAwareScrollView>    */}
       </LinearGradient>
 
 

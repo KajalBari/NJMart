@@ -14,6 +14,7 @@ import {
   TermsandConditions,
   LoginPage,
   Dashboard,
+  ProfilePage,
 } from '../screens';
 import {COLORS} from '../constants/Colors';
 import {SMImage} from '../elements';
@@ -113,6 +114,12 @@ export default function MainContainer(props) {
         <Stack.Screen
         name="Dashboard"
         component={Dashboard}
+        options={{headerTitle:'',gestureEnabled:false}}
+        />
+   
+        <Stack.Screen
+        name="ProfilePage"
+        component={ProfilePage}
         options={{headerTitle:'',gestureEnabled:false}}
         />
 

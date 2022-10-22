@@ -9,9 +9,13 @@ import LinearGradient from 'react-native-linear-gradient';
 
 function TermsandConditions(props) {
     const {navigation} = props;
-    const handleLoginPage = () => {
-      navigation.navigate('LoginPage');
+
+    const handleDashboard = () => {
+      navigation.navigate('Dashboard');
     };
+   // const handleLoginPage = () => {
+   //   navigation.navigate('LoginPage');
+  //  };
 
 return(
 
@@ -42,7 +46,8 @@ return(
           buttonText="Submit"
           type="nextbutton"
           buttonStyle={styles.submitButtonStyle}
-          onPress={handleLoginPage}
+          onPress={handleDashboard}
+         // onPress={handleLoginPage}
           />  
           </SMView>  
      

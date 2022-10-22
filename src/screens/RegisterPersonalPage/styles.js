@@ -53,10 +53,9 @@ export const styles = StyleSheet.create({
         alignSelf: "center",
     },
 
-  
-
     tableStyle: {
-        width: normalize(250),
+       // width: normalize(250),
+       width: dim().width * 0.74,
        // height: normalize(331),
         minHeight: dim().height * 0.74,
         marginLeft: normalize(15),
@@ -73,18 +72,18 @@ export const styles = StyleSheet.create({
     },
 
     scrollView:{
-       // overflow:'auto',
-       flexGrow: normalize(0.2),
-      // overFlowy: "auto",
-    // width:'100%',
-        //height: normalize(50),
+      flex:1,
+      height:dim().height*0.4,
+      flexGrow:1,
+      paddingVertical:normalize(10),
+    //   maxLength:normalize(100),
+           // marginHorizontal:normalize(30),
     },
 
-    divStyle:{
-        overflow:'scroll',
-        //display:'flex',
-        height: normalize(400),
-        flex:1,
+    divStyle:{        
+        height: dim().height*0.6,
+        // width:dim().width*0.4
+      
     },
 
     elevation: {
@@ -108,17 +107,13 @@ export const styles = StyleSheet.create({
         color: "#FD6510",
     },
 
-    mandatoryStyle: {
-        marginLeft: normalize(-70),
-        marginTop: normalize(20),
+    mandatoryStyle: {   
         fontFamily: 'Inter',
         fontStyle: "normal",
         fontWeight: "100",
         fontSize: normalize(13),
         lineHeight: normalize(16),
-        display: "flex",
-        flexDirection: 'row',
-        alignContent: 'flex-start',
+        textAlign:'left',
         color: "#FD6510",
     },
 
@@ -135,7 +130,7 @@ export const styles = StyleSheet.create({
     },
 
     titleStyle: {
-        display: "flex",
+       // display: "flex",
       //  flexDirection: 'row',
         alignSelf: 'flex-start',
         marginLeft: normalize(25),
@@ -150,7 +145,7 @@ export const styles = StyleSheet.create({
     },
 
     applicantNameStyle: {
-        display: "flex",
+       // display: "flex",
         //flexDirection: 'row',
         alignSelf: 'flex-start',
         marginLeft: normalize(25),
@@ -164,7 +159,7 @@ export const styles = StyleSheet.create({
     },
 
     dobStyle: {
-        display: "flex",
+       // display: "flex",
        // flexDirection: 'row',
         alignSelf: 'flex-start',
         marginLeft: normalize(25),
@@ -179,7 +174,7 @@ export const styles = StyleSheet.create({
     },
 
     fatherNameStyle: {
-        display: "flex",
+       // display: "flex",
        // flexDirection: 'row',
         alignSelf: 'flex-start',
         marginLeft: normalize(25),
@@ -194,7 +189,7 @@ export const styles = StyleSheet.create({
     },
 
     maritalStatusStyle: {
-        display: "flex",
+       // display: "flex",
        // flexDirection: 'row',
         alignSelf: 'flex-start',
         marginLeft: normalize(25),
@@ -209,7 +204,7 @@ export const styles = StyleSheet.create({
     },
 
     genderStyle: {
-        display: "flex",
+        //display: "flex",
        // flexDirection: 'row',
         alignSelf: 'flex-start',
         marginLeft: normalize(25),
@@ -224,7 +219,7 @@ export const styles = StyleSheet.create({
     },
 
     nextButtonStyle: {
-        display: "flex",
+       // display: "flex",
         width: normalize(190),
         height: normalize(40),
         justifyContent: "center",

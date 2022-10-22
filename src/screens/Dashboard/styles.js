@@ -14,36 +14,28 @@ export const styles = StyleSheet.create({
     },
 
     ellipseStyle: {
-        boxSizing: "border-box",
-        // position: "absolute",
         display: 'flex',
         flexDirection:'row',
-        // justifyContent:'flex-end',
         alignItems:'center',
          width: normalize(55),
          height: normalize(55),
          marginLeft: normalize(220),
          margintop: normalize(30),
          backgroundColor: "#ECDEDE",
-         // borderColor: "solid #7DF27A",
         borderRadius: normalize(50),
         borderWidth: 3,
      borderColor: '#66ff66',
     },
 
-    // ellipseStyle2:{
-    //     boxSizing: "border-box",
-
-    //     position: "absolute",
-    //     width: normalize(23),
-    //     height: normalize(19),
-    //     marginLeft: normalize(301),
-    //     marginTop: normalize(35),
-    //     backgroundColor: "#FFFCF8",
-    //     borderRadius:normalize(40),
-    //     borderWidth:4,
-    //    // border: 4px solid #7DF27A;
-    // },
+    menuContainer:{
+       // display: 'flex',
+        //flexDirection:'row',
+        alignItems:'center',
+         width: normalize(55),
+         height: normalize(55),
+         marginLeft: normalize(260),
+        margintop: normalize(50),
+    },
 
     shoppingCartStyle: {
         width: normalize(30),
@@ -55,16 +47,6 @@ export const styles = StyleSheet.create({
         tintColor: "#000",
         borderRadius: normalize(15),
     },
-
-    // shoppingCartStyle11:{
-    //     width: normalize(40),
-    //     height: normalize(30),
-    //     marginLeft: normalize(9),
-    //     marginTop: normalize(7),
-    //     fontSize:normalize(30),
-    //     tintColor:"#00FF00",
-    // },
-
 
     menuStyle: {
         //    position: "absolute",
@@ -93,54 +75,27 @@ export const styles = StyleSheet.create({
     },
 
     profileStyle: {
-        // position:'absolute',
         marginLeft: normalize(40),
-        // marginTop: normalize(20),
     },
 
     nameStyle: {
-        // position: "absolute",
-        // width: normalize(197),
-        // height: normalize(52),
-        // marginLeft: normalize(30),
-        // marginTop: normalize(30),
         fontFamily: 'Inter',
         fontStyle: "normal",
-        fontweight: normalize(200),
+       // fontweight: normalize(200),
+       fontWeight: '200',
         fontSize: normalize(25),
         lineHeight: normalize(30),
-        // display: "flex",
-        // alignItems: "center",
-        // textalign: "center",
         color: "#FD6510",
         marginLeft:normalize(20),
     },
-
-    // dashboardDetails:{
-    //     position: "absolute",
-    //     width: normalize(428),
-    //     height: normalize(697),
-    //     marginLeft: normalize(0),
-    //     marginTop: normalize(441),
-
-    //     //background: linear-gradient(180deg, #FFFEFD 0%, #FFFCF8 100%);
-    //     boxShadow: "-10px -25px 14px rgba(0, 0, 0, 0.25), 12px 21px 17px rgba(73, 66, 66, 0.36)",
-    //     borderRadius: normalize(69),
-    // },
 
     gradient: {
         // position: "absolute",
         width: normalize(355),
         height: normalize(200),
-        // marginLeft: normalize(0),
         marginTop: normalize(dim().height * 0.04),
-        // boxShadow: "-10px -25px 14px rgba(0, 0, 0, 0.25), 12px 21px 17px rgba(73, 66, 66, 0.36)",
-
         borderTopLeftRadius: normalize(50),
         borderTopRightRadius: normalize(50),
-
-        // borderTopEndRadius: normalize(370),
-        // borderTopStartRadius: normalize(360),
     },
 
 
@@ -226,28 +181,20 @@ export const styles = StyleSheet.create({
     },
 
     rectangle3: {
-        // position: "absolute",
         width: normalize(102),
         height: normalize(102),
-        // marginLeft: normalize(240),
-        // marginTop: normalize(291),
-        // fontSize: normalize(10),
-        // alignItems: "flex-start",
-        // justifyContent: 'center',
-        // alignSelf:"center",
         display: 'flex',
         flexDirection: 'column',
         backgroundColor: "#FFFCF8",
         alignItems: "center",
         justifyContent: "space-evenly",
-        // boxShadow: "-10px -25px 14px rgba(0, 0, 0, 0.25), 12px 21px 17px rgba(73, 66, 66, 0.36)",
         borderRadius: normalize(30),
     },
 
     contentRectangleStyle: {
         paddingTop:dim().width*0.4,
         width: normalize(355),
-         height: normalize(400),
+       //  height: normalize(400),
          marginTop: normalize(-45),
          backgroundColor: '#FFFCF8',
         borderTopLeftRadius: normalize(65),
@@ -258,33 +205,20 @@ export const styles = StyleSheet.create({
     },
 
     contentStyle1:{
-       // width: normalize(200),
-       // height: normalize(200),
-        // marginLeft: normalize(50),
          marginTop: normalize(-90),
-        // fontSize: normalize(10),
-        // alignItems: "flex-start",
-        // justifyContent: 'center',
-        // alignSelf:"center",
         display: 'flex',
         flexDirection: "row",
         justifyContent: 'center',
         alignItems: 'center',
-      //  backgroundColor: 'green',
        paddingTop: dim().width * 0.08,
-      // paddingRight:normalize(20),
-      // marginRight:normalize(10),
        justifyContent: 'space-between',
-      // alignItems:'center',
-       //rowGap: normalize(10),
-
     },
 
     profileContent: {
         width: normalize(122),
         height: normalize(122),
-        // marginLeft: normalize(50),
-         marginTop: normalize(-90),
+       marginTop:normalize(-110),
+         //marginTop: normalize(-90),
         display: 'flex',
         flexDirection: "column",
         justifyContent: 'center',
@@ -302,34 +236,17 @@ export const styles = StyleSheet.create({
     },
 
     profileTextStyle: {
-        // position: "absolute",
-        // width: normalize(44),
-        // height: normalize(25),
-        // left: normalize(42),
-        // top: normalize(90),
-
         fontFamily: 'Inter',
         fontStyle: "normal",
-        //fontWeight:'400',
         fontSize: normalize(15),
-        // lineHeight: normalize(10),
-        // display: "flex",
-        // alignSelf: 'center',
-        // alignItems: 'center',
-        // textAlign: 'center',
-
         color: "#675454",
     },
 
-    accountContentStyle: {
+    accountContent: {
         width: normalize(122),
         height: normalize(122),
-        // marginLeft: normalize(50),
-         marginTop: normalize(-90),
-        // fontSize: normalize(10),
-        // alignItems: "flex-start",
-        // justifyContent: 'center',
-        // alignSelf:"center",
+        // marginTop: normalize(-90),
+        marginTop:normalize(-110),
         display: 'flex',
         flexDirection: "column",
         justifyContent: 'center',
@@ -342,33 +259,53 @@ export const styles = StyleSheet.create({
         // position:'absolute',
         width: normalize(52.88),
         height: normalize(50),
-        // marginLeft: normalize(40),
-        // marginTop: normalize(450),
     },
 
     accountTextStyle: {
-        // position: "absolute",
-        // width: normalize(44),
-        // height: normalize(25),
-        // left: normalize(40),
-        // top: normalize(90),
         fontFamily: 'Inter',
         fontStyle: "normal",
         fontSize: normalize(15),
-        // lineHeight: normalize(10),
         color: "#675454",
     },
 
     profileContent1: {
         width: normalize(122),
         height: normalize(122),
-        // marginLeft: normalize(50),
-         marginTop: normalize(50),
+         marginLeft: normalize(-310),
+        // paddingLeft:normalize(-40),
+         marginTop: normalize(20),
         display: 'flex',
         flexDirection: "column",
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'red',
+        backgroundColor: '#FFFCF8',
         borderRadius: normalize(15),
     },
+
+    
+    profileContent2: {
+        width: normalize(122),
+        height: normalize(122),
+         marginTop: normalize(-190),
+        marginTop:normalize(20),
+        display: 'flex',
+        flexDirection: "column",
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#FFFCF8',
+        borderRadius: normalize(15),
+    },
+
+
+    submitButtonStyle: {
+        display: "flex",
+        width: normalize(190),
+        height: normalize(40),
+        justifyContent: "center",
+        marginTop: normalize(10),
+        lineHeight: normalize(10),
+        borderRadius: normalize(20),
+        fontSize: normalize(10),
+      },
+    
 })

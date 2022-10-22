@@ -19,15 +19,6 @@ function Register(props) {
     const handleRegisterPersonalPage = () => {
       navigation.navigate('RegisterPersonalPage');
     };
-
-   // const [text, onChangeText] = React.useState(null);
-  //  constructor()
-  //  {
-  //   super()
-  //   this.state={
-  //     sponserid:""
-  //   }
-  //  }
 return(
 
     <LinearGradient colors={["#FD6510","#FFBF43"]} 
@@ -47,11 +38,6 @@ return(
           <SMText style={styles.sponsorHeading}>
               Sponsor Information 
           </SMText>
-
-
-          {/* <SMText>
-            {this.state.sponserid}
-          </SMText> */}
 
            <SMTextInput 
           style={styles.sponsorId}  

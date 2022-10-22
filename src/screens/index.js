@@ -9,3 +9,4 @@ export {default as RegisterSecurityInfoPage} from './RegisterSecurityInfoPage';
 export {default as TermsandConditions} from './TermsandConditions';
 export {default as LoginPage} from './LoginPage';
 export {default as Dashboard} from './Dashboard';
+export {default as ProfilePage} from './ProfilePage';

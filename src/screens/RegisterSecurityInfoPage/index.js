@@ -42,6 +42,8 @@ return(
     placeholder ={"Password:*"}
     />
 
+
+
     <SMTextInput 
     style={styles.confirmPassStyle}
       placeholder={"Confirm Password:*"}

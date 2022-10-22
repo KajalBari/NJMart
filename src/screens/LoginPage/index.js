@@ -11,6 +11,7 @@ import {TextInput} from 'react-native';
 function LoginPage(props) {
   const { navigation } = props;
   const handleDashboard= () => {
+    // console.log("Button PRess")
     navigation.navigate('Dashboard');
   };
 
@@ -39,24 +40,17 @@ function LoginPage(props) {
         style={styles.passwordStyle}
           placeholder={"Enter your password"}
         />
-
         
           <SMText style={styles.forgetPassStyle}>Forgot Password?</SMText>
         
-      
         <SMButton
           buttonText="Login"
           type="nextbutton"
-          buttonStyle={[styles.loginButtonStyle]}
+          buttonStyle={styles.loginButtonStyle}
           onPress={handleDashboard}
         />
 
-          {/* <SMButton
-          buttonText="Next"
-          type="nextbutton"
-          buttonStyle={[styles.nextButtonStyle]}
-          onPress={handleRegisterPersonalPage}
-          /> */}
+
 
         <SMView style={styles.signUpDiv}>
           <SMText style={styles.userStyle}>

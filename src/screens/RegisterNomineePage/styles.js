@@ -40,8 +40,10 @@ export const styles = StyleSheet.create({
     },
 
     tableStyle: {
-        width: normalize(250),
-        height: normalize(361),
+        // width: normalize(250),
+        // height: normalize(361),
+        width: dim().width * 0.74,
+        minHeight: dim().height * 0.62,
         marginLeft: normalize(10),
         marginTop: normalize(-10),
         alignItems: "center",

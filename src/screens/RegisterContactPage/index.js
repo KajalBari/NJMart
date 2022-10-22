@@ -7,6 +7,8 @@ import { styles } from './styles';
 import {FlatList,TextInput} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 //import { TextInput } from "react-native-paper";
+import { normalize } from '../../constants/Platform';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 function RegisterContactPage(props) {
     const { navigation } = props;
@@ -23,6 +25,10 @@ return(
 
     <SMImage source={NJMartLogo}  style={styles.njMartImage} />   
      <SMView style={[styles.tableStyle,styles.elevation]}>
+{/* 
+     <KeyboardAwareScrollView
+      extraScrollHeight={normalize(100)}
+      nestedScrollEnabled> */}
     
           <SMText style={styles.registerStyle}>
             Register
@@ -33,6 +39,12 @@ return(
           <SMText style={styles.contactHeading}>
             Contact Information
           </SMText>
+
+          <KeyboardAwareScrollView
+       extraScrollHeight={normalize(100)}
+      nestedScrollEnabled>
+
+      <SMView style={styles.divStyle}>
 
           <SMTextInput
            style={styles.addressStyle}
@@ -73,7 +85,9 @@ return(
           type="nextbutton"
           buttonStyle={styles.nextButtonStyle}
           onPress={handleRegisterNomineePage}
-          />   
+          />  
+</SMView>
+          </KeyboardAwareScrollView> 
           </SMView>  
      </LinearGradient>
            

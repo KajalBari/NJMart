@@ -40,8 +40,9 @@ export const styles = StyleSheet.create({
     },
 
     tableStyle: {
-        width: normalize(250),
+       // width: normalize(250),
        // height: normalize(331),
+       width: dim().width * 0.74,
         minHeight: dim().height * 0.74,
         marginLeft: normalize(15),
         marginTop: normalize(-10),
@@ -96,6 +97,11 @@ export const styles = StyleSheet.create({
         textAlign: "center",
         color: "#FD6510",
     },
+
+    // divStyle:{
+    //     height:normalize(500),
+    // },
+
 
     addressStyle: {
         display: "flex",

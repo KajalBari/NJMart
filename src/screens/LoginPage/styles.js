@@ -124,16 +124,6 @@ export const styles = StyleSheet.create({
         marginTop: normalize(20),
     },
 
-    nextButtonStyle: {
-        display: "flex",
-        width: normalize(190),
-        height: normalize(40),
-        justifyContent: "center",
-        marginTop: normalize(10),
-        lineHeight: normalize(10),
-        borderRadius: normalize(20),
-        fontSize: normalize(10),
-      },
 
     signUpDiv: {
         display: 'flex',

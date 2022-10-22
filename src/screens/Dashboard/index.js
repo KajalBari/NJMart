@@ -10,21 +10,40 @@ import {
 } from '../../assets';
 import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
+//import { TouchableOpacity } from 'react-native-gesture-handler';
+import { normalize } from '../../constants/Platform';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+
+ import {Button,TouchableOpacity} from 'react-native';
 
 function Dashboard(props) {
   const { navigation } = props;
-  const handleRegisterPersonalPage = () => {
-    navigation.navigate('RegisterPersonalPage');
+  const handleProfilePage = () => {
+    navigation.navigate('ProfilePage');
   };
 
+  // const handleRegister = () => {
+  //   navigation.navigate('Register');
+  // };
+
+
   return (
+    <KeyboardAwareScrollView
+  extraScrollHeight={normalize(200)}
+  nestedScrollEnabled> 
+    
     <SMView style={styles.container}>
       <SMView style={styles.ellipseStyle}>
 
         <SMImage source={ShoppingCart} style={styles.shoppingCartStyle} />
+       
+
         {/* <SMImage source={ThinCircle}  style={styles.shoppingCartStyle11}/> */}
+        <TouchableOpacity>
         <SMImage source={menu11} style={styles.menuStyle} />
-      </SMView>
+        </TouchableOpacity>
+        </SMView>
+     
 
       <SMView style={styles.profileDivStyle}>
         <SMImage source={Profile} style={styles.profileStyle} />
@@ -56,38 +75,43 @@ function Dashboard(props) {
         </SMView>
       </LinearGradient>
 
+
+
      <SMView style={styles.contentRectangleStyle}> 
-{/* 
-         <SMView style={styles.contentStyle1}> */}
-
-        <SMView style={[styles.profileContent, styles.elevation]}>
-          <SMImage source={Profile} style={styles.profileContentStyle} />
-          <SMText style={styles.profileTextStyle}>Profile</SMText>
-        </SMView>
-
-        <SMView style={[styles.accountContentStyle, styles.elevation]}>
-          <SMImage source={Account} style={styles.accountImageStyle} />
-          <SMText style={styles.accountTextStyle}>Account</SMText>
-        </SMView>
-
-      {/* </SMView> */}
 
       
-        {/* <SMView style={styles.contentStyle1}> */}
-
-         {/* <SMView style={[styles.profileContent1, styles.elevation]}>
+      <TouchableOpacity onPress={handleProfilePage}>
+       <SMView  style={[styles.profileContent, styles.elevation]}>
           <SMImage source={Profile} style={styles.profileContentStyle} />
           <SMText style={styles.profileTextStyle}>Profile</SMText>
-        </SMView> */}
+        </SMView>
+        </TouchableOpacity>
 
-        {/* <SMView style={[styles.accountContentStyle1, styles.elevation]}>
+        <TouchableOpacity>
+        <SMView style={[styles.accountContent, styles.elevation]}>
           <SMImage source={Account} style={styles.accountImageStyle} />
           <SMText style={styles.accountTextStyle}>Account</SMText>
-        </SMView> */}
-      {/* </SMView> */}
-      </SMView>
-      </SMView>
+        </SMView>
+        </TouchableOpacity>
 
+   
+        <SMView style={[styles.profileContent1, styles.elevation]}>
+        <SMImage source={Profile} style={styles.profileContentStyle} />
+          <SMText style={styles.profileTextStyle}>Downline</SMText>
+        </SMView>
+     
+       
+        <SMView style={[styles.profileContent2, styles.elevation]}>
+        <SMImage source={Account} style={styles.accountImageStyle} />
+          <SMText style={styles.accountTextStyle}>Shopping</SMText>
+        </SMView>
+     
+          
+      </SMView>
+      {/* </KeyboardAwareScrollView> */}
+
+      </SMView>
+      </KeyboardAwareScrollView>
     
   );
 }

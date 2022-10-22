@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
 
   gradient: {
     width: normalize(400),
-    // minHeight: dim().height * 0.4,
+    // minHeight: dim().height * 0.1,
     height: normalize(250),
     marginLeft: normalize(-20),
     marginRight: normalize(-20),
@@ -22,14 +22,15 @@ export const styles = StyleSheet.create({
     display:'flex',
     justifyContent:'center',
     resizeMode: 'contain',
-    justifyContent: 'center',
-    
+    justifyContent: 'center',  
     alignSelf: "center",
 },
 
 tableStyle: {
-    width: normalize(250),
-    height: normalize(341),
+    // width: normalize(250),
+    width: dim().width * 0.70,
+    minHeight: dim().height * 0.60,
+   // height: normalize(341),
     marginLeft: normalize(15),
     marginTop: normalize(-10),
     alignItems: "center",
