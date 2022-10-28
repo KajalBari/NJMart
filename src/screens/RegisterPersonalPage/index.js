@@ -5,11 +5,9 @@ import {
 } from '../../assets';
 import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
-
-// import { ScrollView } from "react-native-gesture-handler";
-import { ScrollView, FlatList, Text } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { normalize } from '../../constants/Platform';
+
 
 
 function RegisterPersonalPage(props) {
@@ -22,17 +20,18 @@ function RegisterPersonalPage(props) {
     // <KeyboardAwareScrollView
     // extraScrollHeight={normalize(100)}
     // nestedScrollEnabled>
+    <SMView style={styles.containerStyle}>
 
-    <LinearGradient colors={["#FD6510", "#FFBF43"]}
-      style={styles.gradient}
-      start={{ x: 1, y: 0.5 }}
-      end={{ x: 0, y: 0.5 }} >
+      <LinearGradient colors={["#FD6510", "#FFBF43"]}
+        style={styles.gradient}
+        start={{ x: 1, y: 0.5 }}
+        end={{ x: 0, y: 0.5 }} >
 
 
-      <SMImage source={NJMartLogo} style={styles.njMartImage} />
+        <SMImage source={NJMartLogo} style={styles.njMartImage} />
 
-<SMView style={[styles.tableStyle, styles.elevation]}>
-        <SMView>
+        <SMView style={[styles.tableStyle, styles.elevation]}>
+
           <SMText style={styles.registerStyle}>
             Register
           </SMText>
@@ -42,57 +41,58 @@ function RegisterPersonalPage(props) {
           <SMText style={styles.personalInfoHeading}>
             Personal Information
           </SMText>
+
+
+          <KeyboardAwareScrollView
+            extraScrollHeight={normalize(100)}
+            nestedScrollEnabled>
+
+            <SMView style={styles.divStyle}>
+
+              <SMTextInput
+                style={styles.titleStyle}
+                placeholder={"Title"}
+              />
+
+              <SMTextInput
+                style={styles.applicantNameStyle}
+                placeholder={"Applicant's Name*"}
+              />
+
+              <SMTextInput
+                style={styles.dobStyle}
+                placeholder={"DOB"}
+              />
+
+              <SMTextInput
+                style={styles.fatherNameStyle}
+                placeholder={"Father's/Husband Name"}
+              />
+
+              <SMTextInput
+                style={styles.maritalStatusStyle}
+                placeholder={"Marital Status"}
+              />
+
+              <SMTextInput
+                style={styles.genderStyle}
+                placeholder={"Gender"}
+              />
+
+              <SMButton
+                buttonText="Next"
+                type="nextbutton"
+                buttonStyle={styles.nextButtonStyle}
+                onPress={handleRegisterContactPage}
+              />
+            </SMView>
+            </KeyboardAwareScrollView>
         </SMView>
-
-        <SMView style={styles.divStyle}>
-
-            <SMTextInput
-              style={styles.titleStyle}
-              placeholder={"Title"}
-              // maxLength={20}
-            />
-
-            <SMTextInput
-              style={styles.applicantNameStyle}
-              placeholder={"Applicant's Name*"}
-              // maxLength={20}
-            />
-
-            <SMTextInput
-              style={styles.dobStyle}
-              placeholder={"DOB"}
-                // maxLength={20}
-            />
-
-            <SMTextInput
-              style={styles.fatherNameStyle}
-              placeholder={"Father's/Husband Name"}
-              // maxLength={20}
-            />
-
-            <SMTextInput
-              style={styles.maritalStatusStyle}
-              placeholder={"Marital Status"}
-              // maxLength={20}
-            />
-
-            <SMTextInput
-              style={styles.genderStyle}
-              placeholder={"Gender"}
-              // maxLength={20}
-            />
-
-            <SMButton
-              buttonText="Next"
-              type="nextbutton"
-              buttonStyle={styles.nextButtonStyle}
-              onPress={handleRegisterContactPage}
-            />
-        </SMView>
-      </SMView>
-    </LinearGradient>
-     
+      </LinearGradient>
+    </SMView>
+    // </KeyboardAwareScrollView>
   );
+
 }
 export default RegisterPersonalPage;
 

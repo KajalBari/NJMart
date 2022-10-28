@@ -4,6 +4,14 @@ import { COLORS } from '../../constants/Colors';
 
 export const styles = StyleSheet.create({
 
+  containerStyle:{
+    display:'flex',
+    flexDirection:'column',
+    // width:dim().width*0.99,
+    width: normalize(500),
+    minHeight: dim().height * 0.4,
+  },
+
   gradient: {
     width: normalize(400),
     // minHeight: dim().height * 0.4,

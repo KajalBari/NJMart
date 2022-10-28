@@ -14,7 +14,8 @@ function RegisterNomineePage(props) {
         navigation.navigate('RegisterBankInfoPage');
     };
 
-return(   
+return( 
+  <SMView style={styles.containerStyle}>
     <LinearGradient colors={["#FD6510","#FFBF43"]} 
     style={styles.gradient}  
     start={{x: 1, y: 0.5}} 
@@ -33,6 +34,9 @@ return(
                 Nominee Information
           </SMText>
 
+      <SMView style={styles.divStyle}>
+
+      
           <SMTextInput
           style={styles.titleStyle}
             placeholder={"Nominee Title"}
@@ -53,10 +57,11 @@ return(
           type="nextbutton"
           buttonStyle={styles.nextButtonStyle}
           onPress={handleRegisterBankInfoPage}
-          />   
+          /> 
+          </SMView>  
           </SMView>  
       </LinearGradient>
-    
+     </SMView>
 );
 }
 export default RegisterNomineePage;

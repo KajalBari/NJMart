@@ -16,6 +16,14 @@ export const styles = StyleSheet.create({
     //     // background: linear-gradient(228.18deg, #FD6510 30.98%, #FFBF43 85.49%);
     // },
 
+    containerStyle:{
+        display:'flex',
+        flexDirection:'column',
+        // width:dim().width*0.99,
+        width: normalize(500),
+        minHeight: dim().height * 0.4,
+    },
+
     gradient: {
         width: normalize(400),
         // minHeight: dim().height * 0.4,
@@ -96,6 +104,14 @@ export const styles = StyleSheet.create({
         color: "#FD6510",
     },
 
+    divStyle:{        
+        // height: dim().height*0.6,
+         // width:dim().width*0.4
+         display:'flex',
+         flexDirection:'column',
+         justifyContent:'flex-start',   
+     },
+     
     bankStyle: {
         display: "flex",
        // flexDirection: 'row',
@@ -174,6 +190,7 @@ export const styles = StyleSheet.create({
         justifyContent: "center",
        // marginTop: normalize(20),
        marginTop:normalize(-40),
+       marginLeft:normalize(30),
         lineHeight: normalize(10),
         borderRadius: normalize(20),
         fontSize: normalize(10),

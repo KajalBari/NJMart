@@ -15,6 +15,14 @@ export const styles = StyleSheet.create({
     //     borderBottomStartRadius: normalize(360),
     //     // background: linear-gradient(228.18deg, #FD6510 30.98%, #FFBF43 85.49%);
     // },
+
+    containerStyle:{
+        display:'flex',
+        flexDirection:'column',
+        // width:dim().width*0.99,
+        width: normalize(500),
+        minHeight: dim().height * 0.4,
+    },
     
     gradient:{
         width: normalize(400),
@@ -57,6 +65,7 @@ export const styles = StyleSheet.create({
         boxShadow:"-10px 4px 14px rgba(0, 0, 0, 0.25), 12px 21px 17px rgba(73, 66, 66, 0.36)", 
     },
 
+
     registerStyle: {
         display: 'flex',
         flexDirection: 'row',
@@ -98,6 +107,14 @@ export const styles = StyleSheet.create({
     width:normalize(210),
     height:normalize(40),
     },
+
+    divStyle:{        
+        // height: dim().height*0.6,
+         // width:dim().width*0.4
+         display:'flex',
+         flexDirection:'column',
+         justifyContent:'flex-start',   
+     },
 
     titleStyle: {
         display: "flex",
@@ -150,6 +167,7 @@ export const styles = StyleSheet.create({
     height: normalize(40),
     justifyContent: "center",
     marginTop: normalize(10),
+    marginLeft:normalize(30),
     lineHeight: normalize(10),
     borderRadius: normalize(20),
     fontSize: normalize(10),

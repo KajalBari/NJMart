@@ -5,7 +5,9 @@ import {
   } from '../../assets';
 import {styles} from './styles';
 import LinearGradient from 'react-native-linear-gradient';
-import {TextInput} from 'react-native';
+import { normalize } from '../../constants/Platform';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+
 
 // const [text, onChangeText] = React.useState(null);
 
@@ -19,7 +21,10 @@ function Register(props) {
     const handleRegisterPersonalPage = () => {
       navigation.navigate('RegisterPersonalPage');
     };
-return(
+
+return( 
+
+  <SMView style={styles.containerStyle}>
 
     <LinearGradient colors={["#FD6510","#FFBF43"]} 
     style={styles.gradient}  
@@ -39,13 +44,15 @@ return(
               Sponsor Information 
           </SMText>
 
+          <SMView style={styles.sponsorFields}>
+
            <SMTextInput 
           style={styles.sponsorId}  
           placeholder={"Sponsor ID*"}
           />
           {/* onChangeText={(e)=>{console.warn(e)}}
           onChangeText={(e)=>{this.styles({sponserid:e})}} */}
-         
+
           <SMTextInput 
           style={styles.sponsorName}  
           placeholder={"Sponsor Name"}
@@ -59,13 +66,16 @@ return(
           <SMButton
           buttonText="Next"
           type="nextbutton"
-          buttonStyle={[styles.nextButtonStyle]}
+          buttonStyle={styles.nextButtonStyle}
           onPress={handleRegisterPersonalPage}
-          />   
+          />  
+          </SMView>
           </SMView>  
      
           </LinearGradient>
+          </SMView>
 
+         
 );
 
 }

@@ -4,9 +4,19 @@ import { dim, normalize } from '../../constants/Platform';
 
 export const styles = StyleSheet.create({
 
+  containerStyle:{
+        display:'flex',
+        flexDirection:'column',
+         width:dim().width*0.99,
+       // width: normalize(500),
+        minHeight: dim().height * 0.4,
+        marginLeft: normalize(-10),
+  },
+
   gradient: {
     width: normalize(400),
-    // minHeight: dim().height * 0.1,
+   // width: dim().width*0.99,
+    // minHeight: dim().height * 0.15,
     height: normalize(250),
     marginLeft: normalize(-20),
     marginRight: normalize(-20),
@@ -40,7 +50,7 @@ tableStyle: {
 },
 
   elevation: {
-    elevation: normalize(30),
+    elevation: normalize(10),
     boxShadow: "-10px 4px 14px rgba(0, 0, 0, 0.25), 12px 21px 17px rgba(73, 66, 66, 0.36)",
   },
 
@@ -84,6 +94,11 @@ tableStyle: {
     color: "#FD6510",
   },
 
+  sponsorFields:{
+    display:'flex',
+    flexDirection:'column',
+    justifyContent:'flex-start', 
+  },
 
   sponsorId: {
     marginLeft: normalize(25),
@@ -136,6 +151,7 @@ tableStyle: {
     height: normalize(40),
     justifyContent: "center",
     marginTop: normalize(10),
+    marginLeft:normalize(30),
     lineHeight: normalize(10),
     borderRadius: normalize(20),
     fontSize: normalize(10),

@@ -3,18 +3,14 @@ import { dim, normalize } from '../../constants/Platform';
 import { COLORS } from '../../constants/Colors';
 
 export const styles = StyleSheet.create({
-    // containerStyle: {
-    //     position: "absolute",
-    //     width: normalize(400),
-    //     minHeight: dim().height * 0.4,
-    //     //height: normalize(230),
-    //     marginLeft: normalize(-20),
-    //     marginRight: normalize(-20),
-    //     backgroundColor: "orange",
-    //     borderBottomEndRadius: normalize(370),
-    //     borderBottomStartRadius: normalize(360),
-    //     // background: linear-gradient(228.18deg, #FD6510 30.98%, #FFBF43 85.49%);
-    // },
+
+    containerStyle: {
+        display:'flex',
+        flexDirection:'column',
+        // width:dim().width*0.99,
+        width: normalize(500),
+        minHeight: dim().height * 0.4,
+    },
 
     textStyle:{
         fontSize:normalize(20),
@@ -83,11 +79,13 @@ export const styles = StyleSheet.create({
     divStyle:{        
         height: dim().height*0.6,
         // width:dim().width*0.4
-      
+        display:'flex',
+    flexDirection:'column',
+    justifyContent:'flex-start',   
     },
 
     elevation: {
-        elevation: 30,
+        elevation: normalize(10),
         boxShadow: "-10px 4px 14px rgba(0, 0, 0, 0.25), 12px 21px 17px rgba(73, 66, 66, 0.36)",
         // overflow:'scroll',
         // height: normalize(400),
@@ -224,6 +222,7 @@ export const styles = StyleSheet.create({
         height: normalize(40),
         justifyContent: "center",
         //marginTop: normalize(10),
+        marginLeft:normalize(30),
         marginTop:normalize(-100),
         lineHeight: normalize(10),
         borderRadius: normalize(20),

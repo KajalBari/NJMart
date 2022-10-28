@@ -4,6 +4,14 @@ import { COLORS } from '../../constants/Colors';
 
 export const styles = StyleSheet.create({
 
+    containerStyle:{
+        display:'flex',
+        flexDirection:'column',
+        // width:dim().width*0.99,
+        width: normalize(500),
+        minHeight: dim().height * 0.4,
+    },
+
     gradient: {
         width: normalize(400),
         // minHeight: dim().height * 0.4,
@@ -84,6 +92,15 @@ export const styles = StyleSheet.create({
         textAlign: "center",
         color: "#FD6510",
     },
+
+    
+    divStyle:{        
+        // height: dim().height*0.6,
+         // width:dim().width*0.4
+         display:'flex',
+         flexDirection:'column',
+         justifyContent:'flex-start',   
+     },
 
     userIdStyle: {
         display: "flex",

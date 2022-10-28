@@ -75,8 +75,6 @@ function Dashboard(props) {
         </SMView>
       </LinearGradient>
 
-
-
      <SMView style={styles.contentRectangleStyle}> 
 
       

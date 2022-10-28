@@ -11,6 +11,9 @@ export const styles = StyleSheet.create({
         // height: normalize(926),
         // marginTop: normalize(10),
         backgroundColor: "#FFFFFF",
+        width: normalize(500),
+        minHeight: dim().height * 0.9,
+        overflow:'scroll',
     },
 
     ellipseStyle: {
@@ -49,7 +52,6 @@ export const styles = StyleSheet.create({
     },
 
     menuStyle: {
-        //    position: "absolute",
         display: 'flex',
         float: 'right',
         justifyContent: 'space-between',
@@ -61,15 +63,11 @@ export const styles = StyleSheet.create({
     },
 
     profileDivStyle: {
-        // position: "absolute",
-        // float:'right',
-        // width: normalize(52.88),
         height: normalize(50),
         display:'flex',
         flexDirection:'row',
         justifyContent:'flex-start',
         alignItems:'center',
-        // marginLeft: normalize(88),
          marginTop: normalize(30),
 
     },
@@ -81,7 +79,6 @@ export const styles = StyleSheet.create({
     nameStyle: {
         fontFamily: 'Inter',
         fontStyle: "normal",
-       // fontweight: normalize(200),
        fontWeight: '200',
         fontSize: normalize(25),
         lineHeight: normalize(30),
@@ -90,7 +87,6 @@ export const styles = StyleSheet.create({
     },
 
     gradient: {
-        // position: "absolute",
         width: normalize(355),
         height: normalize(200),
         marginTop: normalize(dim().height * 0.04),
@@ -109,21 +105,12 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         paddingTop: dim().width * 0.08,
         justifyContent: 'space-evenly',
-        // position: "absolute",
-        // width: normalize(122),
-        // height: normalize(112),
-        // marginLeft: normalize(0),
-        // marginTop: normalize(30),
-        // alignItems:"flex-start",
-        // justifyContent:'center',
     },
 
     rectangle1: {
         //    position: "absolute",
         width: normalize(102),
         height: normalize(102),
-        // marginLeft: normalize(20),
-        // marginTop: normalize(30),
         fontSize: normalize(10),
         display: 'flex',
         flexDirection: 'column',
@@ -134,43 +121,21 @@ export const styles = StyleSheet.create({
     },
 
     memberNumberStyle: {
-        // width: normalize(80),
-        // height: normalize(30),
-        // marginTop: normalize(20),
         fontFamily: 'Inter',
-        // alignItems: 'center',
-        // alignSelf: 'center',
         fontStyle: "normal",
-        // textAlign: 'center',
         fontSize: normalize(16),
-        // lineHeight: normalize(16),
     },
 
     memberStyle: {
-        // width: normalize(80),
-        // height: normalize(30),
-        // marginLeft: normalize(5),
-        // marginTop: normalize(30),
         fontFamily: 'Inter',
-        // alignItems: 'center',
-        // alignSelf: 'center',
         fontStyle: "normal",
-        // textAlign: 'center',
-        // fontWeight: normalize(300),
         fontSize: normalize(16),
         color: "#675454",
     },
 
     rectangle2: {
-        // position: "absolute",
         width: normalize(102),
         height: normalize(102),
-        // marginLeft: normalize(130),
-        // marginTop: normalize(291),
-        // fontSize: normalize(10),
-        // alignItems: "flex-start",
-        // justifyContent: 'center',
-        // alignSelf:"center",
         display: 'flex',
         flexDirection: 'column',
         backgroundColor: "#FFFCF8",

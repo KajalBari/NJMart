@@ -14,6 +14,7 @@ function RegisterSecurityInfoPage(props) {
     };
 
 return(
+  <SMView style={styles.containerStyle}>
   <LinearGradient colors={["#FD6510","#FFBF43"]} 
   style={styles.gradient}  
   start={{x: 1, y: 0.5}} 
@@ -67,6 +68,7 @@ return(
     />   
     </SMView>  
 </LinearGradient>
+  </SMView>
   
 );
 }
