@@ -26,7 +26,10 @@ import {styles} from './styles';
 import store from '../services/storageServices';
 import {
     Register,
+    ProfilePage,
 }from '../screens';
+
+import {createDrawerNavigator} from 'react-navigation-drawer';
 
 const Stack = createNativeStackNavigator();
 
@@ -42,6 +45,13 @@ export default function MainContainer(props) {
     const userDataObj = await store.get('userData');
     setUserData(userDataObj);
   };
+
+
+  const DrawerNavigator = createDrawerNavigator({
+    ProfilePage
+  })
+
+
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -73,12 +83,12 @@ export default function MainContainer(props) {
           options={{headerTitle: '', gestureEnabled: false}}
         />
     
+        <Stack.Screen
+          name="ProfilePage"
+          component={ProfilePage}
+          options={{headerTitle: '', gestureEnabled: false}}
+        />
        
-    
-        
-      
-      
-      
       </Stack.Navigator>
     </NavigationContainer>
   );

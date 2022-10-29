@@ -5,7 +5,7 @@ import { COLORS } from '../../constants/Colors';
 export const styles = StyleSheet.create({
 
     containerStyle: {
-        display:'flex',
+        //display:'flex',
         flexDirection:'column',
         // width:dim().width*0.99,
         width: normalize(500),
@@ -62,9 +62,6 @@ export const styles = StyleSheet.create({
         borderRadius: normalize(40),
         overflow:'scroll',
         flex:1,
-       // overflow:'auto',
-        // width:'100%',
-           // height: normalize(50),
     },
 
     scrollView:{
@@ -77,22 +74,25 @@ export const styles = StyleSheet.create({
     },
 
     divStyle:{        
-        height: dim().height*0.6,
+        // height: dim().height*0.6,
         // width:dim().width*0.4
-        display:'flex',
-    flexDirection:'column',
-    justifyContent:'flex-start',   
+       // display:'flex',
+        flexDirection:'column',
+        justifyContent:'flex-start',   
+    },
+
+    scrollbar:{
+        //flexGrow:"0",
+        flexGrow:1,
     },
 
     elevation: {
         elevation: normalize(10),
         boxShadow: "-10px 4px 14px rgba(0, 0, 0, 0.25), 12px 21px 17px rgba(73, 66, 66, 0.36)",
-        // overflow:'scroll',
-        // height: normalize(400),
     },
 
     registerStyle: {
-        display: 'flex',
+        //display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
         marginTop: normalize(20),
@@ -128,11 +128,6 @@ export const styles = StyleSheet.create({
     },
 
     titleStyle: {
-       // display: "flex",
-      //  flexDirection: 'row',
-        alignSelf: 'flex-start',
-        marginLeft: normalize(25),
-       // marginTop: normalize(10),
         fontFamily: 'Inter',
         fontStyle: "normal",
         fontWeight: "200",
@@ -143,11 +138,6 @@ export const styles = StyleSheet.create({
     },
 
     applicantNameStyle: {
-       // display: "flex",
-        //flexDirection: 'row',
-        alignSelf: 'flex-start',
-        marginLeft: normalize(25),
-       // marginTop: normalize(5),
         fontFamily: 'Inter',
         fontWeight: "200",
         fontSize: normalize(15),
@@ -157,11 +147,6 @@ export const styles = StyleSheet.create({
     },
 
     dobStyle: {
-       // display: "flex",
-       // flexDirection: 'row',
-        alignSelf: 'flex-start',
-        marginLeft: normalize(25),
-      //  marginTop: normalize(5),
         fontFamily: 'Inter',
         fontStyle: "normal",
         fontWeight: "200",
@@ -172,11 +157,6 @@ export const styles = StyleSheet.create({
     },
 
     fatherNameStyle: {
-       // display: "flex",
-       // flexDirection: 'row',
-        alignSelf: 'flex-start',
-        marginLeft: normalize(25),
-       // marginTop: normalize(25),
         fontFamily: 'Inter',
         fontStyle: "normal",
         fontWeight: "200",
@@ -187,11 +167,6 @@ export const styles = StyleSheet.create({
     },
 
     maritalStatusStyle: {
-       // display: "flex",
-       // flexDirection: 'row',
-        alignSelf: 'flex-start',
-        marginLeft: normalize(25),
-       // marginTop: normalize(25),
         fontFamily: 'Inter',
         fontStyle: "normal",
         fontWeight: "200",
@@ -202,11 +177,6 @@ export const styles = StyleSheet.create({
     },
 
     genderStyle: {
-        //display: "flex",
-       // flexDirection: 'row',
-        alignSelf: 'flex-start',
-        marginLeft: normalize(25),
-       // marginTop: normalize(25),
         fontFamily: 'Inter',
         fontStyle: "normal",
         fontWeight: "200",
@@ -217,7 +187,6 @@ export const styles = StyleSheet.create({
     },
 
     nextButtonStyle: {
-       // display: "flex",
         width: normalize(190),
         height: normalize(40),
         justifyContent: "center",

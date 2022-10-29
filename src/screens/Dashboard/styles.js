@@ -16,6 +16,12 @@ export const styles = StyleSheet.create({
         overflow:'scroll',
     },
 
+    text:{
+        color:"#161924",
+        fontSize:normalize(20),
+    },
+
+
     ellipseStyle: {
         display: 'flex',
         flexDirection:'row',
@@ -193,11 +199,8 @@ export const styles = StyleSheet.create({
     },
 
     profileContentStyle: {
-        // position:'absolute',
         width: normalize(52.88),
         height: normalize(50),
-        // marginLeft: normalize(40),
-        // marginTop: normalize(450),
     },
 
     profileTextStyle: {

@@ -25,15 +25,16 @@ export const styles = StyleSheet.create({
     borderBottomEndRadius: normalize(370),
     borderBottomStartRadius: normalize(360),
   },
+  
   njMartImage: {
     width: normalize(150),
     //height: normalize(150),
     minHeight: dim().height * 0.30,
     display:'flex',
     justifyContent:'center',
-    resizeMode: 'contain',
-    justifyContent: 'center',  
+    resizeMode: 'contain', 
     alignSelf: "center",
+    marginLeft:normalize(20),
 },
 
 tableStyle: {
@@ -41,8 +42,8 @@ tableStyle: {
     width: dim().width * 0.70,
     minHeight: dim().height * 0.60,
    // height: normalize(341),
-    marginLeft: normalize(15),
-    marginTop: normalize(-10),
+    marginLeft: normalize(30),
+    marginTop: normalize(-5),
     alignItems: "center",
     alignSelf: "center",
     backgroundColor: "#E8E8E8",

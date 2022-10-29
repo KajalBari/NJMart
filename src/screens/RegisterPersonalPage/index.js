@@ -7,6 +7,7 @@ import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { normalize } from '../../constants/Platform';
+import {ScrollView,Text, View} from 'react-native';
 
 
 
@@ -43,13 +44,11 @@ function RegisterPersonalPage(props) {
           </SMText>
 
 
-          <KeyboardAwareScrollView
-            extraScrollHeight={normalize(100)}
-            nestedScrollEnabled>
+          <ScrollView style={{flexGrow:1}}>
+             
+             <SMView style={styles.divStyle}>
 
-            <SMView style={styles.divStyle}>
-
-              <SMTextInput
+             <SMTextInput
                 style={styles.titleStyle}
                 placeholder={"Title"}
               />
@@ -70,7 +69,7 @@ function RegisterPersonalPage(props) {
               />
 
               <SMTextInput
-                style={styles.maritalStatusStyle}
+                style={styles.maritalStatusStyle}  
                 placeholder={"Marital Status"}
               />
 
@@ -79,14 +78,17 @@ function RegisterPersonalPage(props) {
                 placeholder={"Gender"}
               />
 
-              <SMButton
+            
+             <SMButton
                 buttonText="Next"
                 type="nextbutton"
                 buttonStyle={styles.nextButtonStyle}
                 onPress={handleRegisterContactPage}
-              />
-            </SMView>
-            </KeyboardAwareScrollView>
+              /> 
+
+
+             </SMView>
+            </ScrollView>
         </SMView>
       </LinearGradient>
     </SMView>

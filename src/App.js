@@ -5,6 +5,17 @@ import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
 import MainContainer from './navigations/index';
 import {store} from './store';
 
+// import {createAppContainer} from 'react-navigation';
+// import {createDrawerNavigator} from 'react-navigation-drawer';
+// import {Dimensions} from 'react-native';
+
+// import {Feather} from '@expo/vector-icons';
+// import {ProfilePage} from './screens';
+
+// const DrawerNavigator = createDrawerNavigator({
+//   ProfilePage
+// })
+
 const customDayTheme = {
   ...DefaultTheme,
   roundness: 2,

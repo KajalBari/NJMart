@@ -28,16 +28,18 @@ function ProfilePage(props) {
      extraScrollHeight={normalize(100)}
    nestedScrollEnabled>
 
+  
   <SMView style={styles.containerStyle}>
    <LinearGradient colors={["#FD6510","#FFBF43"]} 
     style={styles.gradient}  
-    start={{x: 1, y: 0.5}} 
+    start={{x: 1, y: 0.5}}
     end={{x: 0, y: 0.5}} >
 
     {/* <SMView style={styles.menuCard}>
     <SMImage source={menu11} style={styles.menuStyle} />
     </SMView> */}
 
+  
     <SMView style={styles.iconNameStyle}>
     <SMImage source={Profile} style={styles.profileStyle} />
     <SMText style={styles.nameStylee}>Navneet Kothari</SMText>
@@ -94,18 +96,8 @@ function ProfilePage(props) {
 
     </LinearGradient>
   </SMView>
-  
+
 </KeyboardAwareScrollView>
-  
-          
-
-       
-   
-
-
-          
-          
-          
     
   );
 

@@ -42,9 +42,7 @@ return(
     style={styles.passwordStyle}
     placeholder ={"Password:*"}
     />
-
-
-
+    
     <SMTextInput 
     style={styles.confirmPassStyle}
       placeholder={"Confirm Password:*"}

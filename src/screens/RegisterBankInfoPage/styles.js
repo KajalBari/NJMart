@@ -60,7 +60,7 @@ export const styles = StyleSheet.create({
     },
 
     elevation: {
-        elevation: 30,
+        elevation: 10,
         boxShadow: "-10px 4px 14px rgba(0, 0, 0, 0.25), 12px 21px 17px rgba(73, 66, 66, 0.36)",
     },
 

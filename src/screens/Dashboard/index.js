@@ -14,17 +14,14 @@ import LinearGradient from 'react-native-linear-gradient';
 import { normalize } from '../../constants/Platform';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
- import {Button,TouchableOpacity} from 'react-native';
+ import {SafeAreaView,TouchableOpacity} from 'react-native';
+ import {FontAwesome5} from '@expo/vector-icons';
 
 function Dashboard(props) {
   const { navigation } = props;
   const handleProfilePage = () => {
     navigation.navigate('ProfilePage');
   };
-
-  // const handleRegister = () => {
-  //   navigation.navigate('Register');
-  // };
 
 
   return (
@@ -34,11 +31,20 @@ function Dashboard(props) {
     
     <SMView style={styles.container}>
       <SMView style={styles.ellipseStyle}>
+       
+      
 
         <SMImage source={ShoppingCart} style={styles.shoppingCartStyle} />
-       
+{/*       
+        <TouchableOpacity style={{alignItems:'flex-end',margin:16}} 
+        onPress={this.props.navigation.openDrawer}>
+          <FontAwesome5 name="bars" size={24} color="#161924"/>
+        </TouchableOpacity>
 
-        {/* <SMImage source={ThinCircle}  style={styles.shoppingCartStyle11}/> */}
+        <SMView style={{flex:1,alignItems:"center",justifyContent:"center"}}>
+          <SMText style={styles.text}>{this.props.name}Screen</SMText>
+        </SMView> */}
+        
         <TouchableOpacity>
         <SMImage source={menu11} style={styles.menuStyle} />
         </TouchableOpacity>

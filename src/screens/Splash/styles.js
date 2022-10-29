@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
    // backgroundColor: COLORS.WHITE,
   },
+  
   njMartImage: {
     display:'flex',
     position:'absolute',
@@ -20,6 +21,19 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf:'center',
   },
+
+  // njMartImage:{
+  //   width: normalize(150),
+  //   //  height: normalize(150),
+  //     minHeight: dim().height * 0.30,
+  //     margintop:normalize(200),
+  //     display:'flex',
+  //     flexDirection:'column',
+  //     //justifyContent:'center',
+  //     resizeMode: 'contain',
+  //     alignSelf: "center",
+  // },
+
 
   gradient:{
     height:normalize(800),
