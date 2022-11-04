@@ -24,6 +24,7 @@ const menu11 = require('./images/NJMart/menu11.png');
 //const ThinCircle = require('./images/NJMart/ThinCircle.png');
 const Profile = require('./images/NJMart/Profile.png');
 const Account = require('./images/NJMart/Account.png');
+const arrow = require ('./images/NJMart/arrow.png');
 
 const splashBottomVectorPNG = require('./images/Splash/splashBottomVector.png');
 const splashIndiaFlagPNG = require('./images/Splash/splashIndiaFlag.png');
@@ -98,6 +99,7 @@ export {
   //ThinCircle,
   Profile,
   Account,
+  arrow,
 
 
   splashSonitixLogoPNG,

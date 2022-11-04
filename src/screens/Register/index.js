@@ -1,26 +1,22 @@
 import React, {useEffect, useState} from 'react';
-import {SMText, SMView, SMImage, SMContainer, SMButton, SMTextInput} from '../../elements';
+import {SMText, SMView, SMImage, SMContainer, SMButton, SMTextInput, SMCheckBox} from '../../elements';
 import {
     NJMartLogo,
   } from '../../assets';
 import {styles} from './styles';
 import LinearGradient from 'react-native-linear-gradient';
+// import { CheckBox } from 'react-native';
 import { normalize } from '../../constants/Platform';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-
-
-// const [text, onChangeText] = React.useState(null);
-
-// const handleChange = event =>{
-//   const result = event.target.value('');
-//   setMessage(result);
-// };
+import { TouchableOpacity } from 'react-native'
 
 function Register(props) {
     const {navigation} = props;
     const handleRegisterPersonalPage = () => {
       navigation.navigate('RegisterPersonalPage');
     };
+
+    const [pos,setPos] = useState("")
 
 return( 
 
@@ -58,17 +54,41 @@ return(
           placeholder={"Sponsor Name"}
           />
 
+          <SMView style={styles.containerRadio}>
+            <SMText style={styles.textPos}>Your Position</SMText>
+
+            <SMView style={styles.Wrapper}>
+              {['Left','Right'].map(position=>
+             <SMView key={position} style={styles.pos}>
+              <SMText style={styles.position1}>{position}</SMText>
+
+            <TouchableOpacity style={styles.outer}
+            onPress={()=>setPos(position)}>
+              {pos === position  &&<SMView style={styles.inner}/>}
+            </TouchableOpacity>
+            </SMView>
+            )}
+            </SMView>
+          </SMView>
+
+
+
+
+{/* 
         <SMTextInput 
           style={styles.positionStyle}  
           placeholder={"Your Position"}
-          />
-          
+        /> */}
+
+
+
           <SMButton
           buttonText="Next"
           type="nextbutton"
           buttonStyle={styles.nextButtonStyle}
           onPress={handleRegisterPersonalPage}
           />  
+
           </SMView>
           </SMView>  
      

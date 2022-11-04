@@ -10,5 +10,6 @@ export {default as TermsandConditions} from './TermsandConditions';
 export {default as LoginPage} from './LoginPage';
 export {default as Dashboard} from './Dashboard';
 export {default as ProfilePage} from './ProfilePage';
+export {default as Downlines} from './Downlines';
 
 // <Screen navigation={ProfilePage} name="Profile" />

@@ -13,6 +13,49 @@ export const styles = StyleSheet.create({
         marginLeft: normalize(-10),
   },
 
+  containerRadio:{
+    //flex:1,
+    justifyContent:'center',
+    alignItems:'center',
+  },
+
+  inner:{
+    width:normalize(12),
+    height:normalize(12),
+    backgroundColor:"grey",
+    borderRadius:normalize(10),
+  },
+
+  outer:{
+    width:normalize(20),
+    height:normalize(20),
+    borderWidth:1,
+    borderRadius:normalize(15),
+    justifyContent:'center',
+    alignItems:'center',
+  },
+
+  textPos:{
+    fontSize:normalize(20),
+    fontWeight:"200",
+  },
+
+  Wrapper:{
+    flexDirection:'row',
+    justifyContent:'space-evenly',
+    marginTop:normalize(10),
+  },
+
+  pos:{
+    marginHorizontal:normalize(15),
+    alignItems:'center',
+  },
+
+  position1:{
+    fontSize:normalize(15),
+    textTransform:'capitalize',
+  },
+
   gradient: {
     width: normalize(400),
    // width: dim().width*0.99,
@@ -113,7 +156,7 @@ tableStyle: {
     alignSelf: 'flex-start',
     color: "#888888",
     width:normalize(210),
-        height:normalize(40),
+    height:normalize(40),
   },
 
   sponsorName: {
@@ -140,7 +183,6 @@ tableStyle: {
     fontStyle: "normal",
     fontWeight: "200",
     fontSize: normalize(15),
-    display: "flex",
     color: "#888888",
     width:normalize(210),
     height:normalize(40),

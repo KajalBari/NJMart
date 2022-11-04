@@ -7,6 +7,7 @@ import {
   ThinCircle,
   Profile,
   Account,
+  arrow,
 } from '../../assets';
 import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
@@ -18,27 +19,28 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 
 function ProfilePage(props) {
   const { navigation } = props;
-  const handleDashboard = () => {
-    navigation.navigate('Dashboard');
+  const handleDownlines = () => {
+    navigation.navigate('Downlines');
   };
 
   return (
    
-    <KeyboardAwareScrollView
-     extraScrollHeight={normalize(100)}
-   nestedScrollEnabled>
+  //   <KeyboardAwareScrollView
+  //    extraScrollHeight={normalize(100)}
+  //  nestedScrollEnabled>
 
-  
   <SMView style={styles.containerStyle}>
    <LinearGradient colors={["#FD6510","#FFBF43"]} 
     style={styles.gradient}  
     start={{x: 1, y: 0.5}}
     end={{x: 0, y: 0.5}} >
 
-    {/* <SMView style={styles.menuCard}>
-    <SMImage source={menu11} style={styles.menuStyle} />
-    </SMView> */}
 
+    {/* <TouchableOpacity onPress={handleDashboard}> */}
+    <SMView style={styles.headerStyle}>
+    <SMImage source={arrow} style={styles.arrowStyle}/>
+    </SMView>
+    {/* </TouchableOpacity> */}
   
     <SMView style={styles.iconNameStyle}>
     <SMImage source={Profile} style={styles.profileStyle} />
@@ -87,6 +89,7 @@ function ProfilePage(props) {
                 buttonText="Next"
                 type="nextbutton"
                 buttonStyle={styles.nextButtonStyle}
+                onPress={handleDownlines}
               />
               </SMView>
            
@@ -97,7 +100,7 @@ function ProfilePage(props) {
     </LinearGradient>
   </SMView>
 
-</KeyboardAwareScrollView>
+// </KeyboardAwareScrollView>
     
   );
 

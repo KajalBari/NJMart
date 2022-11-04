@@ -117,7 +117,6 @@ export const styles = StyleSheet.create({
         //    position: "absolute",
         width: normalize(102),
         height: normalize(102),
-        fontSize: normalize(10),
         display: 'flex',
         flexDirection: 'column',
         backgroundColor: "#FFFCF8",
@@ -147,7 +146,6 @@ export const styles = StyleSheet.create({
         backgroundColor: "#FFFCF8",
         alignItems: "center",
         justifyContent: "space-evenly",
-        // boxShadow: "-10px -25px 14px rgba(0, 0, 0, 0.25), 12px 21px 17px rgba(73, 66, 66, 0.36)",
         borderRadius: normalize(30),
     },
 

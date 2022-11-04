@@ -23,17 +23,21 @@ function Dashboard(props) {
     navigation.navigate('ProfilePage');
   };
 
+  // function Downlines(props){
+  //   const { navigation } = props;
+  // const handleDownlines = () => {
+  //   navigation.navigate('Downlines');
+  // };
+ 
 
   return (
     <KeyboardAwareScrollView
-  extraScrollHeight={normalize(200)}
+  extraScrollHeight={normalize(100)}
   nestedScrollEnabled> 
     
     <SMView style={styles.container}>
       <SMView style={styles.ellipseStyle}>
        
-      
-
         <SMImage source={ShoppingCart} style={styles.shoppingCartStyle} />
 {/*       
         <TouchableOpacity style={{alignItems:'flex-end',margin:16}} 
@@ -98,17 +102,31 @@ function Dashboard(props) {
         </SMView>
         </TouchableOpacity>
 
-   
+        {/* <TouchableOpacity onPress={handleDownlines}> */}
         <SMView style={[styles.profileContent1, styles.elevation]}>
         <SMImage source={Profile} style={styles.profileContentStyle} />
           <SMText style={styles.profileTextStyle}>Downline</SMText>
         </SMView>
+        {/* </TouchableOpacity> */}
      
        
         <SMView style={[styles.profileContent2, styles.elevation]}>
         <SMImage source={Account} style={styles.accountImageStyle} />
           <SMText style={styles.accountTextStyle}>Shopping</SMText>
         </SMView>
+     
+{/*         
+        <SMView style={[styles.profileContent1, styles.elevation]}>
+        <SMImage source={Profile} style={styles.profileContentStyle} />
+          <SMText style={styles.profileTextStyle}>Downline</SMText>
+        </SMView> */}
+    
+     
+       
+        {/* <SMView style={[styles.profileContent2, styles.elevation]}>
+        <SMImage source={Account} style={styles.accountImageStyle} />
+          <SMText style={styles.accountTextStyle}>Shopping</SMText>
+        </SMView> */}
      
           
       </SMView>

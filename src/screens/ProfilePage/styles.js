@@ -19,10 +19,10 @@ gradient:{
     height:normalize(800),
 },
 
-menuCard:{
-    display:'flex',
-    flexDirection:'row',
-},
+// menuCard:{
+//     display:'flex',
+//     flexDirection:'row',
+// },
 // menuContainer:{
 //    display: 'flex',
 //         flexDirection:'row',
@@ -34,13 +34,8 @@ menuCard:{
 // },
 
 menuStyle: {
-    //  position: "absolute",
     display: 'flex',
     float: 'right',
-   // justifyContent: 'space-between',
-    // width: normalize(37.61),
-    // height: normalize(35),
-    // marginRight: normalize(-30),
     left:normalize(150),
      marginTop: normalize(10),
     tintColor: "#000",
@@ -50,11 +45,25 @@ iconNameStyle:{
     display:'flex',
     alignItems:'center',  
     flexDirection:'row',
-    marginTop:normalize(30),
+    marginTop:normalize(10),
 },
 
 profileStyle: {
     marginLeft: normalize(40),
+},
+
+headerStyle:{
+    display:'flex',
+    flexDirection:'row',
+},
+
+
+arrowStyle:{
+    width:normalize(30),
+    height:normalize(30),
+    resizeMode:'contain',
+   marginTop:normalize(10),
+   marginLeft:normalize(20),
 },
 
 nameStylee: {
@@ -73,7 +82,7 @@ contentRectangleStyle: {
    // paddingTop:dim().width*0.4,
     width: normalize(365),
      height: normalize(500),
-     marginTop: normalize(30),
+     marginTop: normalize(20),
      backgroundColor: '#FFFCF8',
     borderTopLeftRadius: normalize(50),
     borderTopRightRadius: normalize(60),   
@@ -249,7 +258,4 @@ nextButtonStyle:{
     borderRadius: normalize(20),
     fontSize: normalize(10), 
 },
-
-
-
 });

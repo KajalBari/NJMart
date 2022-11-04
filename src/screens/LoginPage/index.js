@@ -31,6 +31,7 @@ function LoginPage(props) {
          style={styles.emailStyle}
           placeholder={"Enter your email"}
         /> */}
+        
         <SMTextInput
         style={styles.emailStyle}
           placeholder={"Enter your email"}

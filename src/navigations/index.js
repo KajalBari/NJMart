@@ -15,6 +15,7 @@ import {
   LoginPage,
   Dashboard,
   ProfilePage,
+  Downlines,
 } from '../screens';
 import {COLORS} from '../constants/Colors';
 import {SMImage} from '../elements';
@@ -122,6 +123,13 @@ export default function MainContainer(props) {
         component={ProfilePage}
         options={{headerTitle:'',gestureEnabled:false}}
         />
+
+      <Stack.Screen
+        name="Downlines"
+        component={Downlines}
+        options={{headerTitle:'',gestureEnabled:false}}
+        />
+
 
       </Stack.Navigator>
     </NavigationContainer>

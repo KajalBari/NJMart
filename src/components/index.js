@@ -47,9 +47,9 @@ export default function MainContainer(props) {
   };
 
 
-  const DrawerNavigator = createDrawerNavigator({
-    ProfilePage
-  })
+  // const DrawerNavigator = createDrawerNavigator({
+  //   ProfilePage
+  // })
 
 
   return (
