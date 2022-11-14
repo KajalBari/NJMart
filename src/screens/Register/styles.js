@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
         flexDirection:'column',
          width:dim().width*0.99,
        // width: normalize(500),
-        minHeight: dim().height * 0.4,
+        minHeight: dim().height * 0.5,
         marginLeft: normalize(-10),
   },
 
@@ -36,24 +36,35 @@ export const styles = StyleSheet.create({
   },
 
   textPos:{
-    fontSize:normalize(20),
-    fontWeight:"200",
+    marginLeft:normalize(40),
+    marginTop: normalize(10),
+    fontFamily: 'Inter',
+    fonetStyle: "normal",
+    fontWight: "200",
+    fontSize: normalize(15),
+    display: "flex",
+  //  flexDirection: 'row',
+    alignSelf: 'flex-start',
+    color: "#888888",
+    width:normalize(210),
+    height:normalize(40),
   },
 
   Wrapper:{
     flexDirection:'row',
     justifyContent:'space-evenly',
-    marginTop:normalize(10),
+    marginTop:normalize(-15)  
   },
 
   pos:{
     marginHorizontal:normalize(15),
-    alignItems:'center',
+    alignItems:'center',   
   },
 
   position1:{
     fontSize:normalize(15),
     textTransform:'capitalize',
+    color:"#888888"
   },
 
   gradient: {
@@ -148,8 +159,8 @@ tableStyle: {
     marginLeft: normalize(25),
     marginTop: normalize(10),
     fontFamily: 'Inter',
-    fontStyle: "normal",
-    fontWeight: "200",
+    fonetStyle: "normal",
+    fontWight: "200",
     fontSize: normalize(15),
     display: "flex",
   //  flexDirection: 'row',
@@ -201,3 +212,4 @@ tableStyle: {
   },
 
 });
+

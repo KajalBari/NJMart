@@ -100,6 +100,13 @@ export const styles = StyleSheet.create({
         borderTopRightRadius: normalize(50),
     },
 
+    shoppingStyle:{
+        width:normalize(30),
+        height:normalize(30),
+        resizeMode:'contain',
+        marginTop:normalize(10),
+        marginLeft:normalize(20),
+    },
 
     elevation: {
         elevation: normalize(30),

@@ -57,7 +57,6 @@ headerStyle:{
     flexDirection:'row',
 },
 
-
 arrowStyle:{
     width:normalize(30),
     height:normalize(30),

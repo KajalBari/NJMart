@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {
   SMText,
   SMView,
@@ -13,13 +13,15 @@ import {styles} from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {normalize} from '../../constants/Platform';
-import {ScrollView, Text, View} from 'react-native';
+import {ScrollView,TouchableOpacity,Text, View} from 'react-native';
 
 function RegisterPersonalPage(props) {
   const {navigation} = props;
   const handleRegisterContactPage = () => {
     navigation.navigate('RegisterContactPage');
   };
+
+  const [pos,setPos] = useState("")
 
   return (
     <SMView style={styles.containerStyle} >
@@ -43,9 +45,27 @@ function RegisterPersonalPage(props) {
           <ScrollView nestedScrollEnabled>
             <SMView style={styles.divStyle}>
 
-              <SMTextInput 
+              {/* <SMTextInput 
               style={styles.titleStyle}
-               placeholder={'Title'} />
+               placeholder={'Title'} /> */}
+
+<SMView style={styles.containerRadio}>
+            <SMText style={styles.textPos}>Title</SMText>
+
+            <SMView style={styles.Wrapper}>
+              {['Mr','Mrs','Ms'].map(position=>
+             <SMView key={position} style={styles.pos}>
+              <SMText style={styles.position1}>{position}</SMText>
+
+            <TouchableOpacity style={styles.outer}
+            onPress={()=>setPos(position)}>
+              {pos === position  &&<SMView style={styles.inner}/>}
+            </TouchableOpacity>
+            </SMView>
+            )}
+            </SMView>
+          </SMView>
+
 
               <SMTextInput
                 style={styles.applicantNameStyle}
@@ -59,14 +79,48 @@ function RegisterPersonalPage(props) {
                 style={styles.fatherNameStyle}
                 placeholder={"Father's/Husband Name"}/>
 
-              <SMTextInput
+              {/* <SMTextInput
                 style={styles.maritalStatusStyle}
                 placeholder={'Marital Status'}
-              />     
+              />      */}
+            <SMView style={styles.containerRadio}>
+            <SMText style={styles.textPos}>Marital Status</SMText>
 
-              <SMTextInput 
+            <SMView style={styles.Wrapper}>
+              {['Single','Married'].map(position=>
+             <SMView key={position} style={styles.pos}>
+              <SMText style={styles.position1}>{position}</SMText>
+
+            <TouchableOpacity style={styles.outer}
+            onPress={()=>setPos(position)}>
+              {pos === position  &&<SMView style={styles.inner}/>}
+            </TouchableOpacity>
+            </SMView>
+            )}
+            </SMView>
+          </SMView>
+
+
+              {/* <SMTextInput 
               style={styles.genderStyle} 
-              placeholder={'Gender'} />
+              placeholder={'Gender'} /> */}
+
+        <SMView style={styles.containerRadio}>
+            <SMText style={styles.textPos}>Gender</SMText>
+
+            <SMView style={styles.Wrapper}>
+              {['Male','Female'].map(position=>
+             <SMView key={position} style={styles.pos}>
+              <SMText style={styles.position1}>{position}</SMText>
+
+            <TouchableOpacity style={styles.outer}
+            onPress={()=>setPos(position)}>
+              {pos === position  &&<SMView style={styles.inner}/>}
+            </TouchableOpacity>
+            </SMView>
+            )}
+            </SMView>
+          </SMView>
 
               <SMButton
                 buttonText="Next"

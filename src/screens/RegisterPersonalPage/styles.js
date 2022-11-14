@@ -9,10 +9,59 @@ export const styles = StyleSheet.create({
     position:'relative',
   },
 
-  listStyle: {
-    textAlign: 'center',
-    margin: normalize(20),
-    padding: normalize(10),
+  containerRadio:{
+    //flex:1,
+    justifyContent:'center',
+    alignItems:'center',
+  },
+
+  inner:{
+    width:normalize(12),
+    height:normalize(12),
+    backgroundColor:"grey",
+    borderRadius:normalize(10),
+  },
+
+  
+  outer:{
+    width:normalize(20),
+    height:normalize(20),
+    borderWidth:1,
+    borderRadius:normalize(15),
+    justifyContent:'center',
+    alignItems:'center',
+  },
+
+  textPos:{
+    marginLeft:normalize(30),
+    marginTop: normalize(10),
+    fontFamily: 'Inter',
+    fonetStyle: "normal",
+    fontWight: "200",
+    fontSize: normalize(15),
+    display: "flex",
+  //  flexDirection: 'row',
+    alignSelf: 'flex-start',
+    color: "#888888",
+    width:normalize(210),
+    height:normalize(40),
+  },
+
+  Wrapper:{
+    flexDirection:'row',
+    justifyContent:'space-evenly',
+    marginTop:normalize(-15)  
+  },
+
+  pos:{
+    marginHorizontal:normalize(15),
+    alignItems:'center',   
+  },
+
+  position1:{
+    fontSize:normalize(15),
+    textTransform:'capitalize',
+    color:"#888888"
   },
 
   gradient: {
@@ -31,7 +80,7 @@ export const styles = StyleSheet.create({
   },
 
   tableStyle: {
-     width: dim().width * 0.8,
+     width: dim().width * 0.75,
     minHeight: dim().height * 0.7,
     position:'absolute',
     alignItems:'center',
@@ -69,7 +118,6 @@ export const styles = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: '100',
     fontSize: normalize(24),
-    //lineHeight: normalize(29),
     color: '#FD6510',
   },
 

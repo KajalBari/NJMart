@@ -3,18 +3,6 @@ import { dim, normalize } from '../../constants/Platform';
 import { COLORS } from '../../constants/Colors';
 
 export const styles = StyleSheet.create({
-    // containerStyle: {
-    //     position: "absolute",
-    //     width: normalize(400),
-    //     minHeight: dim().height * 0.4,
-    //     //height: normalize(230),
-    //     marginLeft: normalize(-20),
-    //     marginRight: normalize(-20),
-    //     backgroundColor: "orange",
-    //     borderBottomEndRadius: normalize(370),
-    //     borderBottomStartRadius: normalize(360),
-    //     // background: linear-gradient(228.18deg, #FD6510 30.98%, #FFBF43 85.49%);
-    // },
 
     containerStyle:{
         display:'flex',
@@ -23,7 +11,62 @@ export const styles = StyleSheet.create({
         width: normalize(500),
         minHeight: dim().height * 0.4,
     },
+
+    containerRadio:{
+        //flex:1,
+        justifyContent:'center',
+        alignItems:'center',
+      },
     
+      inner:{
+        width:normalize(12),
+        height:normalize(12),
+        backgroundColor:"grey",
+        borderRadius:normalize(10),
+      },
+
+      outer:{
+        width:normalize(20),
+        height:normalize(20),
+        borderWidth:1,
+        borderRadius:normalize(15),
+        justifyContent:'center',
+        alignItems:'center',
+      },
+
+      
+  textPos:{
+    marginLeft:normalize(30),
+    marginTop: normalize(10),
+    fontFamily: 'Inter',
+    fonetStyle: "normal",
+    fontWight: "200",
+    fontSize: normalize(15),
+    display: "flex",
+  //  flexDirection: 'row',
+    alignSelf: 'flex-start',
+    color: "#888888",
+    width:normalize(210),
+    height:normalize(40),
+  },
+
+  Wrapper:{
+    flexDirection:'row',
+    justifyContent:'space-evenly',
+    marginTop:normalize(-15)  
+  },
+
+  pos:{
+    marginHorizontal:normalize(15),
+    alignItems:'center',   
+  },
+
+  position1:{
+    fontSize:normalize(15),
+    textTransform:'capitalize',
+    color:"#888888"
+  },
+  
     gradient:{
         width: normalize(400),
         // minHeight: dim().height * 0.4,

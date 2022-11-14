@@ -5,7 +5,7 @@ import {
 } from '../../assets';
 import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
-import {TextInput} from 'react-native';
+import {TextInput,TouchableOpacity} from 'react-native';
 //import { TextInput } from "react-native-paper";
 
 function RegisterNomineePage(props) {
@@ -41,6 +41,23 @@ return(
           style={styles.titleStyle}
             placeholder={"Nominee Title"}
           />
+
+{/* <SMView style={styles.containerRadio}>
+            <SMText style={styles.textPos}>Title</SMText>
+
+            <SMView style={styles.Wrapper}>
+              {['Mr','Mrs','Ms'].map(position=>
+             <SMView key={position} style={styles.pos}>
+              <SMText style={styles.position1}>{position}</SMText>
+
+            <TouchableOpacity style={styles.outer}
+            onPress={()=>setPos(position)}>
+              {pos === position  &&<SMView style={styles.inner}/>}
+            </TouchableOpacity>
+            </SMView>
+            )}
+            </SMView>
+          </SMView> */}
 
           <SMTextInput
            style={styles.nameStyle}

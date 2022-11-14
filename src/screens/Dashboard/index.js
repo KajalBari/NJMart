@@ -7,6 +7,7 @@ import {
   ThinCircle,
   Profile,
   Account,
+  shopping,
 } from '../../assets';
 import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
