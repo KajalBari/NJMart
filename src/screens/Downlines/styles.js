@@ -15,6 +15,13 @@ export const styles = StyleSheet.create({
        // marginRight: normalize(20),
     },
 
+    innerDivStyle:{
+        alignItems: 'center',
+        height: dim().height * 0.68,
+        paddingBottom: normalize(10),
+        paddingTop: normalize(10),
+    },
+
     gradient:{
         height:normalize(800),
     },

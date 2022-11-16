@@ -21,7 +21,6 @@ export const styles = StyleSheet.create({
         fontSize:normalize(20),
     },
 
-
     ellipseStyle: {
         display: 'flex',
         flexDirection:'row',
@@ -33,7 +32,7 @@ export const styles = StyleSheet.create({
          backgroundColor: "#ECDEDE",
         borderRadius: normalize(50),
         borderWidth: 3,
-     borderColor: '#66ff66',
+        borderColor: '#66ff66',
     },
 
     menuContainer:{

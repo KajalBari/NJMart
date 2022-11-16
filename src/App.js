@@ -4,6 +4,8 @@ import {Provider, useSelector} from 'react-redux';
 import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
 import MainContainer from './navigations/index';
 import {store} from './store';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
 
 // import {createAppContainer} from 'react-navigation';
 // import {createDrawerNavigator} from 'react-navigation-drawer';
@@ -128,12 +130,30 @@ function AppWrapper(props) {
   );
 }
 
+// function MyDrawer() {
+ 
+//   const Drawer = createDrawerNavigator();
+//     return (
+//       <NavigationContainer>
+//       <Drawer.Navigator >
+//         <Drawer.Screen name="ProfilePage" component={ProfilePage} />
+//         <Drawer.Screen name="Downlines" component={Downlines} />
+//       </Drawer.Navigator>
+//       </NavigationContainer>
+//     );
+//   }
+  
 function App() {
   return (
     <Provider store={store}>
       <AppWrapper />
-    </Provider>
+      {/* <MyDrawer/> */}
+    </Provider>    
   );
 }
+
+// const Drawer = createDrawerNavigator();
+
+
 
 export default App;

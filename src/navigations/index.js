@@ -16,6 +16,7 @@ import {
   Dashboard,
   ProfilePage,
   Downlines,
+  DrawerNavigation,
 } from '../screens';
 import {COLORS} from '../constants/Colors';
 import {SMImage} from '../elements';
@@ -129,6 +130,13 @@ export default function MainContainer(props) {
         component={Downlines}
         options={{headerTitle:'',gestureEnabled:false}}
         />
+
+      <Stack.Screen
+        name="DrawerNavigation"
+        component={DrawerNavigation}
+        options={{headerTitle:'',gestureEnabled:false}}
+        />
+
 
 
       </Stack.Navigator>

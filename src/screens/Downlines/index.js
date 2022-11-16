@@ -12,83 +12,97 @@ import {
 import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 //import { TouchableOpacity } from 'react-native-gesture-handler';
+import { ScrollView } from 'react-native';
 import { normalize } from '../../constants/Platform';
 
 
 function Downlines(props) {
-    const { navigation } = props;
-    const handleDownlines = () => {
-      navigation.navigate('Downlines');
-    };
+  const { navigation } = props;
+  const handleDrawerNavigation = () => {
+    navigation.navigate('DrawerNavigation');
+  };
 
-return(
+  return (
+
     <SMView style={styles.containerStyle}>
-    <LinearGradient colors={["#FD6510","#FFBF43"]} 
-     style={styles.gradient}  
-     start={{x: 1, y: 0.5}}
-     end={{x: 0, y: 0.5}} >
+      <LinearGradient colors={["#FD6510", "#FFBF43"]}
+        style={styles.gradient}
+        start={{ x: 1, y: 0.5 }}
+        end={{ x: 0, y: 0.5 }} >
 
 
-    {/* <TouchableOpacity onPress={handleDashboard}> */}
-    <SMView style={styles.headerStyle}>
-    <SMImage source={arrow} style={styles.arrowStyle}/>
-    </SMView>
-    {/* </TouchableOpacity> */}
+        {/* <TouchableOpacity onPress={handleDashboard}> */}
+        <SMView style={styles.headerStyle}>
+          <SMImage source={arrow} style={styles.arrowStyle} />
+        </SMView>
+        {/* </TouchableOpacity> */}
 
-    <SMView style={styles.iconNameStyle}>
-    <SMImage source={Profile} style={styles.profileStyle} />
-    <SMText style={styles.nameStylee}>Navneet Kothari</SMText>
-    </SMView>
+        {/* <SMView style={styles.innerDivStyle}> */}
 
-    <SMView style={[styles.contentRectangleStyle,styles.elevation]}>
-      <SMText style={styles.downlineText}>Downlines</SMText>
-        <SMView style={styles.lineStyle}>
+        <SMView style={styles.iconNameStyle}>
+          <SMImage source={Profile} style={styles.profileStyle} />
+          <SMText style={styles.nameStylee}>Navneet Kothari</SMText>
         </SMView>
 
-    <SMView style={styles.downlineDetails}>
+        <SMView style={[styles.contentRectangleStyle, styles.elevation]}>
+          <SMText style={styles.downlineText}>Downlines</SMText>
+          <SMView style={styles.lineStyle}>
+          </SMView>
 
-    <SMView style={styles.downlineStucture}>
-        <SMView style={styles.rectangleStyle}>
-        <SMText style={styles.genalogyText}>Genealogy</SMText>
+          {/* <ScrollView nestedScrollEnabled> */}
+            <SMView style={styles.downlineDetails}>
+
+              <SMView style={styles.downlineStucture}>
+                <SMView style={styles.rectangleStyle}>
+                  <SMText style={styles.genalogyText}>Genealogy</SMText>
+                </SMView>
+              </SMView>
+
+              <SMView style={styles.downlineStucture}>
+                <SMView style={styles.rectangleStyle}>
+                  <SMText style={styles.treeStructureText}>Tree Structure</SMText>
+                </SMView>
+              </SMView>
+
+              <SMView style={styles.downlineStucture}>
+                <SMView style={styles.rectangleStyle}>
+                  <SMText style={styles.directStyle}>Directs</SMText>
+                </SMView>
+
+                <SMView style={styles.downlineStucture}>
+                  <SMView style={styles.rectangleStyle}>
+                    <SMText style={styles.headCountStyle}>Head Count</SMText>
+                  </SMView>
+                </SMView>
+
+                <SMView style={styles.downlineStucture}>
+                  <SMView style={styles.rectangleStyle}>
+                    <SMText style={styles.businessStyle}>Business Count</SMText>
+                  </SMView>
+                </SMView>
+
+
+                {/* <SMView style={styles.downlineStucture}>
+                  <SMView style={styles.rectangleStyle}>
+                    <SMText style={styles.directTreeStyle}>Direct Tree</SMText>
+                  </SMView>
+                </SMView> */}
+
+                <SMButton
+                buttonText="Next"
+                type="nextbutton"
+                buttonStyle={styles.nextButtonStyle}
+                onPress={handleDrawerNavigation}
+              />
+
+              </SMView>
+            </SMView>
+          {/* </ScrollView> */}
+          {/* </SMView> */}
         </SMView>
+
+      </LinearGradient>
     </SMView>
-
-  <SMView style={styles.downlineStucture}>
-      <SMView style={styles.rectangleStyle}>
-      <SMText style={styles.treeStructureText}>Tree Structure</SMText>
-    </SMView>
-  </SMView>
-
-<SMView style={styles.downlineStucture}>
-  <SMView style={styles.rectangleStyle}>
-    <SMText style={styles.directStyle}>Directs</SMText>
-  </SMView>
-
-  <SMView style={styles.downlineStucture}>
-  <SMView style={styles.rectangleStyle}>
-    <SMText style={styles.headCountStyle}>Head Count</SMText>
-  </SMView>
-</SMView>
-
-<SMView style={styles.downlineStucture}>
-  <SMView style={styles.rectangleStyle}>
-    <SMText style={styles.businessStyle}>Business Count</SMText>
-  </SMView>
-</SMView>
-
-
-<SMView style={styles.downlineStucture}>
-  <SMView style={styles.rectangleStyle}>
-    <SMText style={styles.directTreeStyle}>Direct Tree</SMText>
-  </SMView>
-</SMView>
-
-</SMView>
-    </SMView>
-    </SMView>
-
-    </LinearGradient>
-  </SMView>  
-);
+  );
 }
 export default Downlines;
