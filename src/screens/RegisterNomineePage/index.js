@@ -36,37 +36,19 @@ return(
 
       <SMView style={styles.divStyle}>
 
-      
           <SMTextInput
           style={styles.titleStyle}
-            placeholder={"Nominee Title"}
+          placeholder={"Nominee Title"}
           />
-
-{/* <SMView style={styles.containerRadio}>
-            <SMText style={styles.textPos}>Title</SMText>
-
-            <SMView style={styles.Wrapper}>
-              {['Mr','Mrs','Ms'].map(position=>
-             <SMView key={position} style={styles.pos}>
-              <SMText style={styles.position1}>{position}</SMText>
-
-            <TouchableOpacity style={styles.outer}
-            onPress={()=>setPos(position)}>
-              {pos === position  &&<SMView style={styles.inner}/>}
-            </TouchableOpacity>
-            </SMView>
-            )}
-            </SMView>
-          </SMView> */}
-
+          
           <SMTextInput
            style={styles.nameStyle}
-              placeholder={"Nominee Name"}
+           placeholder={"Nominee Name"}
           />
 
           <SMTextInput
            style={styles.relationStyle}
-              placeholder={"Relation with Applicant"}
+          placeholder={"Relation with Applicant"}
           />
 
           <SMButton
@@ -75,6 +57,7 @@ return(
           buttonStyle={styles.nextButtonStyle}
           onPress={handleRegisterBankInfoPage}
           /> 
+          
           </SMView>  
           </SMView>  
       </LinearGradient>

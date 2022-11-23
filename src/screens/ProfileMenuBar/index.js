@@ -13,3 +13,16 @@ import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 import { TouchableOpacity } from 'react-native';
 
+function ProfileMenuBar(props) {
+  const { navigation } = props;
+  const handleDownlines = () => {
+    navigation.navigate('Downlines');
+  };
+
+return(
+<SMView >
+  <SMText>Kajal</SMText>
+</SMView>
+);
+}
+export default ProfileMenuBar;

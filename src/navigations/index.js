@@ -16,6 +16,7 @@ import {
   Dashboard,
   ProfilePage,
   Downlines,
+  ProfileMenuBar,
 } from '../screens';
 import {COLORS} from '../constants/Colors';
 import {SMImage} from '../elements';
@@ -130,6 +131,11 @@ export default function MainContainer(props) {
         options={{headerTitle:'',gestureEnabled:false}}
         />
 
+      <Stack.Screen
+        name="ProfileMenuBar"
+        component={ProfileMenuBar}
+        options={{headerTitle:'',gestureEnabled:false}}
+        />
 
       </Stack.Navigator>
     </NavigationContainer>

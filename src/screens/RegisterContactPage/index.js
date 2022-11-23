@@ -46,6 +46,7 @@ return(
            style={styles.addressStyle}
             placeholder={"Postal Address"}
           />
+          
           <SMTextInput
              style={styles.countryStyle}
             placeholder={"Country"}

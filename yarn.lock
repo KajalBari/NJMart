@@ -1801,6 +1801,11 @@
     "invariant" "^2.2.4"
     "prop-types" "^15.7.2"
 
+"@react-native-community/checkbox@^0.5.14":
+  "integrity" "sha512-UmGf3wBpoCXLmVRKIDZyzOG+QR1fOhm0FOw4KzxHTCXpsBvZgIn5wbJ+MWk4io5RohQdY8GSX2MYFmkPJeJpeA=="
+  "resolved" "https://registry.npmjs.org/@react-native-community/checkbox/-/checkbox-0.5.14.tgz"
+  "version" "0.5.14"
+
 "@react-native-community/cli-debugger-ui@^6.0.0-rc.0":
   "integrity" "sha512-achYcPPoWa9D02C5tn6TBzjeY443wQTyx37urptc75JpZ7gR5YHsDyIEEWa3DDYp1va9zx/iGg+uZ/hWw07GAw=="
   "resolved" "https://registry.npmjs.org/@react-native-community/cli-debugger-ui/-/cli-debugger-ui-6.0.0-rc.0.tgz"
@@ -6220,55 +6225,10 @@
   dependencies:
     "p-locate" "^5.0.0"
 
-"lodash._reinterpolate@^3.0.0":
-  "integrity" "sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0="
-  "resolved" "https://registry.npmjs.org/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz"
-  "version" "3.0.0"
-
 "lodash.debounce@^4.0.8":
   "integrity" "sha1-gteb/zCmfEAF/9XiUVMArZyk168="
   "resolved" "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz"
   "version" "4.0.8"
-
-"lodash.frompairs@^4.0.1":
-  "integrity" "sha1-vE5SB/onV8E25XNhTpZkUGsrG9I="
-  "resolved" "https://registry.npmjs.org/lodash.frompairs/-/lodash.frompairs-4.0.1.tgz"
-  "version" "4.0.1"
-
-"lodash.isequal@^4.5.0":
-  "integrity" "sha1-QVxEePK8wwEgwizhDtMib30+GOA="
-  "resolved" "https://registry.npmjs.org/lodash.isequal/-/lodash.isequal-4.5.0.tgz"
-  "version" "4.5.0"
-
-"lodash.isstring@^4.0.1":
-  "integrity" "sha1-1SfftUVuynzJu5XV2ur4i6VKVFE="
-  "resolved" "https://registry.npmjs.org/lodash.isstring/-/lodash.isstring-4.0.1.tgz"
-  "version" "4.0.1"
-
-"lodash.omit@^4.5.0":
-  "integrity" "sha1-brGa5aHuHdnfC5aeZs4Lf6MLXmA="
-  "resolved" "https://registry.npmjs.org/lodash.omit/-/lodash.omit-4.5.0.tgz"
-  "version" "4.5.0"
-
-"lodash.pick@^4.4.0":
-  "integrity" "sha1-UvBWEP/53tQiYRRB7R/BI6AwAbM="
-  "resolved" "https://registry.npmjs.org/lodash.pick/-/lodash.pick-4.4.0.tgz"
-  "version" "4.4.0"
-
-"lodash.template@^4.5.0":
-  "integrity" "sha512-84vYFxIkmidUiFxidA/KjjH9pAycqW+h980j7Fuz5qxRtO9pgB7MDFTdys1N7A5mcucRiDyEq4fusljItR1T/A=="
-  "resolved" "https://registry.npmjs.org/lodash.template/-/lodash.template-4.5.0.tgz"
-  "version" "4.5.0"
-  dependencies:
-    "lodash._reinterpolate" "^3.0.0"
-    "lodash.templatesettings" "^4.0.0"
-
-"lodash.templatesettings@^4.0.0":
-  "integrity" "sha512-stgLz+i3Aa9mZgnjr/O+v9ruKZsPsndy7qPZOchbqk2cnTU1ZaldKK+v7m54WoKIyxiuMZTKT2H81F8BeAc3ZQ=="
-  "resolved" "https://registry.npmjs.org/lodash.templatesettings/-/lodash.templatesettings-4.2.0.tgz"
-  "version" "4.2.0"
-  dependencies:
-    "lodash._reinterpolate" "^3.0.0"
 
 "lodash.throttle@^4.1.1":
   "integrity" "sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ="
@@ -7860,17 +7820,11 @@
   "resolved" "https://registry.npmjs.org/react-native-tab-view/-/react-native-tab-view-3.1.1.tgz"
   "version" "3.1.1"
 
-"react-native-vector-icons@*", "react-native-vector-icons@^9.0.0":
-  "integrity" "sha512-qKX5d5/TafHmI4B7UOSZCL3BAGh7ZfF30iLwRgxBkKfZl2lKSuHp8Ottj9OyWh9b5fFtlg+LtyvZrns3g2kh+w=="
-  "resolved" "https://registry.npmjs.org/react-native-vector-icons/-/react-native-vector-icons-9.0.0.tgz"
-  "version" "9.0.0"
+"react-native-vector-icons@*", "react-native-vector-icons@^9.2.0":
+  "integrity" "sha512-wKYLaFuQST/chH3AJRjmOLoLy3JEs1JR6zMNgTaemFpNoXs0ztRnTxcxFD9xhX7cJe1/zoN5BpQYe7kL0m5yyA=="
+  "resolved" "https://registry.npmjs.org/react-native-vector-icons/-/react-native-vector-icons-9.2.0.tgz"
+  "version" "9.2.0"
   dependencies:
-    "lodash.frompairs" "^4.0.1"
-    "lodash.isequal" "^4.5.0"
-    "lodash.isstring" "^4.0.1"
-    "lodash.omit" "^4.5.0"
-    "lodash.pick" "^4.4.0"
-    "lodash.template" "^4.5.0"
     "prop-types" "^15.7.2"
     "yargs" "^16.1.1"
 
@@ -7882,10 +7836,10 @@
     "escape-string-regexp" "2.0.0"
     "invariant" "2.2.4"
 
-"react-native@*", "react-native@^0.0.0-0 || 0.60 - 0.66 || 1000.0.0", "react-native@>=0.40.0", "react-native@>=0.42.0", "react-native@>=0.48.4", "react-native@>=0.57.0", "react-native@>=0.59", "react-native@>=0.60.0", "react-native@>=0.63.3", "react-native@0.66.4":
-  "integrity" "sha512-9vx5dlSfQlKbbDtr8+xMon6qsmSu7jvjdXWZpEKh3XVKpUidbbODv7048gwVKX8YAel1egeR7hN8vzSeI6ssTw=="
-  "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.66.4.tgz"
-  "version" "0.66.4"
+"react-native@*", "react-native@^0.0.0-0 || 0.60 - 0.66 || 1000.0.0", "react-native@>= 0.62", "react-native@>=0.40.0", "react-native@>=0.42.0", "react-native@>=0.48.4", "react-native@>=0.57.0", "react-native@>=0.59", "react-native@>=0.60.0", "react-native@>=0.63.3", "react-native@0.66.5":
+  "integrity" "sha512-dC5xmE1anT+m8eGU0N/gv2XUWZygii6TTqbwZPsN+uMhVvjxt4FsTqpZOFFvA5sxLPR/NDEz8uybTvItNBMClw=="
+  "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.66.5.tgz"
+  "version" "0.66.5"
   dependencies:
     "@jest/create-cache-key-function" "^27.0.1"
     "@react-native-community/cli" "^6.0.0"

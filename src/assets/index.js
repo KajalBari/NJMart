@@ -26,6 +26,9 @@ const Profile = require('./images/NJMart/Profile.png');
 const Account = require('./images/NJMart/Account.png');
 const arrow = require ('./images/NJMart/arrow.png');
 const shopping = require ('./images/NJMart/shopping.png');
+const Reward = require ('./images/NJMart/Reward.png');
+const Files= require ('./images/NJMart/Files.png');
+const Downline = require ('./images/NJMart/Downline.png');
 
 const splashBottomVectorPNG = require('./images/Splash/splashBottomVector.png');
 const splashIndiaFlagPNG = require('./images/Splash/splashIndiaFlag.png');
@@ -102,6 +105,9 @@ export {
   Account,
   arrow,
   shopping,
+  Reward,
+  Files,
+  Downline,
 
 
   splashSonitixLogoPNG,

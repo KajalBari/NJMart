@@ -36,11 +36,14 @@ function ProfilePage(props) {
     end={{x: 0, y: 0.5}} >
 
 
-    {/* <TouchableOpacity onPress={handleDashboard}> */}
+    <TouchableOpacity  onPress={() => navigation.navigate('Dashboard', { name: 'Dashboard' })} >
     <SMView style={styles.headerStyle}>
-    <SMImage source={arrow} style={styles.arrowStyle}/>
+    <SMImage source={arrow}
+    style={styles.arrowStyle} />
     </SMView>
-    {/* </TouchableOpacity> */}
+    
+
+    </TouchableOpacity>
   
     <SMView style={styles.iconNameStyle}>
     <SMImage source={Profile} style={styles.profileStyle} />

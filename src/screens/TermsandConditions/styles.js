@@ -5,45 +5,37 @@ import { COLORS } from '../../constants/Colors';
 export const styles = StyleSheet.create({
 
   containerStyle:{
-    display:'flex',
-    flexDirection:'column',
-    // width:dim().width*0.99,
-    width: normalize(500),
-    minHeight: dim().height * 0.4,
+    minWidth: dim().width * 0.9,
+    minHeight: dim().height * 10,
+    position: 'relative',
   },
 
   gradient: {
-    width: normalize(400),
-    // minHeight: dim().height * 0.4,
-    height: normalize(250),
-    marginLeft: normalize(-20),
-    marginRight: normalize(-20),
-    borderBottomLeftRadius: normalize(200),
-    borderBottomRightRadius: normalize(200),
-    borderBottomEndRadius: normalize(370),
-    borderBottomStartRadius: normalize(360),
+    width: dim().width * 1,
+    minHeight: dim().height * 0.4,
+    borderBottomLeftRadius: normalize(150),
+    borderBottomRightRadius: normalize(150),
   },
 
   njMartImage: {
     width: normalize(150),
-    //  height: normalize(150),
-      minHeight: dim().height * 0.30,
-      display:'flex',
-      justifyContent:'center',
-      resizeMode: 'contain',
-      justifyContent: 'center',
-      alignSelf: "center",
+    minHeight: dim().height * 0,
+    resizeMode: 'contain',
+    alignSelf: 'center',
+    marginTop: normalize(10),
   },
 
   tableStyle: {
-   // width: normalize(250),
-   width: dim().width * 0.74,
-    minHeight: dim().height * 0.55,
-    marginLeft: normalize(15),
-    marginTop: normalize(-10),
-    alignItems: "center",
-    alignSelf: "center",
-    backgroundColor: "#E8E8E8",
+    width: dim().width * 0.70,
+    minHeight: dim().height * 0.5,
+    position: 'absolute',
+    alignItems: 'center',
+    alignSelf: 'center',
+    top: dim().height * 0.2,
+    backgroundColor: '#E8E8E8',
+    paddingBottom: normalize(10),
+    paddingTop: normalize(10),
+    flex: 1,
     borderRadius: normalize(40),
   },
 
@@ -53,17 +45,12 @@ export const styles = StyleSheet.create({
   },
 
   registerStyle: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: normalize(20),
+    marginTop: normalize(10),
     fontFamily: 'Inter',
-    fontStyle: "normal",
+    fontStyle: 'normal',
     fontWeight: '100',
     fontSize: normalize(24),
-    lineHeight: normalize(29),
-    textAlign: "center",
-    color: "#FD6510",
+    color: '#FD6510',
   },
 
   termsAndConditionStyle: {
@@ -79,11 +66,18 @@ export const styles = StyleSheet.create({
   },
 
   divStyle: {
-    display: 'flex',
+    minHeight: dim().height * 0,
+    //alignItems: 'center', 
+    flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: normalize(40),
   },
+
+  checkBoxWrapper:{
+     flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 5,
+  },
+
   termsStyle: {
     width: normalize(150),
     marginLeft: normalize(50),
@@ -96,15 +90,14 @@ export const styles = StyleSheet.create({
   },
 
   checkboxStyle: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
+  // display: 'flex',
+    //alignItems: 'center',
+  //  justifyContent: 'flex-start',
     width: normalize(20),
     height: normalize(20),
     marginTop: normalize(40),
-    marginLeft: normalize(-150),
+    marginLeft: normalize(20),
   },
-
 
   submitButtonStyle: {
     width: normalize(190),

@@ -11,7 +11,7 @@ import {TextInput} from 'react-native';
 function LoginPage(props) {
   const { navigation } = props;
   const handleDashboard= () => {
-    // console.log("Button PRess")
+    // console.log("Button Press")
     navigation.navigate('Dashboard');
   };
 
@@ -50,8 +50,6 @@ function LoginPage(props) {
           buttonStyle={styles.loginButtonStyle}
           onPress={handleDashboard}
         />
-
-
 
         <SMView style={styles.signUpDiv}>
           <SMText style={styles.userStyle}>

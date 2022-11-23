@@ -35,37 +35,38 @@ return(
 
     <SMTextInput
      style={styles.userIdStyle}
-        placeholder ={"User Id:*"}
+        placeholder ={"User Id*"}
   />
 
     <SMTextInput
     style={styles.passwordStyle}
-    placeholder ={"Password:*"}
+    placeholder ={"Password*"}
     />
     
     <SMTextInput 
     style={styles.confirmPassStyle}
-      placeholder={"Confirm Password:*"}
+      placeholder={"Confirm Password*"}
     />
 
     <SMTextInput
      style={styles.securityQueStyle}
-        placeholder={"Security Question:"}
+      placeholder={"Security Question"}
     />
 
     <SMTextInput
-    style={styles.answerStyle}
-        placeholder={"Your Answer:"}
-    />
+      style={styles.answerStyle}
+      placeholder={"Your Answer"}
+      />
 
     <SMButton
     buttonText="Next"
     type="nextbutton"
     buttonStyle={styles.nextButtonStyle}
     onPress={handleTermsandConditions}
-    />   
+    />
+
     </SMView>  
-</LinearGradient>
+    </LinearGradient>
   </SMView>
   
 );

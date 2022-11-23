@@ -70,9 +70,7 @@ return(
             )}
             </SMView>
           </SMView>
-
-
-
+          
 
 {/* 
         <SMTextInput 

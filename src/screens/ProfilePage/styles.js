@@ -19,20 +19,6 @@ gradient:{
     height:normalize(800),
 },
 
-// menuCard:{
-//     display:'flex',
-//     flexDirection:'row',
-// },
-// menuContainer:{
-//    display: 'flex',
-//         flexDirection:'row',
-//         alignItems:'center',
-//          width: normalize(55),
-//          height: normalize(55),
-//          marginLeft: normalize(260),
-//         margintop: normalize(50),  
-// },
-
 menuStyle: {
     display: 'flex',
     float: 'right',
@@ -104,13 +90,14 @@ profileText:{
 },
 
 lineStyle:{ 
-    borderWidth: normalize(3),
-    borderColor:'grey',
-    marginTop:normalize(10), 
+    borderWidth: normalize(4),
+        width:normalize(290),
+        alignSelf:'center',
+        borderColor:'#B9AFAF',
+        marginTop:normalize(10), 
 },
 
 profileDetails:{
-    //display:'flex',
    flexDirection:'column',
     justifyContent:'flex-start', 
 },

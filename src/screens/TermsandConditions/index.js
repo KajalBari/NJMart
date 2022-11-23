@@ -5,23 +5,22 @@ import {
   } from '../../assets';
 import {styles} from './styles';
 import LinearGradient from 'react-native-linear-gradient';
-
+import { Checkbox } from 'react-native-paper';
+//import CheckBox from '@react-native-community/checkbox';
 
 function TermsandConditions(props) {
     const {navigation} = props;
-
     const handleDashboard = () => {
       navigation.navigate('Dashboard');
     };
-   // const handleLoginPage = () => {
-   //   navigation.navigate('LoginPage');
-  //  };
+
+    // const [isSelected, setSelection] = useState(false)
+    const [checked, setChecked] = React.useState(false);
 
 return(
 
     <SMView style={styles.containerStyle}>
 
-   
     <LinearGradient colors={["#FD6510","#FFBF43"]} 
     style={styles.gradient}  
     start={{x: 1, y: 0.5}} 
@@ -29,7 +28,7 @@ return(
     
     <SMImage source={NJMartLogo}  style={styles.njMartImage} />   
      <SMView style={[styles.tableStyle,styles.elevation]}>
-    
+
           <SMText style={styles.registerStyle}>
             Register 
           </SMText>
@@ -38,12 +37,23 @@ return(
           </SMText>
 
         <SMView style={styles.divStyle}> 
-          <SMCheckBox 
-           style={styles.checkboxStyle}/>
+
+          <Checkbox 
+          
+           status={checked ? 'checked' : 'unchecked'}
+           onPress={() => {
+              setChecked(!checked);
+           }}
+           color={'grey'}
+           uncheckColor={'white'}
+           style={styles.checkboxStyle}
+           />
+          
           <SMText style={styles.termsStyle}>
-          Please accept Terms
-              and Condition before Proceed.
-           </SMText>  
+              Please accept Terms
+              and Condition before Proceed
+           </SMText> 
+
         </SMView>
           <SMButton
           buttonText="Submit"
@@ -51,9 +61,9 @@ return(
           buttonStyle={styles.submitButtonStyle}
           onPress={handleDashboard}
          // onPress={handleLoginPage}
-          />  
-          </SMView>  
-     
+          /> 
+         
+     </SMView>
           </LinearGradient>
           </SMView>
 );

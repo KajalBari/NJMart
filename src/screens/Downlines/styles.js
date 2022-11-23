@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     },
 
     gradient:{
-        height:normalize(800),
+        minHeight:dim().height * 0.5,
     },
     
     iconNameStyle:{
@@ -77,16 +77,18 @@ nameStylee: {
     },
     
     lineStyle:{ 
-        borderWidth: 3,
-        borderColor:'grey',
+        borderWidth: normalize(4),
+        width:normalize(300),
+        alignSelf:'center',
+        borderColor:'#B9AFAF',
         marginTop:normalize(10), 
     },
     
     downlineDetails:{
-    display:'flex',
-   flexDirection:'column',
-    justifyContent:'flex-start', 
-},
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'flex-start', 
+    },
 
 downlineStucture:{
     display:'flex',
@@ -189,4 +191,13 @@ directTreeStyle:{
     color: "#FD6510",
 },
 
+nextButtonStyle: {
+    width: normalize(190),
+    height: normalize(40),
+    justifyContent: 'center',
+    marginLeft: normalize(30),
+    borderRadius: normalize(20),
+    fontSize: normalize(10),
+    marginTop: normalize(20),
+  },
 })

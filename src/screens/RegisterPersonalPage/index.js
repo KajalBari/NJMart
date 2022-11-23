@@ -45,11 +45,8 @@ function RegisterPersonalPage(props) {
           <ScrollView nestedScrollEnabled>
             <SMView style={styles.divStyle}>
 
-              {/* <SMTextInput 
-              style={styles.titleStyle}
-               placeholder={'Title'} /> */}
 
-<SMView style={styles.containerRadio}>
+            <SMView style={styles.containerRadio}>
             <SMText style={styles.textPos}>Title</SMText>
 
             <SMView style={styles.Wrapper}>

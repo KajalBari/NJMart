@@ -93,7 +93,6 @@ export const styles = StyleSheet.create({
    borderRadius:normalize(40),
   },
 
-
   divStyle: {
      minHeight: dim().height*0.6,
      alignItems:'center',

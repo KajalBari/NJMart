@@ -7,9 +7,6 @@ export const styles = StyleSheet.create({
 
     container: {
         position: "relative",
-        // width: normalize(428),
-        // height: normalize(926),
-        // marginTop: normalize(10),
         backgroundColor: "#FFFFFF",
         width: normalize(500),
         minHeight: dim().height * 0.9,
@@ -20,7 +17,6 @@ export const styles = StyleSheet.create({
         color:"#161924",
         fontSize:normalize(20),
     },
-
 
     ellipseStyle: {
         display: 'flex',
@@ -33,7 +29,7 @@ export const styles = StyleSheet.create({
          backgroundColor: "#ECDEDE",
         borderRadius: normalize(50),
         borderWidth: 3,
-     borderColor: '#66ff66',
+        borderColor: '#66ff66',
     },
 
     menuContainer:{
@@ -75,7 +71,6 @@ export const styles = StyleSheet.create({
         justifyContent:'flex-start',
         alignItems:'center',
          marginTop: normalize(30),
-
     },
 
     profileStyle: {
@@ -167,45 +162,48 @@ export const styles = StyleSheet.create({
         borderRadius: normalize(30),
     },
 
+    // divStyle:{
+    //     minHeight: dim().height*0.6,
+    //     alignItems:'center',
+        
+    // },
+    
+
     contentRectangleStyle: {
+        width: normalize(355),
+       // height: normalize(300),
+        display:'flex',
+        //flexWrap:'wrap',
         paddingTop:dim().width*0.4,
         width: normalize(355),
-       //  height: normalize(400),
-         marginTop: normalize(-45),
-         backgroundColor: '#FFFCF8',
         borderTopLeftRadius: normalize(65),
         borderTopRightRadius: normalize(50),
-        display :'flex',
-        flexDirection:'row',
-        justifyContent:'space-evenly',   
+        backgroundColor: '#FFFCF8',
+        marginTop:normalize(-40),
     },
 
-    contentStyle1:{
-         marginTop: normalize(-90),
-        display: 'flex',
-        flexDirection: "row",
-        justifyContent: 'center',
-        alignItems: 'center',
-       paddingTop: dim().width * 0.08,
-       justifyContent: 'space-between',
-    },
+    // firstContent:{
+    //          display:'flex',
+    //          flexDirection:'row',
+    //          alignItems:'center',
+    //          justifyContent: 'center',      
+    // },
 
-    profileContent: {
-        width: normalize(122),
-        height: normalize(122),
-       marginTop:normalize(-110),
-         //marginTop: normalize(-90),
-        display: 'flex',
-        flexDirection: "column",
-        justifyContent: 'center',
-        alignItems: 'center',
+    profileContent:{
+        width:normalize(102),
+        height:normalize(102),
+        marginTop:normalize(-110),
+        left:normalize(50),
         backgroundColor: '#FFFCF8',
         borderRadius: normalize(15),
+        alignItems: 'center',
+        display:'flex',
     },
 
-    profileContentStyle: {
+    profileImageStyle: {
         width: normalize(52.88),
         height: normalize(50),
+        marginTop:normalize(20),
     },
 
     profileTextStyle: {
@@ -215,23 +213,21 @@ export const styles = StyleSheet.create({
         color: "#675454",
     },
 
-    accountContent: {
-        width: normalize(122),
-        height: normalize(122),
-        // marginTop: normalize(-90),
+    accountContent:{
+        width:normalize(102),
+        height:normalize(102),
         marginTop:normalize(-110),
-        display: 'flex',
-        flexDirection: "column",
-        justifyContent: 'center',
-        alignItems: 'center',
+        marginLeft:normalize(200),
         backgroundColor: '#FFFCF8',
         borderRadius: normalize(15),
+        alignItems: 'center',
+        display:'flex',
     },
 
     accountImageStyle: {
-        // position:'absolute',
         width: normalize(52.88),
         height: normalize(50),
+        marginTop:normalize(20),
     },
 
     accountTextStyle: {
@@ -241,44 +237,155 @@ export const styles = StyleSheet.create({
         color: "#675454",
     },
 
-    profileContent1: {
-        width: normalize(122),
-        height: normalize(122),
-         marginLeft: normalize(-310),
-        // paddingLeft:normalize(-40),
-         marginTop: normalize(20),
-        display: 'flex',
-        flexDirection: "column",
-        justifyContent: 'center',
-        alignItems: 'center',
+    downlineContent:{
+        width:normalize(102),
+        height:normalize(102),
+        marginTop:normalize(10),
+        marginLeft:normalize(50),
         backgroundColor: '#FFFCF8',
         borderRadius: normalize(15),
+        alignItems: 'center',
+        display:'flex',
     },
+
+    profileImageStyle: {
+        width: normalize(52.88),
+        height: normalize(50),
+        marginTop:normalize(20),
+    },
+
+    downlineTextStyle:{
+        fontFamily: 'Inter',
+        fontStyle: "normal",
+        fontSize: normalize(15),
+        color: "#675454",
+    },
+
+    shoppingContent:{
+        width:normalize(102),
+        height:normalize(102),
+        marginTop:normalize(-100),
+        marginLeft:normalize(200),
+        backgroundColor: '#FFFCF8',
+        borderRadius: normalize(15),
+        alignItems: 'center',
+        display:'flex', 
+    },
+
+    shoppingTextStyle:{
+        fontFamily: 'Inter',
+        fontStyle: "normal",
+        fontSize: normalize(15),
+        color: "#675454",
+    },
+
+    rewardContent:{
+        width:normalize(102),
+        height:normalize(102),
+        marginTop:normalize(10),
+        marginLeft:normalize(50),
+        backgroundColor: '#FFFCF8',
+        borderRadius: normalize(15),
+        alignItems: 'center',
+        display:'flex',
+    },
+
+    rewardTextStyle:{
+        fontFamily: 'Inter',
+        fontStyle: "normal",
+        fontSize: normalize(15),
+        color: "#675454",
+    },
+
+    filesContent:{
+        width:normalize(102),
+        height:normalize(102),
+        marginTop:normalize(-100),
+        marginLeft:normalize(200),
+        backgroundColor: '#FFFCF8',
+        borderRadius: normalize(15),
+        alignItems: 'center',
+        display:'flex',   
+    },
+
+    filesTextStyle:{
+        fontFamily: 'Inter',
+        fontStyle: "normal",
+        fontSize: normalize(15),
+        color: "#675454",
+    },
+
+
+    // secondContent:{
+    //     display:'flex',
+    //     flexDirection:'row',
+    //     alignItems:'center',
+    //     justifyContent: 'center',
+    //    // marginLeft:normalize(300),
+    // },
+
+    // profileContent1: {
+    //     width: normalize(122),
+    //     height: normalize(122),
+    //     left:normalize(45),
+    //    // display: "inline-block",
+    //      marginTop: normalize(20),
+    //     display: 'flex',
+    //     flexDirection: "column",
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    //     backgroundColor: '#FFFCF8',
+    //     borderRadius: normalize(15),
+    // },
 
     
-    profileContent2: {
-        width: normalize(122),
-        height: normalize(122),
-         marginTop: normalize(-190),
-        marginTop:normalize(20),
-        display: 'flex',
-        flexDirection: "column",
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#FFFCF8',
-        borderRadius: normalize(15),
-    },
+    // profileContent2: {
+    //     width: normalize(122),
+    //     height: normalize(122),
+    //     marginTop:normalize(20),
+    //    // display: "inline-block",
+    //     left:normalize(90),
+    //     display: 'flex',
+    //     flexDirection: "column",
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    //     backgroundColor: '#FFFCF8',
+    //     borderRadius: normalize(15),
+    // },
 
+    // profileContent3:{
+    //     width: normalize(122),
+    //     height: normalize(122),
+    //     marginTop:normalize(100),
+    //     display: 'flex',
+    //     flexDirection: "column",
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    //     backgroundColor: '#FFFCF8',
+    //     borderRadius: normalize(15),
+    // },
 
-    submitButtonStyle: {
-        display: "flex",
-        width: normalize(190),
-        height: normalize(40),
-        justifyContent: "center",
-        marginTop: normalize(10),
-        lineHeight: normalize(10),
-        borderRadius: normalize(20),
-        fontSize: normalize(10),
-      },
+    // profileContent4:{
+    //     width: normalize(122),
+    //     height: normalize(122),
+    //     marginTop:normalize(100),
+    //     display: 'flex',
+    //     flexDirection: "column",
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    //     backgroundColor: '#FFFCF8',
+    //     borderRadius: normalize(15),
+    // },
+
+    // submitButtonStyle: {
+    //     display: "flex",
+    //     width: normalize(190),
+    //     height: normalize(40),
+    //     justifyContent: "center",
+    //     marginTop: normalize(10),
+    //     lineHeight: normalize(10),
+    //     borderRadius: normalize(20),
+    //     fontSize: normalize(10),
+    //   },
     
 })
