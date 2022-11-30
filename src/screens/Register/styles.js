@@ -173,6 +173,7 @@ export const styles = StyleSheet.create({
     fontSize: normalize(10),
     marginTop: normalize(20),
   },
+  
 
 });
 

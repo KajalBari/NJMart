@@ -1,0 +1,257 @@
+import { StyleSheet } from 'react-native';
+import { COLORS } from '../../constants/Colors';
+import { dim, normalize } from '../../constants/Platform';
+
+
+export const styles = StyleSheet.create({
+    containerStyle: {
+        display:'flex',
+        flexDirection:'column',
+        width: normalize(500),
+        minHeight: dim().height * 0.4,
+        marginLeft: normalize(-10),
+    },
+
+    sponsorName: {
+        fontFamily: 'Inter',
+        fontStyle: 'normal',
+        fontWeight: '200',
+        fontSize: normalize(15),
+        color: '#888888',
+        width: normalize(210),
+        height: normalize(40),
+      },
+
+    gradient:{
+       // height:normalize(800),
+       minHeight:dim().height * 0.5,
+    },
+    
+    menuStyle: {
+        display: 'flex',
+        float: 'right',
+        left:normalize(150),
+         marginTop: normalize(10),
+        tintColor: "#000",
+    },
+    
+    iconNameStyle:{
+        display:'flex',
+        alignItems:'center',  
+        flexDirection:'row',
+        marginTop:normalize(10),
+    },
+    
+    profileStyle: {
+        marginLeft: normalize(40),
+    },
+    
+    headerStyle:{
+        display:'flex',
+        flexDirection:'row',
+    },
+    
+    arrowStyle:{
+        width:normalize(30),
+        height:normalize(30),
+        resizeMode:'contain',
+       marginTop:normalize(10),
+       marginLeft:normalize(20),
+    },
+    
+    nameStylee: {
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'center',
+        fontFamily: 'Inter',
+        fontStyle: "normal",
+         fontWeight: '200',
+        fontSize: normalize(25),
+        color: 'white',
+        marginLeft:normalize(20),
+    },
+    
+    contentRectangleStyle: {
+       // paddingTop:dim().width*0.4,
+        width: normalize(365),
+         height: normalize(600),
+         marginTop: normalize(20),
+         backgroundColor: '#FFFCF8',
+        borderTopLeftRadius: normalize(50),
+        borderTopRightRadius: normalize(60),   
+    },
+    
+    elevation: {
+        elevation: normalize(30),
+        boxShadow:"-10px -25px 14px rgba(0, 0, 0, 0.25), 12px 21px 17px rgba(73, 66, 66, 0.36)",
+    },
+    
+    profileText:{
+        fontFamily: 'Inter',
+        fontStyle: 'normal',
+        fontWeight: '200',
+        fontSize: normalize(25),
+        marginTop:normalize(10),
+        textAlign:'center',
+        flexDirection:'row',
+        color: "#FD6510",
+    },
+    
+    lineStyle:{ 
+        borderWidth: normalize(4),
+            width:normalize(290),
+            alignSelf:'center',
+            borderColor:'#B9AFAF',
+            marginTop:normalize(10), 
+    },
+    
+    profileDetails:{
+       flexDirection:'column',
+        justifyContent:'flex-start', 
+    },
+    
+    distributorStyle:{
+        display:'flex',
+        justifyContent:'space-between',
+    },
+    
+    distributorIdStyle:{
+        fontFamily: 'Inter',
+        fontStyle: 'normal',
+        fontSize: normalize(25),
+        marginTop:normalize(20),
+       marginLeft: normalize(30),
+        color: "#FD6510",
+    },
+    
+    subTitleStyle1:{
+        fontFamily: 'Inter',
+        fontStyle: 'normal',
+        fontWeight: '200',
+        fontSize: normalize(22),
+       marginLeft:normalize(30),
+        color: "#FD6510", 
+    },
+    
+    nameStyle2:{
+        fontFamily: 'Inter',
+        fontStyle: 'normal',
+        fontSize: normalize(25),
+        marginTop:normalize(10),
+        marginLeft:normalize(30),
+        color: "#FD6510",
+    },
+    
+    subTitleStyle2:{
+        fontFamily: 'Inter',
+        fontStyle: 'normal',
+        fontWeight: '200',
+        fontSize: normalize(22),
+        marginLeft:normalize(30),
+        color: "#FD6510", 
+    },
+    
+    dateStyle:{
+        fontFamily: 'Inter',
+        fontStyle: 'normal',
+        fontSize: normalize(25),
+        marginTop:normalize(10),
+        marginLeft:normalize(30),
+        color: "#FD6510",
+    },
+    
+    subTitleStyle3:{
+        fontFamily: 'Inter',
+        fontStyle: 'normal',
+        fontWeight: '200',
+        fontSize: normalize(22),
+        marginTop:normalize(0),
+        marginLeft:normalize(30),
+        color: "#FD6510", 
+    },
+    
+    addressStyle:{
+        fontFamily: 'Inter',
+        fontStyle: 'normal',
+        fontSize: normalize(25),
+        marginTop:normalize(10),
+        marginLeft:normalize(30),
+        color: "#FD6510",
+    },
+    
+    subTitleStyle4:{
+        fontFamily: 'Inter',
+        fontStyle: 'normal',
+        fontWeight: '200',
+        fontSize: normalize(22),
+        marginTop:normalize(0),
+        marginLeft:normalize(30),
+        color: "#FD6510", 
+    },
+    
+    mobileStyle:{
+        fontFamily: 'Inter',
+        fontStyle: 'normal',
+        fontSize: normalize(25),
+        marginTop:normalize(10),
+        marginLeft:normalize(30),
+        color: "#FD6510",
+    },
+    
+    subTitleStyle5:{
+        fontFamily: 'Inter',
+        fontStyle: 'normal',
+        fontWeight: '200',
+        fontSize: normalize(22),
+        marginTop:normalize(0),
+        marginLeft:normalize(30),
+        color: "#FD6510", 
+    },
+    
+    birthDateStyle:{
+        fontFamily: 'Inter',
+        fontStyle: 'normal',
+        fontSize: normalize(25),
+        marginTop:normalize(10),
+        marginLeft:normalize(30),
+        color: "#FD6510",   
+    },
+    
+    subTitleStyle6:{
+        fontFamily: 'Inter',
+        fontStyle: 'normal',
+        fontWeight: '200',
+        fontSize: normalize(22),
+        marginTop:normalize(0),
+        marginLeft:normalize(30),
+        color: "#FD6510", 
+    },
+    
+    ButtonStyle:{
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'space-between',
+    },
+    
+    editButtonStyle:{
+        width: normalize(160),
+        height: normalize(40),
+        marginTop: normalize(20),
+        marginLeft:normalize(20),
+        lineHeight: normalize(10),
+        borderRadius: normalize(20),
+        fontSize: normalize(10), 
+    },
+    
+    nextButtonStyle:{
+        width: normalize(160),
+        height: normalize(40),
+        marginTop: normalize(20),
+        marginLeft:normalize(10),
+        lineHeight: normalize(10),
+        borderRadius: normalize(20),
+        fontSize: normalize(10), 
+    },
+
+
+}) 

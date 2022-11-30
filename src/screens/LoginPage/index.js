@@ -7,13 +7,18 @@ import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 import { SliderComponent, TouchableOpacity } from 'react-native';
 import {TextInput} from 'react-native';
+import { set } from 'lodash';
 
 function LoginPage(props) {
   const { navigation } = props;
-  const handleDashboard= () => {
+ 
+  const[password,setPassword]=useState('')
+  const[email,setEmail]=useState('')
+  const handleDashboard = () => {
     // console.log("Button Press")
     navigation.navigate('Dashboard');
   };
+
 
   return (
     <LinearGradient colors={["#FD6510", "#FFBF43"]}
@@ -35,11 +40,15 @@ function LoginPage(props) {
         <SMTextInput
         style={styles.emailStyle}
           placeholder={"Enter your email"}
+          value={email}
+          onChangeText={value=>setEmail(value)}
         />
 
         <SMTextInput
         style={styles.passwordStyle}
           placeholder={"Enter your password"}
+          value={password}
+          onChangeText={value=>setPassword(value)}
         />
         
           <SMText style={styles.forgetPassStyle}>Forgot Password?</SMText>
@@ -50,6 +59,7 @@ function LoginPage(props) {
           buttonStyle={styles.loginButtonStyle}
           onPress={handleDashboard}
         />
+        
 
         <SMView style={styles.signUpDiv}>
           <SMText style={styles.userStyle}>

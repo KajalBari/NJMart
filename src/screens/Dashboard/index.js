@@ -44,7 +44,7 @@ function Dashboard(props) {
        
         <SMImage source={ShoppingCart} style={styles.shoppingCartStyle} />
       
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('MenubarNavigation', { name: 'MenubarNavigation' })}>
         <SMImage source={menu11} style={styles.menuStyle} />
         </TouchableOpacity>
         </SMView>

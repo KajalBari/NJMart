@@ -70,6 +70,7 @@ function Downlines(props) {
               <SMView style={styles.rectangleStyle}>
                 <SMText style={styles.directStyle}>Directs</SMText>
               </SMView>
+              </SMView>
 
               <SMView style={styles.downlineStucture}>
                 <SMView style={styles.rectangleStyle}>
@@ -95,8 +96,7 @@ function Downlines(props) {
                   buttonStyle={styles.nextButtonStyle}
                   onPress={handleProfileMenuBar}
               />  
-
-            </SMView>
+              
           </SMView>
         </SMView>
 

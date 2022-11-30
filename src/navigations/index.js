@@ -17,6 +17,8 @@ import {
   ProfilePage,
   Downlines,
   ProfileMenuBar,
+  ProfileEdit,
+  MenubarNavigation,
 } from '../screens';
 import {COLORS} from '../constants/Colors';
 import {SMImage} from '../elements';
@@ -136,6 +138,19 @@ export default function MainContainer(props) {
         component={ProfileMenuBar}
         options={{headerTitle:'',gestureEnabled:false}}
         />
+
+        <Stack.Screen
+        name="ProfileEdit"
+        component={ProfileEdit}
+        options={{headerTitle:'',gestureEnabled:false}}
+        />
+        
+        <Stack.Screen
+        name="MenubarNavigation"
+        component={MenubarNavigation}
+        options={{headerTitle:'',gestureEnabled:false}}
+        />
+        
 
       </Stack.Navigator>
     </NavigationContainer>

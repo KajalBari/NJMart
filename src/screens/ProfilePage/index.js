@@ -12,15 +12,14 @@ import {
 import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 import { TouchableOpacity } from 'react-native';
-//import { ScrollView } from 'react-native-gesture-handler';
 import { ScrollView } from 'react-native';
 import { normalize } from '../../constants/Platform';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 function ProfilePage(props) {
   const { navigation } = props;
-  const handleDownlines = () => {
-    navigation.navigate('Downlines');
+  const handleProfileEdit = () => {
+    navigation.navigate('ProfileEdit');
   };
 
   return (
@@ -38,11 +37,8 @@ function ProfilePage(props) {
 
     <TouchableOpacity  onPress={() => navigation.navigate('Dashboard', { name: 'Dashboard' })} >
     <SMView style={styles.headerStyle}>
-    <SMImage source={arrow}
-    style={styles.arrowStyle} />
+    <SMImage source={arrow} style={styles.arrowStyle} />
     </SMView>
-    
-
     </TouchableOpacity>
   
     <SMView style={styles.iconNameStyle}>
@@ -87,12 +83,13 @@ function ProfilePage(props) {
                 buttonText="Edit"
                 type="nextbutton"
                 buttonStyle={styles.editButtonStyle}
+                onPress={() => navigation.navigate('ProfileEdit', { name: 'ProfileEdit' })}
               />
+
                 <SMButton
                 buttonText="Next"
                 type="nextbutton"
                 buttonStyle={styles.nextButtonStyle}
-                onPress={handleDownlines}
               />
               </SMView>
            

@@ -20,8 +20,9 @@ function ProfileMenuBar(props) {
   };
 
 return(
-<SMView >
+<SMView style={styles.containerStyle}>
   <SMText>Kajal</SMText>
+  
 </SMView>
 );
 }

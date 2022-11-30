@@ -12,5 +12,6 @@ export {default as Dashboard} from './Dashboard';
 export {default as ProfilePage} from './ProfilePage';
 export {default as Downlines} from './Downlines';
 export {default as ProfileMenuBar} from './ProfileMenuBar';
+export {default as ProfileEdit} from './ProfileEdit';
+export {default as MenubarNavigation} from './MenubarNavigation';
 
-// <Screen navigation={ProfilePage} name="Profile" />

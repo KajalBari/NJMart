@@ -7,12 +7,9 @@ export const styles = StyleSheet.create({
      containerStyle: {
         display:'flex',
         flexDirection:'column',
-        // width:dim().width*0.99,
         width: normalize(500),
         minHeight: dim().height * 0.4,
-        //height: normalize(230),
         marginLeft: normalize(-10),
-       // marginRight: normalize(20),
     },
 
     gradient:{

@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import {
   SMText,
   SMView,
@@ -8,33 +8,35 @@ import {
   SMTextInput,
   SMCheckBox,
 } from '../../elements';
-import {NJMartLogo} from '../../assets';
-import {styles} from './styles';
+import { NJMartLogo } from '../../assets';
+import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {normalize} from '../../constants/Platform';
-import {ScrollView,TouchableOpacity,Text, View} from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { normalize } from '../../constants/Platform';
+import { ScrollView, TouchableOpacity, Text, View } from 'react-native';
 
 function RegisterPersonalPage(props) {
-  const {navigation} = props;
+  const { navigation } = props;
   const handleRegisterContactPage = () => {
     navigation.navigate('RegisterContactPage');
   };
 
-  const [pos,setPos] = useState("")
-
+  const [pos, setPos] = useState("")
+  const [applicantName, setApplicantName] = useState('')
+  const [dob, setDob] = useState('')
+  const [fatherName, setFatherName] = useState('')
   return (
     <SMView style={styles.containerStyle} >
       <LinearGradient
         colors={['#FD6510', '#FFBF43']}
         style={styles.gradient}
-        start={{x: 1, y: 0.5}}
-        end={{x: 0, y: 0.5}}>
+        start={{ x: 1, y: 0.5 }}
+        end={{ x: 0, y: 0.5 }}>
         <SMImage source={NJMartLogo} style={styles.njMartImage} />
-        </LinearGradient>
+      </LinearGradient>
 
-        <SMView style={[styles.tableStyle, styles.elevation]}>
-          <SMView style={styles.innerDivStyle}>
+      <SMView style={[styles.tableStyle, styles.elevation]}>
+        <SMView style={styles.innerDivStyle}>
 
           <SMText style={styles.registerStyle}>Register</SMText>
           <SMText style={styles.mandatoryStyle}>*Marks Are Mandatory</SMText>
@@ -46,78 +48,81 @@ function RegisterPersonalPage(props) {
             <SMView style={styles.divStyle}>
 
 
-            <SMView style={styles.containerRadio}>
-            <SMText style={styles.textPos}>Title</SMText>
+              <SMView style={styles.containerRadio}>
+                <SMText style={styles.textPos}>Title</SMText>
 
-            <SMView style={styles.Wrapper}>
-              {['Mr','Mrs','Ms'].map(position=>
-             <SMView key={position} style={styles.pos}>
-              <SMText style={styles.position1}>{position}</SMText>
+                <SMView style={styles.Wrapper}>
+                  {['Mr', 'Mrs', 'Ms'].map(position =>
+                    <SMView key={position} style={styles.pos}>
+                      <SMText style={styles.position1}>{position}</SMText>
 
-            <TouchableOpacity style={styles.outer}
-            onPress={()=>setPos(position)}>
-              {pos === position  &&<SMView style={styles.inner}/>}
-            </TouchableOpacity>
-            </SMView>
-            )}
-            </SMView>
-          </SMView>
+                      <TouchableOpacity style={styles.outer}
+                        onPress={() => setPos(position)}>
+                        {pos === position && <SMView style={styles.inner} />}
+                      </TouchableOpacity>
+                    </SMView>
+                  )}
+                </SMView>
+              </SMView>
 
 
               <SMTextInput
                 style={styles.applicantNameStyle}
-                placeholder={"Applicant's Name*"} />
+                placeholder={"Applicant's Name*"} value={applicantName}
+                onChangeText={value => setApplicantName(value)} />
 
-              <SMTextInput 
-              style={styles.dobStyle} 
-              placeholder={'DOB'} />
+              <SMTextInput
+                style={styles.dobStyle}
+                placeholder={'DOB'} value={dob}
+                onChangeText={value => setDob(value)} />
 
               <SMTextInput
                 style={styles.fatherNameStyle}
-                placeholder={"Father's/Husband Name"}/>
+                placeholder={"Father's/Husband Name"} value={fatherName}
+                onChangeText={value => setFatherName(value)} />
 
               {/* <SMTextInput
                 style={styles.maritalStatusStyle}
                 placeholder={'Marital Status'}
               />      */}
-            <SMView style={styles.containerRadio}>
-            <SMText style={styles.textPos}>Marital Status</SMText>
+              <SMView style={styles.containerRadio}>
+                <SMText style={styles.textPos}>Marital Status</SMText>
 
-            <SMView style={styles.Wrapper}>
-              {['Single','Married'].map(position=>
-             <SMView key={position} style={styles.pos}>
-              <SMText style={styles.position1}>{position}</SMText>
+                <SMView style={styles.Wrapper}>
+                  {['Single', 'Married'].map(position =>
+                    <SMView key={position} style={styles.pos}>
+                      <SMText style={styles.position1}>{position}</SMText>
 
-            <TouchableOpacity style={styles.outer}
-            onPress={()=>setPos(position)}>
-              {pos === position  &&<SMView style={styles.inner}/>}
-            </TouchableOpacity>
-            </SMView>
-            )}
-            </SMView>
-          </SMView>
+                      <TouchableOpacity style={styles.outer}
+                        onPress={() => setPos(position)}>
+                        {pos === position && <SMView style={styles.inner} />}
+                      </TouchableOpacity>
+                    </SMView>
+                  )}
+                </SMView>
+              </SMView>
 
 
               {/* <SMTextInput 
               style={styles.genderStyle} 
               placeholder={'Gender'} /> */}
 
-        <SMView style={styles.containerRadio}>
-            <SMText style={styles.textPos}>Gender</SMText>
+              <SMView style={styles.containerRadio}>
+                <SMText style={styles.textPos}>Gender</SMText>
 
-            <SMView style={styles.Wrapper}>
-              {['Male','Female'].map(position=>
-             <SMView key={position} style={styles.pos}>
-              <SMText style={styles.position1}>{position}</SMText>
+                <SMView style={styles.Wrapper}>
+                  {['Male', 'Female'].map(position =>
+                    <SMView key={position} style={styles.pos}>
+                      <SMText style={styles.position1}>{position}</SMText>
 
-            <TouchableOpacity style={styles.outer}
-            onPress={()=>setPos(position)}>
-              {pos === position  &&<SMView style={styles.inner}/>}
-            </TouchableOpacity>
-            </SMView>
-            )}
-            </SMView>
-          </SMView>
+                      <TouchableOpacity style={styles.outer}
+                        onPress={() => setPos(position)}>
+                        {pos === position && <SMView style={styles.inner} />}
+                      </TouchableOpacity>
+                    </SMView>
+                  )}
+                </SMView>
+              </SMView>
 
               <SMButton
                 buttonText="Next"
@@ -128,66 +133,66 @@ function RegisterPersonalPage(props) {
 
             </SMView>
           </ScrollView>
-          </SMView>
         </SMView>
-      
+      </SMView>
+
     </SMView>
   );
 
-//   return (
-//     // <KeyboardAwareScrollView
-//     // extraScrollHeight={normalize(100)}
-//     // nestedScrollEnabled>
-//     <SMView style={styles.containerStyle}>
-//       <LinearGradient
-//         colors={['#FD6510', '#FFBF43']}
-//         style={styles.gradient}
-//         start={{x: 1, y: 0.5}}
-//         end={{x: 0, y: 0.5}}>
-//         <SMImage source={NJMartLogo} style={styles.njMartImage} />
+  //   return (
+  //     // <KeyboardAwareScrollView
+  //     // extraScrollHeight={normalize(100)}
+  //     // nestedScrollEnabled>
+  //     <SMView style={styles.containerStyle}>
+  //       <LinearGradient
+  //         colors={['#FD6510', '#FFBF43']}
+  //         style={styles.gradient}
+  //         start={{x: 1, y: 0.5}}
+  //         end={{x: 0, y: 0.5}}>
+  //         <SMImage source={NJMartLogo} style={styles.njMartImage} />
 
-//         <SMView style={[styles.tableStyle, styles.elevation]}>
-//           <SMText style={styles.registerStyle}>Register</SMText>
-//           <SMText style={styles.mandatoryStyle}>*Marks Are Mandatory</SMText>
-//           <SMText style={styles.personalInfoHeading}>
-//             Personal Information
-//           </SMText>
+  //         <SMView style={[styles.tableStyle, styles.elevation]}>
+  //           <SMText style={styles.registerStyle}>Register</SMText>
+  //           <SMText style={styles.mandatoryStyle}>*Marks Are Mandatory</SMText>
+  //           <SMText style={styles.personalInfoHeading}>
+  //             Personal Information
+  //           </SMText>
 
-//           <ScrollView style={{flexGrow: 1}}>
-//             <SMView style={styles.divStyle}>
-//               <SMTextInput style={styles.titleStyle} placeholder={'Title'} />
+  //           <ScrollView style={{flexGrow: 1}}>
+  //             <SMView style={styles.divStyle}>
+  //               <SMTextInput style={styles.titleStyle} placeholder={'Title'} />
 
-//               <SMTextInput
-//                 style={styles.applicantNameStyle}
-//                 placeholder={"Applicant's Name*"}
-//               />
+  //               <SMTextInput
+  //                 style={styles.applicantNameStyle}
+  //                 placeholder={"Applicant's Name*"}
+  //               />
 
-//               <SMTextInput style={styles.dobStyle} placeholder={'DOB'} />
+  //               <SMTextInput style={styles.dobStyle} placeholder={'DOB'} />
 
-//               <SMTextInput
-//                 style={styles.fatherNameStyle}
-//                 placeholder={"Father's/Husband Name"}
-//               />
+  //               <SMTextInput
+  //                 style={styles.fatherNameStyle}
+  //                 placeholder={"Father's/Husband Name"}
+  //               />
 
-//               <SMTextInput
-//                 style={styles.maritalStatusStyle}
-//                 placeholder={'Marital Status'}
-//               />
+  //               <SMTextInput
+  //                 style={styles.maritalStatusStyle}
+  //                 placeholder={'Marital Status'}
+  //               />
 
-//               <SMTextInput style={styles.genderStyle} placeholder={'Gender'} />
+  //               <SMTextInput style={styles.genderStyle} placeholder={'Gender'} />
 
-//               <SMButton
-//                 buttonText="Next"
-//                 type="nextbutton"
-//                 buttonStyle={styles.nextButtonStyle}
-//                 onPress={handleRegisterContactPage}
-//               />
-//             </SMView>
-//           </ScrollView>
-//         </SMView>
-//       </LinearGradient>
-//     </SMView>s
-//     // </KeyboardAwareScrollView>
-//   );
+  //               <SMButton
+  //                 buttonText="Next"
+  //                 type="nextbutton"
+  //                 buttonStyle={styles.nextButtonStyle}
+  //                 onPress={handleRegisterContactPage}
+  //               />
+  //             </SMView>
+  //           </ScrollView>
+  //         </SMView>
+  //       </LinearGradient>
+  //     </SMView>s
+  //     // </KeyboardAwareScrollView>
+  //   );
 }
- export default RegisterPersonalPage;
+export default RegisterPersonalPage;

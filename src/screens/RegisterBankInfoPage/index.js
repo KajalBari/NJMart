@@ -6,9 +6,15 @@ import {
 import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 import { ScrollView } from 'react-native';
+import { useState } from "react";
 
 function RegisterBankInfoPage(props) {
   const { navigation } = props;
+  const [bankName, setBankName] = useState('')
+  const [branchName, setBranchName] = useState('')
+  const [accNumber, setAccNumber] = useState('')
+  const [panNum, setPanNum] = useState('')
+  const [ifsc, setIfsc] = useState('')
   const handleRegisterSecurityInfoPage = () => {
     navigation.navigate('RegisterSecurityInfoPage');
   };
@@ -43,26 +49,36 @@ function RegisterBankInfoPage(props) {
               <SMTextInput
                 style={styles.bankStyle}
                 placeholder={"Bank Name"}
+                value={bankName}
+                onChangeText={value => setBankName(value)}
               />
 
               <SMTextInput
                 style={styles.branchStyle}
                 placeholder={"Branch Name"}
+                value={branchName}
+                onChangeText={value => setBranchName(value)}
               />
 
               <SMTextInput
                 style={styles.accountStyle}
                 placeholder={"Account Number"}
+                value={accNumber}
+                onChangeText={value => setAccNumber(value)}
               />
 
               <SMTextInput
                 style={styles.pancardStyle}
                 placeholder={"Pan Number*"}
+                value={panNum}
+                onChangeText={value => setPanNum(value)}
               />
 
               <SMTextInput
                 style={styles.ifscStyle}
                 placeholder={"IFSC Code"}
+                value={ifsc}
+                onChangeText={value => setIfsc(value)}
               />
 
               <SMButton
