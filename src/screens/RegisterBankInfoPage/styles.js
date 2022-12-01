@@ -27,13 +27,13 @@ export const styles = StyleSheet.create({
 
     tableStyle: {
         width: dim().width * 0.75,
-        minHeight: dim().height * 0.7,
+        minHeight: dim().height * 0.5,
         position: 'absolute',
-        alignItems: 'center',
-        alignSelf: 'center',
+       // alignItems: 'center',
+       alignSelf: 'center',
         top: dim().height * 0.2,
         backgroundColor: '#E8E8E8',
-        paddingBottom: normalize(10),
+        // paddingBottom: normalize(5),
         paddingTop: normalize(10),
         flex: 1,
         borderRadius: normalize(40),

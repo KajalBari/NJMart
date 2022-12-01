@@ -34,8 +34,12 @@ export const styles = StyleSheet.create({
     
 contentRectangleStyle: {
     // paddingTop:dim().width*0.4,
+   // width:dim().width*0.10,1
      width: normalize(365),
-      height: normalize(500),
+
+    minHeight:dim().height*0.9,
+
+     // height: normalize(500),
       marginTop: normalize(20),
       backgroundColor: '#FFFCF8',
      borderTopLeftRadius: normalize(60),

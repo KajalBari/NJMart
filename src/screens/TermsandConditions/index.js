@@ -10,8 +10,8 @@ import { Checkbox } from 'react-native-paper';
 
 function TermsandConditions(props) {
     const {navigation} = props;
-    const handleDashboard = () => {
-      navigation.navigate('Dashboard');
+    const handleLoginPage = () => {
+      navigation.navigate('LoginPage');
     };
 
     // const [isSelected, setSelection] = useState(false)
@@ -59,8 +59,8 @@ return(
           buttonText="Submit"
           type="nextbutton"
           buttonStyle={styles.submitButtonStyle}
-          onPress={handleDashboard}
-         // onPress={handleLoginPage}
+         // onPress={handleDashboard}
+         onPress={handleLoginPage}
           /> 
          
      </SMView>

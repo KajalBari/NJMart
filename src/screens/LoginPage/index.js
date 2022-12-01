@@ -6,74 +6,64 @@ import {
 import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 import { SliderComponent, TouchableOpacity } from 'react-native';
-import {TextInput} from 'react-native';
-import { set } from 'lodash';
+import { TextInput } from 'react-native';
+import { Button } from 'react-native-paper';
+// import { set } from 'lodash';
 
 function LoginPage(props) {
   const { navigation } = props;
- 
-  const[password,setPassword]=useState('')
-  const[email,setEmail]=useState('')
+
+  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('')
   const handleDashboard = () => {
     // console.log("Button Press")
     navigation.navigate('Dashboard');
   };
-
-
   return (
-    <LinearGradient colors={["#FD6510", "#FFBF43"]}
-      style={styles.gradient}
-      start={{ x: 1, y: 0.5 }}
-      end={{ x: 0, y: 0.5 }} >
-
-      <SMImage source={NJMartLogo} style={styles.njMartImage} />
+    <SMView style={styles.containerStyle} >
+      <LinearGradient colors={["#FD6510", "#FFBF43"]}
+        style={styles.gradient}
+        start={{ x: 1, y: 0.5 }}
+        end={{ x: 0, y: 0.5 }} >
+        <SMImage source={NJMartLogo} style={styles.njMartImage} />
+      </LinearGradient>
       <SMView style={[styles.tableStyle, styles.elevation]}>
         <SMText style={styles.loginStyle}>
           Log In
         </SMText>
-
-        {/* <TextInput
-         style={styles.emailStyle}
-          placeholder={"Enter your email"}
-        /> */}
-        
         <SMTextInput
-        style={styles.emailStyle}
+          style={styles.emailStyle}
           placeholder={"Enter your email"}
           value={email}
-          onChangeText={value=>setEmail(value)}
+          onChangeText={value => setEmail(value)}
         />
-
         <SMTextInput
-        style={styles.passwordStyle}
+          style={styles.passwordStyle}
           placeholder={"Enter your password"}
           value={password}
-          onChangeText={value=>setPassword(value)}
+          onChangeText={value => setPassword(value)}
         />
-        
+        <TouchableOpacity>
           <SMText style={styles.forgetPassStyle}>Forgot Password?</SMText>
-        
-        <SMButton
+        </TouchableOpacity>
+         <SMButton
           buttonText="Login"
           type="nextbutton"
           buttonStyle={styles.loginButtonStyle}
           onPress={handleDashboard}
-        />
-        
-
+        /> 
         <SMView style={styles.signUpDiv}>
-          <SMText style={styles.userStyle}>
+        <SMText style={styles.userStyle}>
             are you a new user?
-          </SMText>
-          <TouchableOpacity>
-          <SMText style={styles.signUpStyle}>
-            Sign Up
-          </SMText>
+        </SMText>
+        <TouchableOpacity  onPress={() => navigation.navigate('Register', { name: 'Register' })} >
+            <SMText style={styles.signUpStyle}>
+              Sign Up
+            </SMText>
           </TouchableOpacity>
-
         </SMView>
       </SMView>
-    </LinearGradient>
+    </SMView>
   );
 }
 export default LoginPage;

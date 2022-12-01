@@ -81,10 +81,6 @@ function RegisterPersonalPage(props) {
                 placeholder={"Father's/Husband Name"} value={fatherName}
                 onChangeText={value => setFatherName(value)} />
 
-              {/* <SMTextInput
-                style={styles.maritalStatusStyle}
-                placeholder={'Marital Status'}
-              />      */}
               <SMView style={styles.containerRadio}>
                 <SMText style={styles.textPos}>Marital Status</SMText>
 
@@ -101,11 +97,6 @@ function RegisterPersonalPage(props) {
                   )}
                 </SMView>
               </SMView>
-
-
-              {/* <SMTextInput 
-              style={styles.genderStyle} 
-              placeholder={'Gender'} /> */}
 
               <SMView style={styles.containerRadio}>
                 <SMText style={styles.textPos}>Gender</SMText>
@@ -138,61 +129,5 @@ function RegisterPersonalPage(props) {
 
     </SMView>
   );
-
-  //   return (
-  //     // <KeyboardAwareScrollView
-  //     // extraScrollHeight={normalize(100)}
-  //     // nestedScrollEnabled>
-  //     <SMView style={styles.containerStyle}>
-  //       <LinearGradient
-  //         colors={['#FD6510', '#FFBF43']}
-  //         style={styles.gradient}
-  //         start={{x: 1, y: 0.5}}
-  //         end={{x: 0, y: 0.5}}>
-  //         <SMImage source={NJMartLogo} style={styles.njMartImage} />
-
-  //         <SMView style={[styles.tableStyle, styles.elevation]}>
-  //           <SMText style={styles.registerStyle}>Register</SMText>
-  //           <SMText style={styles.mandatoryStyle}>*Marks Are Mandatory</SMText>
-  //           <SMText style={styles.personalInfoHeading}>
-  //             Personal Information
-  //           </SMText>
-
-  //           <ScrollView style={{flexGrow: 1}}>
-  //             <SMView style={styles.divStyle}>
-  //               <SMTextInput style={styles.titleStyle} placeholder={'Title'} />
-
-  //               <SMTextInput
-  //                 style={styles.applicantNameStyle}
-  //                 placeholder={"Applicant's Name*"}
-  //               />
-
-  //               <SMTextInput style={styles.dobStyle} placeholder={'DOB'} />
-
-  //               <SMTextInput
-  //                 style={styles.fatherNameStyle}
-  //                 placeholder={"Father's/Husband Name"}
-  //               />
-
-  //               <SMTextInput
-  //                 style={styles.maritalStatusStyle}
-  //                 placeholder={'Marital Status'}
-  //               />
-
-  //               <SMTextInput style={styles.genderStyle} placeholder={'Gender'} />
-
-  //               <SMButton
-  //                 buttonText="Next"
-  //                 type="nextbutton"
-  //                 buttonStyle={styles.nextButtonStyle}
-  //                 onPress={handleRegisterContactPage}
-  //               />
-  //             </SMView>
-  //           </ScrollView>
-  //         </SMView>
-  //       </LinearGradient>
-  //     </SMView>s
-  //     // </KeyboardAwareScrollView>
-  //   );
 }
 export default RegisterPersonalPage;

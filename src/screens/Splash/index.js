@@ -22,7 +22,7 @@ function Splash(props) {
   }, []);
 
   const handleNavigation = async () => {
-    navigation.navigate('Register');
+    navigation.navigate('LoginPage');
   };
 
   return (

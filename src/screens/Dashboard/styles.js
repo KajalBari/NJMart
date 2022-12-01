@@ -9,8 +9,8 @@ export const styles = StyleSheet.create({
         position: "relative",
         backgroundColor: "#FFFFFF",
         width: normalize(500),
-        minHeight: dim().height * 0.9,
-        overflow:'scroll',
+        minHeight: dim().height * 0.5,
+       // overflow:'scroll',
     },
 
     text:{
@@ -161,17 +161,10 @@ export const styles = StyleSheet.create({
         justifyContent: "space-evenly",
         borderRadius: normalize(30),
     },
-
-    // divStyle:{
-    //     minHeight: dim().height*0.6,
-    //     alignItems:'center',
-        
-    // },
     
-
     contentRectangleStyle: {
         width: normalize(355),
-       // height: normalize(300),
+       minHeight: dim().height*1,
         display:'flex',
         //flexWrap:'wrap',
         paddingTop:dim().width*0.4,
@@ -181,13 +174,6 @@ export const styles = StyleSheet.create({
         backgroundColor: '#FFFCF8',
         marginTop:normalize(-40),
     },
-
-    // firstContent:{
-    //          display:'flex',
-    //          flexDirection:'row',
-    //          alignItems:'center',
-    //          justifyContent: 'center',      
-    // },
 
     profileContent:{
         width:normalize(102),

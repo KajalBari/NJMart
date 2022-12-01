@@ -25,7 +25,7 @@ function Downlines(props) {
   return (
 
     <KeyboardAwareScrollView
-        // extraScrollHeight={normalize(80)}
+       //  extraScrollHeight={normalize(80)}
         nestedScrollEnabled>
 
         
@@ -90,13 +90,13 @@ function Downlines(props) {
                 </SMView>
               </SMView>
 
-              <SMButton
+              {/* <SMButton
                   buttonText="Next"
                   type="nextbutton"
                   buttonStyle={styles.nextButtonStyle}
                   onPress={handleProfileMenuBar}
               />  
-              
+               */}
           </SMView>
         </SMView>
 

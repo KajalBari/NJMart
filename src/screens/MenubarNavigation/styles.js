@@ -5,7 +5,7 @@ import { dim, normalize } from '../../constants/Platform';
 export const styles = StyleSheet.create({
     containerStyle: {
       minWidth:dim().width*0.9,
-      minHeight:dim().height*5,
+      minHeight:dim().height*0.8,
       position:'relative',
     },
 
@@ -16,6 +16,19 @@ export const styles = StyleSheet.create({
          borderBottomRightRadius: normalize(150),
        },
     
+        
+    headerStyle:{
+        display:'flex',
+        flexDirection:'row',
+    },
+    
+    arrowStyle:{
+        width:normalize(30),
+        height:normalize(30),
+        resizeMode:'contain',
+       marginTop:normalize(10),
+       marginLeft:normalize(20),
+    },
     
        iconNameStyle:{
         display:'flex',

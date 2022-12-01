@@ -35,7 +35,7 @@ function Dashboard(props) {
   return (
 
     <KeyboardAwareScrollView
-        extraScrollHeight={normalize(80)}
+        //extraScrollHeight={normalize(80)}
         nestedScrollEnabled>
 
 
