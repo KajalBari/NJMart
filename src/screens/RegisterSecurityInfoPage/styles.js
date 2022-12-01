@@ -4,7 +4,7 @@ import { COLORS } from '../../constants/Colors';
 
 export const styles = StyleSheet.create({
 
-    containerStyle:{
+    containerStyle: {
         minWidth: dim().width * 0.9,
         minHeight: dim().height * 10,
         position: 'relative',
@@ -27,13 +27,11 @@ export const styles = StyleSheet.create({
 
     tableStyle: {
         width: dim().width * 0.75,
-        minHeight: dim().height * 0.7,
+        minHeight: dim().height * 0.5,
         position: 'absolute',
-        alignItems: 'center',
         alignSelf: 'center',
         top: dim().height * 0.2,
         backgroundColor: '#E8E8E8',
-        paddingBottom: normalize(10),
         paddingTop: normalize(10),
         flex: 1,
         borderRadius: normalize(40),
@@ -63,6 +61,10 @@ export const styles = StyleSheet.create({
         fontWeight: '100',
         fontSize: normalize(24),
         color: '#FD6510',
+       // paddingBottom: dim().width * 0.01,
+       // paddingTop: dim().width * 0.01,
+        paddingTop:normalize(10),
+        paddingBottom:normalize(10),
     },
 
     mandatoryStyle: {
@@ -72,6 +74,10 @@ export const styles = StyleSheet.create({
         fontSize: normalize(13),
         lineHeight: normalize(16),
         color: '#FD6510',
+        //paddingTop:normalize(10),
+       // paddingBottom:normalize(10),
+       // paddingTop: dim().width * 0.01,
+        //paddingBottom: dim().width * 0.01,
     },
 
     securityInfoHeading: {
@@ -81,6 +87,10 @@ export const styles = StyleSheet.create({
         fontWeight: '200',
         fontSize: normalize(18),
         color: '#FD6510',
+        paddingTop:normalize(10),
+        paddingBottom:normalize(10),
+        //paddingTop: dim().width * 0.01,
+        //paddingBottom: dim().width * 0.01,
     },
 
     userIdStyle: {
@@ -123,7 +133,6 @@ export const styles = StyleSheet.create({
         height: normalize(40),
     },
 
-
     answerStyle: {
         fontFamily: 'Inter',
         fontStyle: 'normal',
@@ -142,6 +151,5 @@ export const styles = StyleSheet.create({
         borderRadius: normalize(20),
         fontSize: normalize(10),
     },
-
 
 })

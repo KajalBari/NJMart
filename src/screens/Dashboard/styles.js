@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
         backgroundColor: "#FFFFFF",
         width: normalize(500),
         minHeight: dim().height * 0.5,
+       // paddingBottom:normalize(20),
        // overflow:'scroll',
     },
 
@@ -164,10 +165,12 @@ export const styles = StyleSheet.create({
     
     contentRectangleStyle: {
         width: normalize(355),
-       minHeight: dim().height*1,
+       minHeight: dim().height*0.7,
         display:'flex',
         //flexWrap:'wrap',
         paddingTop:dim().width*0.4,
+       // paddingBottom:normalize(10),
+        marginBottom:normalize(0),
         width: normalize(355),
         borderTopLeftRadius: normalize(65),
         borderTopRightRadius: normalize(50),

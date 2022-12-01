@@ -5,7 +5,7 @@ import {
 } from '../../assets';
 import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
-import { TextInput } from 'react-native';
+import { TextInput,ScrollView } from 'react-native';
 
 function RegisterSecurityInfoPage(props) {
   const { navigation } = props;
@@ -27,7 +27,9 @@ function RegisterSecurityInfoPage(props) {
         end={{ x: 0, y: 0.5 }} >
 
         <SMImage source={NJMartLogo} style={styles.njMartImage} />
+        </LinearGradient>
         <SMView style={[styles.tableStyle, styles.elevation]}>
+        <SMView style={styles.innerDivStyle}>
 
           <SMText style={styles.registerStyle}>
             Register
@@ -38,6 +40,10 @@ function RegisterSecurityInfoPage(props) {
           <SMText style={styles.securityInfoHeading}>
             Security Information
           </SMText>
+
+
+          <ScrollView nestedScrollEnabled>
+          <SMView style={styles.divStyle}>
 
           <SMTextInput
             style={styles.userIdStyle}
@@ -81,8 +87,11 @@ function RegisterSecurityInfoPage(props) {
             onPress={handleTermsandConditions}
           />
 
+          </SMView>
+          </ScrollView>
         </SMView>
-      </LinearGradient>
+        </SMView>
+    
     </SMView>
 
   );

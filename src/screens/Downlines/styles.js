@@ -36,9 +36,7 @@ contentRectangleStyle: {
     // paddingTop:dim().width*0.4,
    // width:dim().width*0.10,1
      width: normalize(365),
-
-    minHeight:dim().height*0.9,
-
+    minHeight:dim().height*1,
      // height: normalize(500),
       marginTop: normalize(20),
       backgroundColor: '#FFFCF8',
