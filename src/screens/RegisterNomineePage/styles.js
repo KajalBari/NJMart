@@ -80,7 +80,7 @@ export const styles = StyleSheet.create({
 
   tableStyle: {
     width: dim().width * 0.70,
-    minHeight: dim().height * 0.5,
+    minHeight: dim().height * 0.55,
     position: 'absolute',
     alignItems: 'center',
     alignSelf: 'center',
@@ -153,14 +153,50 @@ export const styles = StyleSheet.create({
     height: normalize(40),
   },
 
-  relationStyle: {
-    fontFamily: 'Inter',
-    fontStyle: 'normal',
-    fontWeight: '200',
+  applicantRelationView: {
+    //flex: 1,
+   // flexDirection: 'column',
+    alignItems: 'center',
+    //justifyContent: 'center',
+    zIndex: normalize(5),
+  },
+
+  applicantRelationText: {
     fontSize: normalize(15),
-    color: '#888888',
-    width: normalize(210),
-    height: normalize(40),
+    fontWeight: '700',
+    color: COLORS.SUB_COLOR_DARK_GREY,
+    marginHorizontal: normalize(10),
+    lineHeight: normalize(20),
+    marginBottom: normalize(40),
+    alignSelf: 'flex-start',
+    marginLeft: normalize(30),
+  
+  },
+
+  applicantRelationTextBoxStyle: {
+    width: normalize(135),
+    height: normalize(35),
+    marginTop: normalize(-1),
+    alignSelf: 'flex-start',
+    marginLeft: normalize(0),
+    
+  },
+
+  applicantRelationPlaceholder: {
+    fontSize: normalize(14),
+    fontWeight: '500',
+    textAlign: 'center',
+    marginBottom: normalize(10),
+    marginTop: normalize(10),
+  },
+
+
+  DropDownContainer: {
+    width: normalize(130),
+    height: normalize(35),
+    marginLeft: normalize(-40),
+    marginTop: normalize(-20),
+   
   },
 
 
@@ -171,7 +207,7 @@ export const styles = StyleSheet.create({
     marginLeft: normalize(30),
     borderRadius: normalize(20),
     fontSize: normalize(10),
-    marginTop: normalize(20),
+    marginTop: normalize(30),
   },
 
 });

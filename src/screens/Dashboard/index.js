@@ -25,15 +25,7 @@ function Dashboard(props) {
     navigation.navigate('ProfilePage');
   };
 
-  // function Downlines(props){
-  //   const { navigation } = props;
-  // const handleDownlines = () => {
-  //   navigation.navigate('Downlines');
-  // };
- 
-
   return (
-
     <KeyboardAwareScrollView
         //extraScrollHeight={normalize(80)}
         nestedScrollEnabled>

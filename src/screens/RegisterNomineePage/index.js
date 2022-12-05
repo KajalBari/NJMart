@@ -1,5 +1,5 @@
 import React from "react";
-import { SMText, SMView, SMImage, SMContainer, SMButton, SMTextInput, SMCheckBox } from '../../elements';
+import { SMText, SMView, SMImage, SMContainer, SMButton, SMTextInput, SMCheckBox,SMPicker } from '../../elements';
 import {
   NJMartLogo,
 } from '../../assets';
@@ -7,6 +7,8 @@ import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 import { TextInput, TouchableOpacity } from 'react-native';
 import { useState } from "react";
+import {useDispatch, useSelector} from 'react-redux';
+import {normalize} from '../../constants/Platform';
 //import { TextInput } from "react-native-paper";
 
 function RegisterNomineePage(props) {
@@ -15,6 +17,25 @@ function RegisterNomineePage(props) {
   const [nName, setNName] = useState('')
   const [nTitle, setNTitle] = useState('')
   const [nRelation, setNRelation] = useState('')
+
+  // const bankDetails = useSelector(state => state.profile.bankDetails);
+  // const ifscCodeBankDetails = useSelector(
+  //   state => state.profile.ifscCodeBankDetails,
+  // );
+
+  const [pos, setPos] = useState("")
+
+  const [applicantRelation, setApplicantRelation] = useState('Select');
+  const [openApplicantRelationPicker, setOpenApplicantRelationPicker] = useState(false);
+  const [applicantRelationPickerItems, setApplicantRelationPickerItems] = useState([
+    {label: 'Father', value: 'father'},
+    {label: 'Mother', value: 'mother'},
+    {label: 'Husband', value: 'husband'},
+    {label: 'Wife', value: 'wife'},
+    {label: 'Son', value: 'son'},
+    {label: 'Brother', value: 'brother'},
+    {label: 'Other', value: 'other'},
+  ]);
 
 
   const handleRegisterBankInfoPage = () => {
@@ -43,12 +64,23 @@ function RegisterNomineePage(props) {
 
           <SMView style={styles.divStyle}>
 
-            <SMTextInput
-              style={styles.titleStyle}
-              placeholder={"Nominee Title"}
-              value={nTitle}
-              onChangeText={value => setNTitle(value)}
-            />
+            
+            <SMView style={styles.containerRadio}>
+                <SMText style={styles.textPos}>Nominee Title:</SMText>
+
+                <SMView style={styles.Wrapper}>
+                  {['Mr', 'Mrs', 'Ms'].map(position =>
+                    <SMView key={position} style={styles.pos}>
+                      <SMText style={styles.position1}>{position}</SMText>
+
+                      <TouchableOpacity style={styles.outer}
+                        onPress={() => setPos(position)}>
+                        {pos === position && <SMView style={styles.inner} />}
+                      </TouchableOpacity>
+                    </SMView>
+                  )}
+                </SMView>
+              </SMView>
 
             <SMTextInput
               style={styles.nameStyle}
@@ -57,12 +89,29 @@ function RegisterNomineePage(props) {
               onChangeText={value => setNName(value)}
             />
 
-            <SMTextInput
-              style={styles.relationStyle}
-              placeholder={"Relation with Applicant"}
-              value={nRelation}
-              onChangeText={value => setNRelation(value)}
-            />
+
+              <SMView style={styles.applicantRelationView}>
+              <SMText  style={styles.applicantRelationText}>
+                Relation With Applicant:
+              </SMText>
+              <SMPicker
+                type="secondary"
+                open={openApplicantRelationPicker}
+                value={applicantRelation}
+                items={applicantRelationPickerItems}
+                setOpen={setOpenApplicantRelationPicker}
+                setItems={setApplicantRelationPickerItems}
+                containerStyle={styles.DropDownContainer}
+                style={styles.applicantRelationTextBoxStyle}
+                placeholder={'Select'}
+                setValue={setApplicantRelation}
+                placeholderStyle={styles.applicantRelationPlaceholder}
+                ArrowUpIconComponentSize={normalize(14)}
+                ArrowDownIconComponentSize={normalize(14)}
+                //textStyle={styles.accountTypeTextStyle}
+              //disabled={bankDetails.length >= 5}
+              />
+              </SMView>
 
             <SMButton
               buttonText="Next"

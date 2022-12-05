@@ -103,15 +103,60 @@ export const styles = StyleSheet.create({
         height: normalize(40),
     },
 
-    stateStyle: {
-        fontFamily: 'Inter',
-        fontStyle: 'normal',
-        fontWeight: '200',
-        fontSize: normalize(15),
-        color: '#888888',
-        width: normalize(210),
-        height: normalize(40),
+    // stateStyle: {
+    //     fontFamily: 'Inter',
+    //     fontStyle: 'normal',
+    //     fontWeight: '200',
+    //     fontSize: normalize(15),
+    //     color: '#888888',
+    //     width: normalize(210),
+    //     height: normalize(40),
+    // },
+
+    applicantRelationView: {
+        alignItems: 'center',
+        zIndex: normalize(5),
+        marginLeft: normalize(-90),
+        // marginRight:normalize(-10),
     },
+
+    applicantRelationText: {
+        fontSize: normalize(15),
+        fontWeight: '700',
+        color: COLORS.SUB_COLOR_DARK_GREY,
+        marginHorizontal: normalize(10),
+        lineHeight: normalize(20),
+        marginBottom: normalize(40),
+        alignSelf: 'flex-start',
+        marginLeft: normalize(30),
+
+    },
+
+    applicantRelationTextBoxStyle: {
+        width: normalize(135),
+        height: normalize(35),
+        marginTop: normalize(-1),
+        alignSelf: 'flex-start',
+        //marginLeft: normalize(30),
+        // backgroundColor:'red',
+    },
+
+    applicantRelationPlaceholder: {
+        fontSize: normalize(14),
+        fontWeight: '500',
+        textAlign: 'center',
+        marginBottom: normalize(10),
+        marginTop: normalize(10),
+
+    },
+
+    DropDownContainer: {
+        width: normalize(150),
+        height: normalize(50),
+        marginLeft: normalize(30),
+        marginTop: normalize(-20),
+    },
+
 
     districtStyle: {
         fontFamily: 'Inter',

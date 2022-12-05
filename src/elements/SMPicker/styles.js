@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
   dropDownContainerStyle: {
     alignSelf: 'center',
     maxWidth: dim().width * 0.9,
-    borderColor: COLORS.BRAND_BLUE,
+    borderColor: COLORS.WHITE,
   },
   listItemContainerStyle: {
     borderColor: COLORS.BRAND_BLUE,

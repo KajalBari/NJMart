@@ -1,5 +1,5 @@
 import React from "react";
-import { SMText, SMView, SMImage, SMContainer, SMButton, SMTextInput, SMCheckBox } from '../../elements';
+import { SMText, SMView, SMImage, SMContainer, SMButton, SMTextInput, SMCheckBox ,SMPicker} from '../../elements';
 import {
   NJMartLogo,
 } from '../../assets';
@@ -8,17 +8,30 @@ import { FlatList, TextInput } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { ScrollView } from 'react-native';
 import { useState } from "react";
+import {normalize} from '../../constants/Platform';
 //import { TextInput } from "react-native-paper";
 
 function RegisterContactPage(props) {
   const { navigation } = props;
   const [postalAdd, setPostalAdd] = useState('')
   const [country, setCountry] = useState('')
-  const [state, setState] = useState('')
+ // const [state, setState] = useState('')
   const [district, setDistrict] = useState('')
   const [pin, setPin] = useState('')
   const [mobile, setMobile] = useState('')
   const [email, setEmail] = useState('')
+
+  const [applicantRelation, setApplicantRelation] = useState('Select');
+  const [openApplicantRelationPicker, setOpenApplicantRelationPicker] = useState(false);
+  const [applicantRelationPickerItems, setApplicantRelationPickerItems] = useState([
+    {label: 'Maharashtra', value: 'maharashtra'},
+    {label: 'Uttar Pradesh', value: 'uttarPradesh'},
+    {label: 'Gujarat', value: 'gujarat'},
+    {label: 'Punjab', value: 'punjab'},
+    // {label: 'Madhya Pardesh', value: 'madhyaPardesh'},
+    {label: 'Orrisa', value: 'orrisa'},
+    {label: 'Goa', value: 'goa'},
+  ]);
 
   const handleRegisterNomineePage = () => {
     navigation.navigate('RegisterNomineePage');
@@ -56,7 +69,6 @@ function RegisterContactPage(props) {
                 placeholder={"Postal Address"}
                 value={postalAdd}
                 onChangeText={value => setPostalAdd(value)}
-
               />
 
               <SMTextInput
@@ -66,12 +78,28 @@ function RegisterContactPage(props) {
                 onChangeText={value => setCountry(value)}
               />
 
-              <SMTextInput
-                style={styles.stateStyle}
-                placeholder={"State"}
-                value={state}
-                onChangeText={value => setState(value)}
+              <SMView style={styles.applicantRelationView}>
+              <SMText  style={styles.applicantRelationText}>
+                 State:
+              </SMText>
+              <SMPicker
+                type="secondary"
+                open={openApplicantRelationPicker}
+                value={applicantRelation}
+                items={applicantRelationPickerItems}
+                setOpen={setOpenApplicantRelationPicker}
+                setItems={setApplicantRelationPickerItems}
+                containerStyle={styles.DropDownContainer}
+                style={styles.applicantRelationTextBoxStyle}
+                placeholder={'Select'}
+                setValue={setApplicantRelation}
+                placeholderStyle={styles.applicantRelationPlaceholder}
+                ArrowUpIconComponentSize={normalize(14)}
+                ArrowDownIconComponentSize={normalize(14)}
+                //textStyle={styles.accountTypeTextStyle}
+              //disabled={bankDetails.length >= 5}
               />
+              </SMView>
 
               <SMTextInput
                 style={styles.districtStyle}
@@ -99,7 +127,6 @@ function RegisterContactPage(props) {
                 placeholder={"Email"}
                 value={email}
                 onChangeText={value => setEmail(value)}
-         
               />
 
               <SMButton

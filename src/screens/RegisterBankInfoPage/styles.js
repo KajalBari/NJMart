@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
         width: dim().width * 0.75,
         minHeight: dim().height * 0.5,
         position: 'absolute',
-       // alignItems: 'center',
+        alignItems: 'center',
        alignSelf: 'center',
         top: dim().height * 0.2,
         backgroundColor: '#E8E8E8',
@@ -58,14 +58,15 @@ export const styles = StyleSheet.create({
     },
 
     registerStyle: {
-        marginTop: normalize(10),
+       marginTop: normalize(20),
         fontFamily: 'Inter',
         fontStyle: 'normal',
         fontWeight: '100',
         fontSize: normalize(24),
         color: '#FD6510', 
-        paddingBottom:dim().width*0.01,
-        paddingTop:dim().width*0.01,
+        marginBottom:normalize(20)
+        //paddingBottom:dim().width*0.01,
+       // paddingTop:dim().width*0.01,
     },
 
     mandatoryStyle: {
@@ -75,8 +76,8 @@ export const styles = StyleSheet.create({
         fontSize: normalize(13),
         lineHeight: normalize(16),
         color: '#FD6510',
-        paddingTop:dim().width*0.01,
-        paddingBottom:dim().width*0.01,
+        //paddingTop:dim().width*0.01,
+        ///paddingBottom:dim().width*0.01,
     },
 
     bankInfoHeading: {
@@ -86,8 +87,8 @@ export const styles = StyleSheet.create({
         fontWeight: '200',
         fontSize: normalize(18),
         color: '#FD6510',
-        paddingTop:dim().width*0.01,
-        paddingBottom:dim().width*0.01,
+       // paddingTop:dim().width*0.01,
+        //paddingBottom:dim().width*0.01,
     },
 
     bankStyle: {

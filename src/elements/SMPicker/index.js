@@ -48,23 +48,23 @@ function SMPicker(props) {
         style={[
           styles.style,
           {
-            color: type === 'primary' ? COLORS.WHITE : COLORS.BRAND_BLUE,
+            color: type === 'primary' ? COLORS.TEXTBOX_LIGHT_GREY : COLORS.SUB_COLOR_DARK_GREY,
             backgroundColor:
-              type === 'primary' ? COLORS.BRAND_BLUE : COLORS.WHITE,
+              type === 'primary' ? COLORS.SUB_COLOR_DARK_GREY : COLORS.TEXTBOX_LIGHT_GREY,
           },
           style,
         ]}
         labelStyle={[
           styles.labelStyle,
           {
-            color: type === 'primary' ? COLORS.WHITE : COLORS.BRAND_BLUE,
+            color: type === 'primary' ? COLORS.TEXTBOX_LIGHT_GREY : COLORS.SUB_COLOR_DARK_GREY,
           },
           labelStyle,
         ]}
         textStyle={[
           styles.textStyle,
           {
-            color: type === 'primary' ? COLORS.WHITE : COLORS.BRAND_BLUE,
+            color: type === 'primary' ? COLORS.TEXTBOX_LIGHT_GREY : COLORS.SUB_COLOR_DARK_GREY,
           },
           textStyle,
         ]}
@@ -73,7 +73,7 @@ function SMPicker(props) {
             type="AntDesign"
             name="caretup"
             style={style}
-            color={type === 'primary' ? COLORS.WHITE : COLORS.BRAND_BLUE}
+            color={type === 'primary' ? COLORS.TEXTBOX_LIGHT_GREY : COLORS.SUB_COLOR_DARK_GREY}
             size={
               ArrowUpIconComponentSize
                 ? ArrowUpIconComponentSize
@@ -86,7 +86,7 @@ function SMPicker(props) {
             type="AntDesign"
             name="caretdown"
             style={style}
-            color={type === 'primary' ? COLORS.WHITE : COLORS.BRAND_BLUE}
+            color={type === 'primary' ? COLORS.TEXTBOX_LIGHT_GREY : COLORS.SUB_COLOR_DARK_GREY}
             size={
               ArrowDownIconComponentSize
                 ? ArrowDownIconComponentSize
@@ -99,14 +99,14 @@ function SMPicker(props) {
           styles.dropDownContainerStyle,
           {
             backgroundColor:
-              type === 'primary' ? COLORS.WHITE : COLORS.BRAND_BLUE,
+              type === 'primary' ? COLORS.TEXTBOX_LIGHT_GREY : COLORS.LIGHT_ORANGE,
           },
           dropDownContainerStyle,
         ]}
         listItemLabelStyle={[
           styles.listItemLabelStyle,
           {
-            color: type === 'primary' ? COLORS.BRAND_BLUE : COLORS.WHITE,
+            color: type === 'primary' ? COLORS.SUB_COLOR_DARK_GREY : COLORS.TEXTBOX_LIGHT_GREY,
           },
           listItemLabelStyle,
         ]}
@@ -114,7 +114,7 @@ function SMPicker(props) {
         listItemContainerStyle={[
           styles.listItemContainerStyle,
           {
-            color: type === 'primary' ? COLORS.BRAND_BLUE : COLORS.WHITE,
+            color: type === 'primary' ? COLORS.SUB_COLOR_DARK_GREY : COLORS.TEXTBOX_LIGHT_GREY,
           },
           listItemContainerStyle,
         ]}
@@ -122,13 +122,13 @@ function SMPicker(props) {
           styles.itemSeparatorStyle,
           {
             backgroundColor:
-              type === 'primary' ? COLORS.BRAND_BLUE : COLORS.WHITE,
+              type === 'primary' ? COLORS.SUB_COLOR_DARK_GREY : COLORS.TEXTBOX_LIGHT_GREY,
           },
         ]}
         tickIconStyle={[
           styles.tickIconStyle,
           {
-            tintColor: type === 'primary' ? COLORS.BRAND_BLUE : COLORS.WHITE,
+            tintColor: type === 'primary' ? COLORS.SUB_COLOR_DARK_GREY: COLORS.TEXTBOX_LIGHT_GREY,
           },
         ]}
         listMode="SCROLLVIEW"
