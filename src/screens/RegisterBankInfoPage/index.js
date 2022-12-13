@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{ useState , useEffect } from "react";
 import { SMText, SMView, SMImage, SMContainer, SMButton, SMTextInput, SMCheckBox } from '../../elements';
 import {
   NJMartLogo,
@@ -6,17 +6,41 @@ import {
 import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 import { ScrollView } from 'react-native';
-import { useState } from "react";
-
+import {useDispatch, useSelector} from 'react-redux';
+import { bankValidator } from './bankValidator';
+import { loginValidator } from '../LoginPage/loginValidator';
 function RegisterBankInfoPage(props) {
   const { navigation } = props;
-  const [bankName, setBankName] = useState('')
-  const [branchName, setBranchName] = useState('')
-  const [accNumber, setAccNumber] = useState('')
-  const [panNum, setPanNum] = useState('')
-  const [ifsc, setIfsc] = useState('')
+
+  const [bankInfo, setBankInfo] = useState({
+    bankName: '',
+    branchName: '',
+    accNumber: '',
+    panNum: '',
+    ifsc: '',
+  })
+  const handleOnChange = (key, value) => {
+    setBankInfo({
+      ...bankInfo,
+      [key]:value,
+    });
+  };
+  const [errorMessageObj, seterrorMessageObj] = useState({
+    valid: false,
+  });
+  const clearErrorMessageObj = () => {
+    seterrorMessageObj({
+      valid: false,
+    });
+  };
   const handleRegisterSecurityInfoPage = () => {
-    navigation.navigate('RegisterSecurityInfoPage');
+    const validatedData  = loginValidator({...bankInfo});
+    if (validatedData.valid) {
+      clearErrorMessageObj();
+      navigation.navigate('RegisterSecurityInfoPage');
+    } else {
+      seterrorMessageObj({ ...validatedData });
+    }
   };
 
   return (
@@ -42,50 +66,61 @@ function RegisterBankInfoPage(props) {
           <SMText style={styles.bankInfoHeading}>
             Bank Information
           </SMText>
-
           <ScrollView nestedScrollEnabled>
             <SMView style={styles.divStyle}>
 
               <SMTextInput
                 style={styles.bankStyle}
                 placeholder={"Bank Name"}
-                value={bankName}
-                onChangeText={value => setBankName(value)}
+                value={bankInfo.bankName}
+                onChangeText={value => {
+                  handleOnChange('bankName', value);
+                }}
               />
 
               <SMTextInput
                 style={styles.branchStyle}
                 placeholder={"Branch Name"}
-                value={branchName}
-                onChangeText={value => setBranchName(value)}
+                value={bankInfo.branchName}
+                onChangeText={value => {
+                  handleOnChange('branchName', value);
+                }}
               />
 
               <SMTextInput
                 style={styles.accountStyle}
                 placeholder={"Account Number"}
-                value={accNumber}
-                onChangeText={value => setAccNumber(value)}
+                value={bankInfo.accNumber}
+                onChangeText={value => {
+                  handleOnChange('accNumber', value);
+                }}
               />
 
               <SMTextInput
                 style={styles.pancardStyle}
                 placeholder={"Pan Number*"}
-                value={panNum}
-                onChangeText={value => setPanNum(value)}
+                value={bankInfo.panNum}
+                onChangeText={value => {
+                  handleOnChange('panNum', value);
+                }}
+                errorMessage={errorMessageObj?.panNum}
               />
 
               <SMTextInput
                 style={styles.ifscStyle}
                 placeholder={"IFSC Code"}
-                value={ifsc}
-                onChangeText={value => setIfsc(value)}
+                value={bankInfo.ifsc}
+                onChangeText={value => {
+                  handleOnChange('ifsc', value);
+                }}
               />
 
               <SMButton
                 buttonText="Next"
                 type="nextbutton"
                 buttonStyle={styles.nextButtonStyle}
-                onPress={handleRegisterSecurityInfoPage}
+                // onPress={() =>handleRegisterSecurityInfoPage()}}
+                onPress={() =>handleRegisterSecurityInfoPage()}
               />
 
             </SMView>

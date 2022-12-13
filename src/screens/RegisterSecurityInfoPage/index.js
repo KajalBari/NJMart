@@ -8,13 +8,55 @@ import LinearGradient from 'react-native-linear-gradient';
 import { TextInput,ScrollView } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {normalize} from '../../constants/Platform';
+import {securityInfoValidator} from './securityInfoValidator';
 
 function RegisterSecurityInfoPage(props) {
   const { navigation } = props;
-  const [userId, setUserId] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirmPass, setConfirmPass] = useState('')
-  const [yourAns, setYourAns] = useState('')
+
+  const [securityInfo, setSecurityInfo] = useState({
+    userId: '',
+    password: '',
+    confirmPass: '',
+    yourAns: '',
+  })
+
+  const [errorMessageObj, seterrorMessageObj] = useState({
+    valid: false,
+  });
+  const clearErrorMessageObj = () => {
+    seterrorMessageObj({
+      valid: false,
+    });
+  };
+
+  const [loginState, setloginState] = useState({
+    userId: '',
+    password: '',
+    confirmPass:'',
+  })
+
+  const handleOnChange = (key, value) => {
+    setloginState({
+      ...loginState,
+      [key]:value,
+    });
+  };
+
+  const submit = () => {
+    const validatedData  = securityInfoValidator({...loginState});
+      // console.log("otpValidator",otpValidator.valid);
+      if (validatedData.valid) {
+        clearErrorMessageObj();
+        navigation.navigate('TermsandConditions');
+      } else {
+        seterrorMessageObj({ ...validatedData });
+      }
+    }
+
+  // const [userId, setUserId] = useState('')
+  // const [password, setPassword] = useState('')
+  // const [confirmPass, setConfirmPass] = useState('')
+  // const [yourAns, setYourAns] = useState('')
 
   const [applicantRelation, setApplicantRelation] = useState('Select');
   const [openApplicantRelationPicker, setOpenApplicantRelationPicker] = useState(false);
@@ -25,13 +67,12 @@ function RegisterSecurityInfoPage(props) {
     {label: 'What Is Your Favorite PastTime?', value: 'favPastTime'},
     {label: 'What is Your All-Time Favorite Sports Team?', value: 'favTeam'},
     {label: 'What Was Your High School Mascot?', value: 'schoolMascot'},
-    {label: 'What Is Your Pet Name?', value: 'petName'},
-    
+    {label: 'What Is Your Pet Name?', value: 'petName'}, 
   ]);
 
-  const handleTermsandConditions = () => {
-    navigation.navigate('TermsandConditions');
-  };
+  // const handleTermsandConditions = () => {
+  //   navigation.navigate('TermsandConditions');
+  // };
 
   return (
     <SMView style={styles.containerStyle}>
@@ -63,21 +104,33 @@ function RegisterSecurityInfoPage(props) {
             style={styles.userIdStyle}
             placeholder={"User Id*"}
             value={userId}
-            onChangeText={value => setUserId(value)}
+            //onChangeText={value => setUserId(value)}
+            onChangeText={value => {
+              handleOnChange('userId', value);
+            }}
+            errorMessage={errorMessageObj?.userId}
           />
 
           <SMTextInput
             style={styles.passwordStyle}
             placeholder={"Password*"}
             value={password}
-            onChangeText={value => setPassword(value)}
+           // onChangeText={value => setPassword(value)}
+           onChangeText={value => {
+            handleOnChange('password', value);
+          }}
+          errorMessage={errorMessageObj?.password}
           />
 
           <SMTextInput
             style={styles.confirmPassStyle}
             placeholder={"Confirm Password*"}
             value={confirmPass}
-            onChangeText={value => setConfirmPass(value)}
+            //onChangeText={value => setConfirmPass(value)}
+            onChangeText={value => {
+              handleOnChange('confirmPass', value);
+            }}
+            errorMessage={errorMessageObj?.confirmPass}
           />
 
             <SMView style={styles.applicantRelationView}>
@@ -114,7 +167,8 @@ function RegisterSecurityInfoPage(props) {
             buttonText="Next"
             type="nextbutton"
             buttonStyle={styles.nextButtonStyle}
-            onPress={handleTermsandConditions}
+           // onPress={handleTermsandConditions}
+           onPress={() => {submit()}}
           />
 
           </SMView>

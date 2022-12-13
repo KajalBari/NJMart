@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
+import moment from 'moment';
 import {
   SMText,
   SMView,
@@ -7,12 +8,11 @@ import {
   SMButton,
   SMTextInput,
   SMCheckBox,
+  SMCalendarPicker,
 } from '../../elements';
 import { NJMartLogo } from '../../assets';
 import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { normalize } from '../../constants/Platform';
 import { ScrollView, TouchableOpacity, Text, View } from 'react-native';
 
 function RegisterPersonalPage(props) {
@@ -21,7 +21,7 @@ function RegisterPersonalPage(props) {
     navigation.navigate('RegisterContactPage');
   };
 
-  const [pos, setPos] = useState("")
+  const [pos, setPos] = useState('')
   const [applicantName, setApplicantName] = useState('')
   const [dob, setDob] = useState('')
   const [fatherName, setFatherName] = useState('')
@@ -46,7 +46,6 @@ function RegisterPersonalPage(props) {
 
           <ScrollView nestedScrollEnabled>
             <SMView style={styles.divStyle}>
-
 
               <SMView style={styles.containerRadio}>
                 <SMText style={styles.textPos}>Title</SMText>
@@ -75,6 +74,7 @@ function RegisterPersonalPage(props) {
                 style={styles.dobStyle}
                 placeholder={'DOB'} value={dob}
                 onChangeText={value => setDob(value)} />
+
 
               <SMTextInput
                 style={styles.fatherNameStyle}

@@ -9,10 +9,48 @@ import LinearGradient from 'react-native-linear-gradient';
 import { ScrollView } from 'react-native';
 import { useState } from "react";
 import {normalize} from '../../constants/Platform';
+import { contactValidation } from './contactValidation';
+
 //import { TextInput } from "react-native-paper";
 
 function RegisterContactPage(props) {
   const { navigation } = props;
+
+
+  const [errorMessageObj, seterrorMessageObj] = useState({
+    valid: false,
+  });
+  const clearErrorMessageObj = () => {
+    seterrorMessageObj({
+      valid: false,
+    });
+  };
+
+  const [loginState, setloginState] = useState({
+    mobile: '',
+  })
+
+  const handleOnChange = (key, value) => {
+    setloginState({
+      ...loginState,
+      [key]:value,
+    });
+  };
+
+  const submit = () => {
+    const validatedData  = contactValidation({...loginState});
+      // console.log("otpValidator",otpValidator.valid);
+      if (validatedData.valid) {
+        clearErrorMessageObj();
+        navigation.navigate('RegisterNomineePage');
+      } else {
+        seterrorMessageObj({ ...validatedData });
+      }
+    }
+//console.log(loginValidator);
+
+
+
   const [postalAdd, setPostalAdd] = useState('')
   const [country, setCountry] = useState('')
  // const [state, setState] = useState('')
@@ -118,8 +156,11 @@ function RegisterContactPage(props) {
               <SMTextInput
                 style={styles.mobileStyle}
                 placeholder={"Mobile*"}
-                value={mobile}
-                onChangeText={value => setMobile(value)}
+                value={loginState.mobile}
+                onChangeText={value =>{
+                  handleOnChange('mobile',value);
+                }}
+                errorMessage={errorMessageObj?.mobile}
               />
 
               <SMTextInput
@@ -127,13 +168,15 @@ function RegisterContactPage(props) {
                 placeholder={"Email"}
                 value={email}
                 onChangeText={value => setEmail(value)}
+  
               />
 
               <SMButton
                 buttonText="Next"
                 type="nextbutton"
                 buttonStyle={styles.nextButtonStyle}
-                onPress={handleRegisterNomineePage}
+               // onPress={handleRegisterNomineePage}
+                onPress={() => {submit()}}
               />
             </SMView>
           </ScrollView>
