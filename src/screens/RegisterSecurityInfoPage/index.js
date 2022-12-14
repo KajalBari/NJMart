@@ -36,14 +36,14 @@ function RegisterSecurityInfoPage(props) {
   })
 
   const handleOnChange = (key, value) => {
-    setloginState({
-      ...loginState,
+    setSecurityInfo({
+      ...securityInfo,
       [key]:value,
     });
   };
 
   const submit = () => {
-    const validatedData  = securityInfoValidator({...loginState});
+    const validatedData  = securityInfoValidator({...securityInfo});
       // console.log("otpValidator",otpValidator.valid);
       if (validatedData.valid) {
         clearErrorMessageObj();
@@ -103,7 +103,7 @@ function RegisterSecurityInfoPage(props) {
           <SMTextInput
             style={styles.userIdStyle}
             placeholder={"User Id*"}
-            value={userId}
+            value={securityInfo.userId}
             //onChangeText={value => setUserId(value)}
             onChangeText={value => {
               handleOnChange('userId', value);
@@ -114,7 +114,7 @@ function RegisterSecurityInfoPage(props) {
           <SMTextInput
             style={styles.passwordStyle}
             placeholder={"Password*"}
-            value={password}
+            value={securityInfo.password}
            // onChangeText={value => setPassword(value)}
            onChangeText={value => {
             handleOnChange('password', value);
@@ -125,7 +125,7 @@ function RegisterSecurityInfoPage(props) {
           <SMTextInput
             style={styles.confirmPassStyle}
             placeholder={"Confirm Password*"}
-            value={confirmPass}
+            value={securityInfo.confirmPass}
             //onChangeText={value => setConfirmPass(value)}
             onChangeText={value => {
               handleOnChange('confirmPass', value);
@@ -159,7 +159,7 @@ function RegisterSecurityInfoPage(props) {
           <SMTextInput
             style={styles.answerStyle}
             placeholder={"Your Answer"}
-            value={yourAns}
+            value={securityInfo.yourAns}
             onChangeText={value => setYourAns(value)}
           />
 

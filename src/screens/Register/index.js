@@ -47,7 +47,7 @@ function Register(props) {
 
             <SMTextInput
               style={styles.sponsorId}
-              placeholder={"Sponsor ID*"}
+              placeholder={"Sponsor ID"}
               value={sponsorId}
               onChangeText={value => setSponsorId(value)}
             />

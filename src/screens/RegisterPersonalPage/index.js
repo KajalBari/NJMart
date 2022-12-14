@@ -14,17 +14,52 @@ import { NJMartLogo } from '../../assets';
 import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 import { ScrollView, TouchableOpacity, Text, View } from 'react-native';
+import {personalInfoValidator} from './personalInfoValidator';
+
 
 function RegisterPersonalPage(props) {
   const { navigation } = props;
-  const handleRegisterContactPage = () => {
-    navigation.navigate('RegisterContactPage');
+
+  const [personalInfo, setPersonalInfo] = useState({
+    applicantName: '',
+    dob: '',
+    fatherName: '',
+  })
+
+  const handleOnChange = (key, value) => {
+    setPersonalInfo({
+      ...personalInfo,
+      [key]:value,
+    });
+  };
+  const [errorMessageObj, seterrorMessageObj] = useState({
+    valid: false,
+  });
+  const clearErrorMessageObj = () => {
+    seterrorMessageObj({
+      valid: false,
+    });
   };
 
-  const [pos, setPos] = useState('')
-  const [applicantName, setApplicantName] = useState('')
-  const [dob, setDob] = useState('')
-  const [fatherName, setFatherName] = useState('')
+  const handleRegisterContactPage = () => {
+    const validatedData  = personalInfoValidator({...personalInfo});
+    if (validatedData.valid) {
+      clearErrorMessageObj();
+      navigation.navigate('RegisterContactPage');
+    } else {
+      seterrorMessageObj({ ...validatedData });
+    }
+  };
+
+
+  // const handleRegisterContactPage = () => {
+  //   navigation.navigate('RegisterContactPage');
+  // };
+
+   const [pos, setPos] = useState('')
+  // const [applicantName, setApplicantName] = useState('')
+  // const [dob, setDob] = useState('')
+  // const [fatherName, setFatherName] = useState('')
   return (
     <SMView style={styles.containerStyle} >
       <LinearGradient
@@ -67,19 +102,35 @@ function RegisterPersonalPage(props) {
 
               <SMTextInput
                 style={styles.applicantNameStyle}
-                placeholder={"Applicant's Name*"} value={applicantName}
-                onChangeText={value => setApplicantName(value)} />
+                placeholder={"Applicant's Name*"} 
+                value={personalInfo.applicantName}
+                //onChangeText={value => setApplicantName(value)}
+                onChangeText={value => {
+                  handleOnChange('applicantName', value);
+                }}
+                errorMessage={errorMessageObj?.applicantName}
+                 />
 
               <SMTextInput
                 style={styles.dobStyle}
-                placeholder={'DOB'} value={dob}
-                onChangeText={value => setDob(value)} />
+                placeholder={'DOB'} 
+                value={personalInfo.dob}
+                //onChangeText={value => setDob(value)}
+                onChangeText={value => {
+                  handleOnChange('dob', value);
+                }}
+                 />
 
 
               <SMTextInput
                 style={styles.fatherNameStyle}
-                placeholder={"Father's/Husband Name"} value={fatherName}
-                onChangeText={value => setFatherName(value)} />
+                placeholder={"Father's/Husband Name"} 
+                value={personalInfo.fatherName}
+                //onChangeText={value => setFatherName(value)}
+                onChangeText={value => {
+                  handleOnChange('fatherName', value);
+                }}
+                 />
 
               <SMView style={styles.containerRadio}>
                 <SMText style={styles.textPos}>Marital Status</SMText>

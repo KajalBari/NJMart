@@ -47,6 +47,11 @@ function RegisterContactPage(props) {
         seterrorMessageObj({ ...validatedData });
       }
     }
+
+    const [countryCodePickerItems, setCountryCodePickerItems] = useState([
+      {label: '+91', value: '+91'},
+      {label: '+1', value: '+1'},
+    ]);
 //console.log(loginValidator);
 
 
@@ -157,6 +162,8 @@ function RegisterContactPage(props) {
                 style={styles.mobileStyle}
                 placeholder={"Mobile*"}
                 value={loginState.mobile}
+                items={countryCodePickerItems}
+                setItems={setCountryCodePickerItems}
                 onChangeText={value =>{
                   handleOnChange('mobile',value);
                 }}

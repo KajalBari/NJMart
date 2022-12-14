@@ -9,6 +9,7 @@ import { ScrollView } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import { bankValidator } from './bankValidator';
 import { loginValidator } from '../LoginPage/loginValidator';
+
 function RegisterBankInfoPage(props) {
   const { navigation } = props;
 

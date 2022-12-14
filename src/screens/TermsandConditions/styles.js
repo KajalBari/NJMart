@@ -4,6 +4,36 @@ import { COLORS } from '../../constants/Colors';
 
 export const styles = StyleSheet.create({
 
+  termsAndConditionsLabel: {
+    // fontSize: normalize(9),
+     //color: COLORS.BRAND_BLUE,
+
+    width: normalize(150),
+    marginLeft: normalize(30),
+    marginTop: normalize(20),
+    fontFamily: 'Inter',
+    fontWeight: "200",
+    fontSize: normalize(15),
+    color: "#888888",
+    lineHeight: normalize(25),
+  },
+
+  termsAndConditionsCheckBox: {
+    // width: normalize(12),
+    // height: normalize(12),
+    // backgroundColor: COLORS.BRAND_BLUE,
+
+    width: normalize(20),
+    height: normalize(20),
+    marginTop: normalize(10),
+    marginLeft: normalize(20),
+  },
+
+
+
+
+
+
   containerStyle:{
     minWidth: dim().width * 0.9,
     minHeight: dim().height * 10,

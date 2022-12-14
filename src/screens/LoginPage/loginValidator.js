@@ -7,6 +7,10 @@ email: {
     presence: {
       message: 'Enter the EmailID',
     },
+   // valid: {
+      //       rule: emailID => validateUserEmail(emailID),
+      //       message: 'Enter a valid EmailID',
+      //     },
   
   },
   password: {
@@ -14,6 +18,10 @@ email: {
     presence: {
       message: 'Enter the password',
     },
+    //valid: {
+      //       rule: password => validatePassword(password),
+      //       message: 'Enter a valid password',
+      //     },
   },
   panNum:{
     required: true,

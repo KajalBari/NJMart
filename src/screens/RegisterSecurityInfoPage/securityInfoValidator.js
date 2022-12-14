@@ -12,10 +12,10 @@ const validationRules = {
         presence: {
           message: 'Enter the UserId',
         },
-        valid: {
-          rule: userId => validateUserEmail(userId),
-          message: 'Enter a valid UserId',
-        },
+        // valid: {
+        //   rule: userId => validateUserEmail(userId),
+        //   message: 'Enter a valid UserId',
+        // },
       },
 
       password: {
@@ -23,24 +23,24 @@ const validationRules = {
         presence: {
           message: 'Enter the password',
         },
-        valid: {
-          rule: password => validatePassword(password),
-          message: 'Enter a valid password',
-        },
+        // valid: {
+        //   rule: password => validatePassword(password),
+        //   message: 'Enter a valid password',
+        // },
       },
       confirmPass: {
         required: true,
         presence: {
           message: 'Enter the password again for confirmation',
         },
-        valid: {
-          message: 'Enter a valid password',
-        },
-        match: {
-          rule: (password, confirmPass) =>
-            passwordsMatch(password, confirmPass),
-          message: 'Passwords do not match',
-        },
+        // valid: {
+        //   message: 'Enter a valid password',
+        // },
+        // match: {
+        //   rule: (password, confirmPass) =>
+        //     passwordsMatch(password, confirmPass),
+        //   message: 'Passwords do not match',
+        // },
       },
 };
 
