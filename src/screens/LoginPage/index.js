@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { SMText, SMView, SMImage, SMContainer, SMButton, SMTextInput } from '../../elements';
 import {
   NJMartLogo,
+  showPasswordPNG,
+  dontShowPasswordPNG,
 } from '../../assets';
 import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
-import { SliderComponent, TouchableOpacity, Alert } from 'react-native';
+import { SliderComponent, TouchableOpacity, Alert ,Pressable} from 'react-native';
 import { loginValidator } from './loginValidator';
-import { TextInput } from 'react-native';
 import { Button } from 'react-native-paper';
-// import { set } from 'lodash';
+
 
 function LoginPage(props) {
   const { navigation } = props;
@@ -31,6 +32,7 @@ function LoginPage(props) {
     password: '',
   })
 
+  const [showPassword, setShowPassword] = useState(false);
   const handleOnChange = (key, value) => {
     setloginState({
       ...loginState,
@@ -41,7 +43,6 @@ function LoginPage(props) {
 
   const submit = () => {
     const validatedData  = loginValidator({...loginState});
-      // console.log("otpValidator",otpValidator.valid);
       if (validatedData.valid) {
         clearErrorMessageObj();
         navigation.navigate('Dashboard');
@@ -49,20 +50,6 @@ function LoginPage(props) {
         seterrorMessageObj({ ...validatedData });
       }
     }
-
-  // const submit = () =>{
-  //   //return Alert.alert(email, password);
-  //   if (email === "kajal" && password ==="bari")
-  //     Alert.alert('Email and Password is Correct')
-  //   else{
-  //     Alert.alert('Email and Password is not Correct')
-  //   } 
-  // }
-
-  // const handleDashboard = () => {
-  //   // console.log("Button Press")
-  //   navigation.navigate('Dashboard');
-  // };
 
   return (
     <SMView style={styles.containerStyle} >
@@ -92,9 +79,30 @@ function LoginPage(props) {
           onChangeText={value => {
             handleOnChange('password', value);
           }}
+          secureTextEntry={!showPassword}
+          
+          rightElement={
+            <Pressable
+              onPress={() => {
+                setShowPassword(!showPassword);
+              }}>
+              {showPassword ? (
+                <SMImage
+                  source={showPasswordPNG}
+                  style={styles.showPasswordPNG}
+                />
+              ) : (
+                <SMImage
+                  source={dontShowPasswordPNG}
+                  style={styles.showPasswordPNG}
+                />
+              )}
+            </Pressable>
+          }
           errorMessage={errorMessageObj?.password}
         />
-        <TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigation.navigate('ForgetPassword', { name: 'ForgetPassword' })}>
           <SMText style={styles.forgetPassStyle}>Forgot Password?</SMText>
         </TouchableOpacity>
         <SMButton

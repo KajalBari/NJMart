@@ -14,4 +14,5 @@ export {default as Downlines} from './Downlines';
 export {default as ProfileMenuBar} from './ProfileMenuBar';
 export {default as ProfileEdit} from './ProfileEdit';
 export {default as MenubarNavigation} from './MenubarNavigation';
+export {default as ForgetPassword} from './ForgetPassword';
 

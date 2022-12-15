@@ -4,7 +4,7 @@ import {normalize} from '../../constants/Platform';
 
 export const styles = StyleSheet.create({
   defaultDialogStyle: {
-    backgroundColor: COLORS.BRAND_BLUE,
+    backgroundColor: COLORS.LIGHT_ORANGE,
     minHeight: normalize(150),
     alignItems: 'center',
     justifyContent: 'center',
@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   dialogContentStyle: {
-    backgroundColor: COLORS.BRAND_BLUE,
+    backgroundColor: COLORS.LIGHT_ORANGE,
     justifyContent: 'center',
     alignSelf: 'center',
     borderRadius: normalize(10),

@@ -74,6 +74,13 @@ export const styles = StyleSheet.create({
         height: normalize(40),
     },
 
+    showPasswordPNG: {
+        width: normalize(14),
+        height: normalize(14),
+        resizeMode: 'contain',
+        tintColor: COLORS.BLACK,
+      },
+
     forgetPassStyle: {
         // display: 'flex',
         //  flexDirection: 'row',
@@ -86,6 +93,7 @@ export const styles = StyleSheet.create({
         fontSize: normalize(15),
         color: "#888888",
     },
+
 
     loginButtonStyle: {
         width: normalize(190),

@@ -4,14 +4,11 @@ import {COLORS} from '../../constants/Colors';
 
 export const styles = StyleSheet.create({
 
-  calendarStyle: {
-    width: dim().width * 0.8,
-    height: normalize(50),
-    marginVertical: normalize(10),
-   // backgroundColor: colors.smInputFieldBackground,
-   // borderColor: colors.smInputFieldBackground,
-  },
-
+  // calendarStyle: {
+  //   width: dim().width * 0.8,
+  //   height: normalize(50),
+  //   marginVertical: normalize(10),
+  // },
 
   containerStyle: {
     minWidth:dim().width*0.9,

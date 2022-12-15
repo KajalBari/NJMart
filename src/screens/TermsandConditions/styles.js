@@ -96,8 +96,7 @@ export const styles = StyleSheet.create({
   },
 
   divStyle: {
-    minHeight: dim().height * 0,
-    //alignItems: 'center', 
+    minHeight: dim().height * 0, 
     flex: 1,
     justifyContent: 'center',
   },

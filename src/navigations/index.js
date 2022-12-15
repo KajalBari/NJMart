@@ -19,6 +19,7 @@ import {
   ProfileMenuBar,
   ProfileEdit,
   MenubarNavigation,
+  ForgetPassword,
 } from '../screens';
 import {COLORS} from '../constants/Colors';
 import {SMImage} from '../elements';
@@ -151,6 +152,12 @@ export default function MainContainer(props) {
         options={{headerTitle:'',gestureEnabled:false}}
         />
         
+        <Stack.Screen
+        name="ForgetPassword"
+        component={ForgetPassword}
+        options={{headerTitle:'',gestureEnabled:false}}
+        />
+
 
       </Stack.Navigator>
     </NavigationContainer>

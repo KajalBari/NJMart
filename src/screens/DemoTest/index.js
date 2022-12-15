@@ -1,156 +1,133 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
+import {Pressable} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {useDispatch, useSelector} from 'react-redux';
+import {
+  emailPNG,
+  passwordKeyPNG,
+  showPasswordPNG,
+  dontShowPasswordPNG,
+  firstLastNamePNG,
+  referralWalletPNG
+} from '../../assets';
 import {COLORS} from '../../constants/Colors';
 import {normalize} from '../../constants/Platform';
 import {
   SMButton,
+  SMCheckBox,
   SMContainer,
+  SMDialog,
+  SMIcons,
+  SMImage,
   SMPicker,
   SMSnackBar,
   SMText,
   SMTextInput,
   SMView,
 } from '../../elements';
-import {
-  BankDetailsPopup,
-  BankAccountDeletePopup,
-  BankDetailsRow,
-} from '../../components';
-import {addBankDetailsValidator} from './addBankDetailsValidator';
-import * as profileAction from '../../actions';
-import {textInputArr} from './consts';
-import {checkifEmpty, validateIFSCCode} from '../../utils/commonUtils';
+import {createAccountValidator} from './createAccountValidator';
 import {styles} from './styles';
-import useStyles from './styles';
-import { useTheme } from 'react-native-paper';
+import * as authAction from '../../actions';
+import { validatePassword } from '../../utils/commonUtils';
 
-function AddBankDetails(props) {
-  const { colors } = useTheme();
-  const styles = useStyles();
-  const {navigation} = props;
+function CreateAccount(props) {
+  const {navigation,route} = props;
   const dispatch = useDispatch();
+  const params = route?.params;
+  
+  const [createAccountState, setcreateAccountState] = useState({
+    firstName: '',
+    lastName: '',
+    emailID: '',
+    password: '',
+    confirmPassword: '',
+    mobileNumber: '',
+    RefferalCode: params?.referralCode?.toString() || '489433837',
+    termsAndConditions: false,
+  });
 
-  const initialAddBankDetailState = {
-    accountHolderName: '',
-    accountNumber: '',
-    confirmAccountNumber: '',
-    ifscCode: '',
-    bankName: '',
-    branchName: '',
-    city: '',
-    swiftCode: '',
-    upi: '',
-  };
-
-  const [addBankDetailState, setaddBankDetailState] = useState(
-    initialAddBankDetailState,
-  );
-  const [bankAccountDeletePopupVisible, setBankAccountDeletePopupVisible] =
-    useState('');
-  const [bankDetailsPopupVisible, setBankDetailsPopupVisible] = useState({});
-
-  const [accountType, setAccountType] = useState('savings');
-  const [openAccountTypePicker, setOpenAccountTypePicker] = useState(false);
-  const [accountTypePickerItems, setAccountTypePickerItems] = useState([
-    {label: 'Savings', value: 'savings'},
-    {label: 'Current', value: 'current'},
+  const [countryCode, setCountryCode] = useState('+91');
+  const [openCountryCodePicker, setOpenCountryCodePicker] = useState(false);
+  const [showRegisterConfirmationDialog, setShowRegisterConfirmationDialog] =
+    useState(false);
+  const [showPasswordInfo, setShowPasswordInfo] =
+    useState(false);
+  const [countryCodePickerItems, setCountryCodePickerItems] = useState([
+    {label: '+91', value: '+91'},
+    {label: '+1', value: '+1'},
   ]);
-
   const [errorMessageObj, seterrorMessageObj] = useState({
     valid: false,
   });
-
-  const bankDetailsLoading = useSelector(
-    state => state.profile.bankDetailsLoading,
+  const registerUserLoading = useSelector(
+    state => state.auth.registerUserLoading,
   );
-  const ifscCodeBankDetailsLoading = useSelector(
-    state => state.profile.ifscCodeBankDetailsLoading,
+  const registerUserData = useSelector(
+    state => state.auth.registerUserData,
   );
-  const bankDetails = useSelector(state => state.profile.bankDetails);
-  const ifscCodeBankDetails = useSelector(
-    state => state.profile.ifscCodeBankDetails,
+  const registerUserSuccess = useSelector(
+    state => state.auth.registerUserSuccess,
   );
 
   const snackAlertMessage = useSelector(
     state => state.common.snackAlertMessage,
   );
-  const getBankDetails = () => {
-    dispatch(profileAction.getBankDetails());
+
+  const navigateToLoginScreen = () => {
+    setShowRegisterConfirmationDialog(false);
+    navigation.navigate('Login');
   };
 
   useEffect(() => {
-    getBankDetails();
+    if (registerUserSuccess) {
+      setShowRegisterConfirmationDialog(true);
+      // setTimeout(() => {
+      //   navigateToLoginScreen();
+      // }, 5000);
+    }
+  }, [registerUserSuccess]);
+
+  useEffect(() => {
     return () => {
-      dispatch(profileAction.clearIfscbankDetails());
+      dispatch(authAction.clearAuthState());
     };
   }, []);
 
-  useEffect(() => {
-    if (validateIFSCCode(addBankDetailState.ifscCode)) {
-      dispatch(profileAction.getIfscBankDetails(addBankDetailState.ifscCode));
-    } else {
-      setaddBankDetailState({
-        ...addBankDetailState,
-        bankName: '',
-        branchName: '',
-        city: '',
-      });
-    }
-  }, [addBankDetailState.ifscCode]);
-
-  useEffect(() => {
-    setaddBankDetailState({
-      ...addBankDetailState,
-      bankName: ifscCodeBankDetails?.bank_name || '',
-      branchName: ifscCodeBankDetails?.branch || '',
-      city: ifscCodeBankDetails?.district || '',
+  const handleOnChange = (key, value) => {
+    setcreateAccountState({
+      ...createAccountState,
+      [key]: value,
     });
-  }, [ifscCodeBankDetails]);
+  };
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const clearErrorMessageObj = () => {
     seterrorMessageObj({
       valid: false,
     });
   };
-
-  const handleOnChange = (key, value) => {
-    setaddBankDetailState({
-      ...addBankDetailState,
-      [key]: value,
+// testing
+  const handleRegisterPress = () => {
+    const validatedData = createAccountValidator({
+      ...createAccountState,
+      countryCode,
     });
-  };
-
-  const handleSubmit = () => {
-    const validatedData = addBankDetailsValidator({
-      ...addBankDetailState,
-      accountType,
-    });
+    if(!validatePassword(createAccountState.password)){
+      setShowPasswordInfo(true);
+    }
     if (validatedData.valid) {
       clearErrorMessageObj();
       dispatch(
-        profileAction.addBankDetails(
-          {...addBankDetailState, accountType},
+        authAction.registerUser(
+          {...createAccountState, countryCode: countryCode},
           navigation,
         ),
       );
-      setaddBankDetailState(initialAddBankDetailState);
     } else {
       seterrorMessageObj({...validatedData});
     }
-  };
-
-  const handleDeleteBankDetails = () => {
-    dispatch(profileAction.deleteBankDetails(bankAccountDeletePopupVisible));
-    setBankAccountDeletePopupVisible('');
-  };
-
-  const handlebankAccountDeletePopupClose = () => {
-    setBankAccountDeletePopupVisible('');
-  };
-
-  const handleBankDetailsDismiss = () => {
-    setBankDetailsPopupVisible({});
   };
 
   return (
@@ -159,130 +136,269 @@ function AddBankDetails(props) {
         extraScrollHeight={normalize(80)}
         nestedScrollEnabled>
         <SMView style={styles.container}>
-          <SMText type="Headline" style={styles.addBankDetailsText}>
-            Add Bank Details 
+          <SMText type="Headline" style={styles.createAccountText}>
+            Create Account
           </SMText>
-          <SMView style={styles.instructionsView}>
-            <SMText type="Title" style={styles.instructionTitle}>
-              Instructions
-            </SMText>
-            <SMText type="Paragraph" style={styles.instructionsText}>
-              Please fill the below details carefully. Account holder's name in
-              bank should match with PAN card name.
-            </SMText>
-            <SMText type="Paragraph" style={styles.warningText}>
-              * Maximum of 5 bank accounts can be added.
-            </SMText>
-          </SMView>
-          <SMView style={styles.addBankDetailsView}>
-            <SMText type="Paragraph" style={styles.innerViewTitle}>
-              ENTER YOUR BANK ACCOUNT DETAILS
-            </SMText>
-            {textInputArr.map(txtInp => {
-              return (
-                <SMTextInput
-                  maxLength={txtInp.maxLength}
-                  autoFocus={txtInp.autoFocus}
-                  type="secondary"
-                  // style={styles.InputTextStyle}
-                  keyboardType={txtInp.keyboardType}
-                  placeholder={txtInp.placeholder}
-                  onChangeText={value => {
-                    handleOnChange(txtInp.onChangeState, value);
-                  }}
-                  value={addBankDetailState[txtInp.onChangeState]}
-                  errorMessage={errorMessageObj[txtInp.onChangeState] || null}
-                  style={styles.textInputStyle}
-                  inputStyle={styles.inputStyle}
-                  placeholderTextColor={colors.smHeaderText}
-                  editable={bankDetails.length < 5}
-                  loader={
-                    txtInp?.onChangeState === 'ifscCode' &&
-                    ifscCodeBankDetailsLoading
-                  }
-                />
-              );
-            })}
-            <SMView style={styles.accountTypeView}>
-              <SMText type="Paragraph" style={styles.accountTypeText}>
-                Account Type:
-              </SMText>
-              <SMPicker
-                type="secondary"
-                open={openAccountTypePicker}
-                value={accountType}
-                items={accountTypePickerItems}
-                setOpen={setOpenAccountTypePicker}
-                setItems={setAccountTypePickerItems}
-                containerStyle={styles.kycDropDownContainer}
-                style={styles.accountTypeStyle}
-                placeholder={'Savings'}
-                setValue={setAccountType}
-                placeholderStyle={styles.accountTypePlaceholderStyle}
-                ArrowUpIconComponentSize={normalize(14)}
-                ArrowDownIconComponentSize={normalize(14)}
-                textStyle={styles.accountTypeTextStyle}
-                disabled={bankDetails.length >= 5}
-              />
-            </SMView>
-          </SMView>
-          <SMButton
-            buttonText="SUBMIT"
-            type="secondary"
-            buttonStyle={styles.submitButton}
-            textStyle={styles.submitButtonText}
-            onPress={handleSubmit}
-            loader={bankDetailsLoading}
-            disableButton={bankDetails.length >= 5 || bankDetailsLoading}
+          <SMTextInput
+            maxLength={50}
+            autoFocus
+            type="primary"
+            keyboardType="default"
+            placeholder={'First Name'}
+            onChangeText={value => {
+              handleOnChange('firstName', value);
+            }}
+            value={createAccountState.firstName}
+            leftElement={
+              <SMImage source={firstLastNamePNG} style={styles.firstNamePNG} />
+            }
+            inputStyle={styles.firstNameInput}
+            errorMessage={errorMessageObj?.firstName}
           />
-          {bankDetails?.length > 0 &&
-            bankDetails.map((bankDet, idx) => {
-              return (
-                <BankDetailsRow
-                  bankName={bankDet?.bank_name || ''}
-                  accountNumber={bankDet?.account_no || ''}
-                  idx={idx + 1}
-                  status={bankDet.status}
-                  onBankNamePress={() => setBankDetailsPopupVisible(bankDet)}
-                  onDeleteBank={() =>
-                    setBankAccountDeletePopupVisible(bankDet.id)
-                  }
-                />
+          <SMTextInput
+            maxLength={50}
+            type="primary"
+            keyboardType="default"
+            placeholder={'Last Name'}
+            onChangeText={value => {
+              handleOnChange('lastName', value);
+            }}
+            value={createAccountState.lastName}
+            leftElement={
+              <SMImage source={firstLastNamePNG} style={styles.lastNamePNG} />
+            }
+            inputStyle={styles.lastNameInput}
+            errorMessage={errorMessageObj?.lastName}
+          />
+          <SMTextInput
+            maxLength={255}
+            type="primary"
+            keyboardType="email-address"
+            placeholder={'Email'}
+            onChangeText={value => {
+              handleOnChange('emailID', value);
+            }}
+            value={createAccountState.emailID.toLocaleLowerCase()}
+            leftElement={<SMImage source={emailPNG} style={styles.emailPNG} />}
+            inputStyle={styles.emailInput}
+            errorMessage={errorMessageObj?.emailID}
+          />
+          <SMTextInput
+            maxLength={20}
+            type="primary"
+            keyboardType="default"
+            placeholder={'Password'}
+            onChangeText={value => {
+              handleOnChange('password', value);
+            }}
+            secureTextEntry={!showPassword}
+            value={createAccountState.password}
+            leftElement={
+              <SMImage source={passwordKeyPNG} style={styles.passwordKeyPNG} />
+            }
+            rightElement={
+              <Pressable
+                onPress={() => {
+                  setShowPassword(!showPassword);
+                }}>
+                {showPassword ? (
+                  <SMImage
+                    source={showPasswordPNG}
+                    style={styles.showPasswordPNG}
+                  />
+                ) : (
+                  <SMImage
+                    source={dontShowPasswordPNG}
+                    style={styles.showPasswordPNG}
+                  />
+                )}
+              </Pressable>
+            }
+            inputStyle={styles.passwordInput}
+            errorMessage={errorMessageObj?.password}
+          />
+          <SMTextInput
+            maxLength={20}
+            type="primary"
+            keyboardType="default"
+            placeholder={'Confirm Password'}
+            onChangeText={value => {
+              handleOnChange('confirmPassword', value);
+            }}
+            secureTextEntry={!showConfirmPassword}
+            value={createAccountState.confirmPassword}
+            leftElement={
+              <SMImage source={passwordKeyPNG} style={styles.passwordKeyPNG} />
+            }
+            rightElement={
+              <Pressable
+                onPress={() => {
+                  setShowConfirmPassword(!showConfirmPassword);
+                }}>
+                {showConfirmPassword ? (
+                  <SMImage
+                    source={showPasswordPNG}
+                    style={styles.showPasswordPNG}
+                  />
+                ) : (
+                  <SMImage
+                    source={dontShowPasswordPNG}
+                    style={styles.showPasswordPNG}
+                  />
+                )}
+              </Pressable>
+            }
+            inputStyle={styles.confirmPasswordInput}
+            errorMessage={errorMessageObj?.confirmPassword}
+          />
+          <SMView style={styles.countryCodeMobileNumberView}>
+            <SMPicker
+              type="primary"
+              open={openCountryCodePicker}
+              value={countryCode}
+              items={countryCodePickerItems}
+              setOpen={setOpenCountryCodePicker}
+              setItems={setCountryCodePickerItems}
+              containerStyle={styles.countryCodeContainerStyle}
+              style={styles.countryCodeStyle}
+              placeholder={'+91'}
+              setValue={setCountryCode}
+              placeholderStyle={styles.countryCodePlaceholderStyle}
+              ArrowUpIconComponentSize={normalize(14)}
+              ArrowDownIconComponentSize={normalize(14)}
+              textStyle={styles.countryCodeTextStyle}
+            />
+            <SMTextInput
+              maxLength={10}
+              type="primary"
+              keyboardType="phone-pad"
+              placeholder={'Mobile Number'}
+              onChangeText={value => {
+                handleOnChange('mobileNumber', value);
+              }}
+              value={createAccountState.mobileNumber}
+              inputStyle={styles.mobileNumberInput}
+              style={styles.mobileNumberStyle}
+              errorMessage={errorMessageObj?.mobileNumber}
+            />
+          </SMView>
+          <SMTextInput
+             maxLength={10}
+             type="primary"
+             keyboardType="default"
+             placeholder={'Referral ID'}
+             onChangeText={value => {
+               handleOnChange('RefferalCode', value);
+            }}
+            value={createAccountState.RefferalCode}
+            leftElement={
+              <SMImage source={referralWalletPNG} style={styles.referalPNG} />
+            }
+            inputStyle={styles.firstNameInput}
+            errorMessage={errorMessageObj?.RefferalCode}
+          />
+         
+          <SMCheckBox
+            label="I agree to terms & conditions for registration"
+            labelStyle={styles.termsAndConditionsLabel}
+            style={styles.rememberMeCheckBox}
+            isSelected={createAccountState.termsAndConditions}
+            onSelection={() => {
+              handleOnChange(
+                'termsAndConditions',
+                !createAccountState.termsAndConditions,
               );
-            })}
+            }}
+            checkBoxStyle={styles.termsAndConditionsCheckBox}
+            checkboxIconSize={normalize(10)}
+          />
+
+          <SMButton
+            buttonText="REGISTER"
+            type="secondary"
+            buttonStyle={styles.registerButton}
+            textStyle={styles.registerButtonText}
+            onPress={handleRegisterPress}
+            loader={registerUserLoading}
+            disableButton={registerUserLoading}
+          />
+          {errorMessageObj?.termsAndConditions && (
+            <SMSnackBar
+              visible={!!errorMessageObj.termsAndConditions}
+              onDismiss={() => {
+                seterrorMessageObj({
+                  ...errorMessageObj,
+                  termsAndConditions: null,
+                });
+              }}
+              actionLabel="CLOSE"
+              onActionPress={() => {
+                seterrorMessageObj({
+                  ...errorMessageObj,
+                  termsAndConditions: null,
+                });
+              }}>
+              {errorMessageObj?.termsAndConditions}
+            </SMSnackBar>
+          )}
+          {snackAlertMessage ? (
+            <SMSnackBar
+              visible={!!snackAlertMessage}
+              onDismiss={() => {
+                dispatch(authAction.clearSnackAlert());
+              }}
+              actionLabel="CLOSE"
+              onActionPress={() => {
+                dispatch(authAction.clearSnackAlert());
+              }}>
+              {snackAlertMessage}
+            </SMSnackBar>
+          ) : null}
+          {showRegisterConfirmationDialog && (
+            <SMDialog
+              visible={showRegisterConfirmationDialog}
+              onDismiss={navigateToLoginScreen}
+              dismissable
+              content={
+                <SMText type="Title" style={styles.confirmationDialogContent}>
+                  {registerUserData?.message || 'We have sent you a verification link to your Email ID'}
+                </SMText>
+              }
+            />
+          )}
+          {showPasswordInfo ? (
+            <SMDialog
+              visible={showPasswordInfo}
+              onDismiss={() => setShowPasswordInfo(false)}
+              dismissable
+              content={
+                <SMView>
+                <SMText type="Title" style={styles.passwordInfoDialogContent}>
+                  Your password must follow below criteria
+                  </SMText>
+                  <SMText type="Title" style={styles.passwordInfoDialogContent}>
+                  - Atleast 1 lower case letter
+                  </SMText>
+                  <SMText type="Title" style={styles.passwordInfoDialogContent}>
+                  - Atleast 1 capital case letter
+                  </SMText>
+                  <SMText type="Title" style={styles.passwordInfoDialogContent}>
+                  - Atleast 1 number
+                  </SMText>
+                  <SMText type="Title" style={styles.passwordInfoDialogContent}>
+                  - Atleast 1 special character
+                  </SMText>
+                  <SMText type="Title" style={styles.passwordInfoDialogContent}>
+                  - Password length must be 8 character to 15 character long
+                </SMText>
+                </SMView>
+              }
+            />
+          ) : null}
         </SMView>
       </KeyboardAwareScrollView>
-      {bankAccountDeletePopupVisible ? (
-        <BankAccountDeletePopup
-          visible={!!bankAccountDeletePopupVisible}
-          onDismiss={handlebankAccountDeletePopupClose}
-          onNoPress={handlebankAccountDeletePopupClose}
-          onYesPress={handleDeleteBankDetails}
-        />
-      ) : null}
-      {!checkifEmpty(bankDetailsPopupVisible) ? (
-        <BankDetailsPopup
-          bankDetails={bankDetailsPopupVisible}
-          onDismiss={handleBankDetailsDismiss}
-          onNoPress={handleBankDetailsDismiss}
-          onYesPress={handleDeleteBankDetails}
-        />
-      ) : null}
-      {snackAlertMessage ? (
-        <SMSnackBar
-          visible={!!snackAlertMessage}
-          onDismiss={() => {
-            dispatch(profileAction.clearSnackAlert());
-          }}
-          actionLabel="CLOSE"
-          onActionPress={() => {
-            dispatch(profileAction.clearSnackAlert());
-          }}>
-          {snackAlertMessage}
-        </SMSnackBar>
-      ) : null}
     </SMContainer>
   );
 }
 
-export default AddBankDetails;
+export default CreateAccount;
