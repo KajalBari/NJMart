@@ -83,7 +83,7 @@ function RegisterPersonalPage(props) {
             <SMView style={styles.divStyle}>
 
               <SMView style={styles.containerRadio}>
-                <SMText style={styles.textPos}>Title</SMText>
+                <SMText style={styles.textPos}>Title:</SMText>
 
                 <SMView style={styles.Wrapper}>
                   {['Mr', 'Mrs', 'Ms'].map(position =>
@@ -133,7 +133,7 @@ function RegisterPersonalPage(props) {
                  />
 
               <SMView style={styles.containerRadio}>
-                <SMText style={styles.textPos}>Marital Status</SMText>
+                <SMText style={styles.textPos}>Marital Status:</SMText>
 
                 <SMView style={styles.Wrapper}>
                   {['Single', 'Married'].map(position =>
@@ -150,7 +150,7 @@ function RegisterPersonalPage(props) {
               </SMView>
 
               <SMView style={styles.containerRadio}>
-                <SMText style={styles.textPos}>Gender</SMText>
+                <SMText style={styles.textPos}>Gender:</SMText>
 
                 <SMView style={styles.Wrapper}>
                   {['Male', 'Female'].map(position =>

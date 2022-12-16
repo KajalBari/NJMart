@@ -10,23 +10,19 @@ export const styles = StyleSheet.create({
         backgroundColor: "#FFFFFF",
         width: normalize(500),
         minHeight: dim().height * 0.5,
-       // paddingBottom:normalize(20),
-       // overflow:'scroll',
+        marginBottom:normalize(20),
     },
 
-    text:{
-        color:"#161924",
-        fontSize:normalize(20),
+    headerStyle:{
+        display:'flex',
+        flexDirection:'row',
     },
 
     ellipseStyle: {
-        display: 'flex',
-        flexDirection:'row',
-        alignItems:'center',
          width: normalize(55),
          height: normalize(55),
          marginLeft: normalize(220),
-         margintop: normalize(30),
+         marginTop: normalize(10),
          backgroundColor: "#ECDEDE",
         borderRadius: normalize(50),
         borderWidth: 3,
@@ -35,8 +31,8 @@ export const styles = StyleSheet.create({
 
     menuContainer:{
        // display: 'flex',
-        //flexDirection:'row',
-        alignItems:'center',
+        flexDirection:'row',
+        //alignItems:'center',
          width: normalize(55),
          height: normalize(55),
          marginLeft: normalize(260),
@@ -56,12 +52,12 @@ export const styles = StyleSheet.create({
 
     menuStyle: {
         display: 'flex',
-        float: 'right',
+       // float: 'right',
         justifyContent: 'space-between',
          width: normalize(37.61),
          height: normalize(35),
          marginLeft: normalize(30),
-         marginTop: normalize(0),
+         marginTop: normalize(20),
         tintColor: "#000",
     },
 
@@ -165,7 +161,7 @@ export const styles = StyleSheet.create({
     
     contentRectangleStyle: {
         width: normalize(355),
-       minHeight: dim().height*0.7,
+       minHeight: dim().height*0.9,
         display:'flex',
         paddingTop:dim().width*0.4,
         marginBottom:normalize(0),
@@ -179,13 +175,16 @@ export const styles = StyleSheet.create({
     profileContent:{
         width:normalize(102),
         height:normalize(102),
-        marginTop:normalize(-110),
+        marginTop:normalize(-100),
         left:normalize(50),
-        backgroundColor: '#FFFCF8',
+       backgroundColor: '#FFFCF8',
+      //backgroundColor: 'red',
         borderRadius: normalize(15),
         alignItems: 'center',
         display:'flex',
     },
+ 
+
 
     profileImageStyle: {
         width: normalize(52.88),
@@ -203,9 +202,10 @@ export const styles = StyleSheet.create({
     accountContent:{
         width:normalize(102),
         height:normalize(102),
-        marginTop:normalize(-110),
+        marginTop:normalize(-100),
         marginLeft:normalize(200),
         backgroundColor: '#FFFCF8',
+       // backgroundColor: 'red',
         borderRadius: normalize(15),
         alignItems: 'center',
         display:'flex',
@@ -227,9 +227,10 @@ export const styles = StyleSheet.create({
     downlineContent:{
         width:normalize(102),
         height:normalize(102),
-        marginTop:normalize(10),
+        marginTop:normalize(40),
         marginLeft:normalize(50),
         backgroundColor: '#FFFCF8',
+       //backgroundColor: 'red',
         borderRadius: normalize(15),
         alignItems: 'center',
         display:'flex',
@@ -253,7 +254,8 @@ export const styles = StyleSheet.create({
         height:normalize(102),
         marginTop:normalize(-100),
         marginLeft:normalize(200),
-        backgroundColor: '#FFFCF8',
+       backgroundColor: '#FFFCF8',
+       //backgroundColor: 'red',
         borderRadius: normalize(15),
         alignItems: 'center',
         display:'flex', 
@@ -269,7 +271,7 @@ export const styles = StyleSheet.create({
     rewardContent:{
         width:normalize(102),
         height:normalize(102),
-        marginTop:normalize(10),
+        marginTop:normalize(40),
         marginLeft:normalize(50),
         backgroundColor: '#FFFCF8',
         borderRadius: normalize(15),
@@ -290,6 +292,7 @@ export const styles = StyleSheet.create({
         marginTop:normalize(-100),
         marginLeft:normalize(200),
         backgroundColor: '#FFFCF8',
+      
         borderRadius: normalize(15),
         alignItems: 'center',
         display:'flex',   

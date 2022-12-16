@@ -32,13 +32,18 @@ function Dashboard(props) {
 
 
     <SMView style={styles.container}>
+
+      <SMView style={styles.headerStyle}>
+
       <SMView style={styles.ellipseStyle}>
-       
         <SMImage source={ShoppingCart} style={styles.shoppingCartStyle} />
-      
+        </SMView>
+     
         <TouchableOpacity onPress={() => navigation.navigate('MenubarNavigation', { name: 'MenubarNavigation' })}>
         <SMImage source={menu11} style={styles.menuStyle} />
         </TouchableOpacity>
+{/* 
+        <SMImage source={menu11} style={styles.menuStyle} /> */}
         </SMView>
      
       <SMView style={styles.profileDivStyle}>

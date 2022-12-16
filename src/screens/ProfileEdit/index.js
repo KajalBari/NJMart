@@ -60,9 +60,8 @@ function ProfileEdit(props) {
 
               <SMView style={styles.distributorStyle}>
                 <SMText style={styles.distributorIdStyle}>Distributor Id</SMText>
-                {/* <SMText style={styles.subTitleStyle1}>NJTop</SMText> */}
                 <SMTextInput
-                  style={styles.sponsorName}
+                  style={styles.textStyle}
                   value={distributorId}
                   onChangeText={value => setdistributorId(value)}
                 />
@@ -70,9 +69,8 @@ function ProfileEdit(props) {
 
               <SMView style={styles.distributorStyle}>
                 <SMText style={styles.nameStyle2}>Name</SMText>
-                {/* <SMText style={styles.subTitleStyle2}>Test</SMText> */}
                 <SMTextInput
-                  style={styles.sponsorName}
+                  style={styles.textStyle}
                   value={name}
                   onChangeText={value => setName(value)}
                 />
@@ -80,9 +78,8 @@ function ProfileEdit(props) {
 
               <SMView style={styles.distributorStyle}>
                 <SMText style={styles.dateStyle}>Join Date</SMText>
-                {/* <SMText style={styles.subTitleStyle3}>Mar 19 2018</SMText> */}
                 <SMTextInput
-                  style={styles.sponsorName}
+                  style={styles.textStyle}
                   value={joinDate}
                   onChangeText={value => setJoinDate(value)}
                 />
@@ -90,9 +87,8 @@ function ProfileEdit(props) {
 
               <SMView style={styles.distributorStyle}>
                 <SMText style={styles.addressStyle}>Address</SMText>
-                {/* <SMText style={styles.subTitleStyle4}>Test</SMText> */}
                 <SMTextInput
-                  style={styles.sponsorName}
+                  style={styles.textStyle}
                   value={address}
                   onChangeText={value => setAddress(value)}
                 />
@@ -100,9 +96,8 @@ function ProfileEdit(props) {
 
               <SMView style={styles.distributorStyle}>
                 <SMText style={styles.birthDateStyle}>Birth Date</SMText>
-                {/* <SMText style={styles.subTitleStyle6}>1/1/1900 12:00AM</SMText> */}
                 <SMTextInput
-                  style={styles.sponsorName}
+                  style={styles.textStyle}
                   value={birthDate}
                   onChangeText={value => setBirthDate(value)}
                 />

@@ -16,7 +16,8 @@ export const styles = StyleSheet.create({
     },
 
 gradient:{
-    height:normalize(800),
+    //height:normalize(700),
+    minHeight:dim().height*0.9,
 },
 
 menuStyle: {
@@ -64,13 +65,15 @@ nameStylee: {
 },
 
 contentRectangleStyle: {
-   // paddingTop:dim().width*0.4,
+    //paddingTop:dim().width*0,
     width: normalize(365),
-     height: normalize(500),
-     marginTop: normalize(20),
+   // minWidth:dim().width*0.2,
+    // height: normalize(700),
+    minHeight:dim().height*1,
+     marginTop: normalize(40),
      backgroundColor: '#FFFCF8',
     borderTopLeftRadius: normalize(50),
-    borderTopRightRadius: normalize(60),   
+    borderTopRightRadius: normalize(50),
 },
 
 elevation: {
@@ -83,28 +86,33 @@ profileText:{
     fontStyle: 'normal',
     fontWeight: '200',
     fontSize: normalize(25),
-    marginTop:normalize(10),
+    marginTop:normalize(15),
     textAlign:'center',
     flexDirection:'row',
     color: "#FD6510",
+    marginBottom:normalize(20),
 },
 
 lineStyle:{ 
-    borderWidth: normalize(4),
+        borderWidth: normalize(4),
         width:normalize(290),
         alignSelf:'center',
         borderColor:'#B9AFAF',
         marginTop:normalize(10), 
+        marginBottom:normalize(10),
 },
 
 profileDetails:{
    flexDirection:'column',
     justifyContent:'flex-start', 
+    //lineHeight:normalize(20),
 },
 
 distributorStyle:{
     display:'flex',
     justifyContent:'space-between',
+    //lineHeight:normalize(20),
+    marginBottom:normalize(10),
 },
 
 distributorIdStyle:{
@@ -223,11 +231,12 @@ ButtonStyle:{
     display:'flex',
     flexDirection:'row',
     justifyContent:'space-between',
+    marginTop:normalize(10),
 },
 
 editButtonStyle:{
     width: normalize(160),
-    height: normalize(40),
+     height: normalize(40),
     marginTop: normalize(20),
     marginLeft:normalize(20),
     lineHeight: normalize(10),
@@ -237,10 +246,10 @@ editButtonStyle:{
 
 nextButtonStyle:{
     width: normalize(160),
-    height: normalize(40),
+     height: normalize(40),
     marginTop: normalize(20),
     marginLeft:normalize(10),
-    lineHeight: normalize(10),
+    // lineHeight: normalize(10),
     borderRadius: normalize(20),
     fontSize: normalize(10), 
 },

@@ -15,6 +15,7 @@ import { TouchableOpacity } from 'react-native';
 import { ScrollView } from 'react-native';
 import { normalize } from '../../constants/Platform';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { dim } from '../../constants/Platform';
 
 function ProfilePage(props) {
   const { navigation } = props;
@@ -24,9 +25,9 @@ function ProfilePage(props) {
 
   return (
    
-  //   <KeyboardAwareScrollView
-  //    extraScrollHeight={normalize(100)}
-  //  nestedScrollEnabled>
+    <KeyboardAwareScrollView
+     extraScrollHeight={normalize(100)}
+   nestedScrollEnabled>
 
   <SMView style={styles.containerStyle}>
    <LinearGradient colors={["#FD6510","#FFBF43"]} 
@@ -100,7 +101,7 @@ function ProfilePage(props) {
     </LinearGradient>
   </SMView>
 
-// </KeyboardAwareScrollView>
+ </KeyboardAwareScrollView>
     
   );
 

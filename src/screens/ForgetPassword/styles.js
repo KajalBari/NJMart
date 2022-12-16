@@ -72,16 +72,17 @@ export const styles = StyleSheet.create({
         color: '#888888',
         width: normalize(220),
         height: normalize(40),
+        marginTop:normalize(20),
     },
 
     resetButtonStyle: {
         width: normalize(190),
         height: normalize(40),
         justifyContent: 'center',
-        marginLeft: normalize(30),
+        marginLeft: normalize(25),
         borderRadius: normalize(20),
         fontSize: normalize(10),
-        marginTop: normalize(20),
+        marginTop: normalize(25),
     },
 
     confirmationDialogContent:{

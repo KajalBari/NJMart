@@ -5,11 +5,11 @@ const validationObj = {
   emailID: {
     required: true,
     presence: {
-      message: 'Enter the EmailID',
+      message: 'Enter the Email',
     },
     valid: {
       rule: emailID => validateUserEmail(emailID),
-      message: 'Enter a valid EmailID',
+      message: 'Enter a valid Email',
     },
   },
 };

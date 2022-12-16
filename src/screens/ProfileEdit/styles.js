@@ -12,15 +12,16 @@ export const styles = StyleSheet.create({
         marginLeft: normalize(-10),
     },
 
-    sponsorName: {
+    textStyle: {
         fontFamily: 'Inter',
         fontStyle: 'normal',
-        fontWeight: '200',
+        fontWeight: '100',
         fontSize: normalize(15),
         color: '#888888',
         width: normalize(210),
         height: normalize(40),
       },
+
 
     gradient:{
        // height:normalize(800),
@@ -73,8 +74,10 @@ export const styles = StyleSheet.create({
     
     contentRectangleStyle: {
        // paddingTop:dim().width*0.4,
-        width: normalize(365),
-         height: normalize(600),
+        width:dim().width*1.1,
+       // width: normalize(365),
+      // minHeight:dim().height*0.9,
+         height: normalize(630),
          marginTop: normalize(20),
          backgroundColor: '#FFFCF8',
         borderTopLeftRadius: normalize(50),
@@ -107,7 +110,7 @@ export const styles = StyleSheet.create({
     
     profileDetails:{
        flexDirection:'column',
-        justifyContent:'flex-start', 
+        justifyContent:'flex-start',
     },
     
     distributorStyle:{

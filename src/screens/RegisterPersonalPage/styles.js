@@ -17,9 +17,10 @@ export const styles = StyleSheet.create({
   },
 
   containerRadio:{
-    //flex:1,
     justifyContent:'center',
     alignItems:'center',
+    lineHeight:normalize(20),
+    marginBottom:normalize(12),
   },
 
   inner:{
@@ -28,15 +29,15 @@ export const styles = StyleSheet.create({
     backgroundColor:"grey",
     borderRadius:normalize(10),
   },
-
   
   outer:{
     width:normalize(20),
     height:normalize(20),
     borderWidth:1,
-    borderRadius:normalize(15),
+    borderRadius:normalize(15),     
     justifyContent:'center',
     alignItems:'center',
+    marginLeft:normalize(10),
   },
 
   textPos:{
@@ -57,16 +58,21 @@ export const styles = StyleSheet.create({
   Wrapper:{
     flexDirection:'row',
     justifyContent:'space-evenly',
-    marginTop:normalize(-15)  
+    marginTop:normalize(-15) ,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+    
   },
 
   pos:{
     marginHorizontal:normalize(15),
-    alignItems:'center',   
+    alignItems:'center',  
+    flexDirection:'row', 
   },
 
   position1:{
-    fontSize:normalize(15),
+    fontSize:normalize(14),
     textTransform:'capitalize',
     color:"#888888"
   },
