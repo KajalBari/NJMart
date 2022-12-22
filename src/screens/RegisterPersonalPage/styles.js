@@ -4,12 +4,6 @@ import {COLORS} from '../../constants/Colors';
 
 export const styles = StyleSheet.create({
 
-  // calendarStyle: {
-  //   width: dim().width * 0.8,
-  //   height: normalize(50),
-  //   marginVertical: normalize(10),
-  // },
-
   containerStyle: {
     minWidth:dim().width*0.9,
     minHeight:dim().height*10,
@@ -26,7 +20,7 @@ export const styles = StyleSheet.create({
   inner:{
     width:normalize(12),
     height:normalize(12),
-    backgroundColor:"grey",
+    backgroundColor:'grey',
     borderRadius:normalize(10),
   },
   
@@ -48,7 +42,6 @@ export const styles = StyleSheet.create({
     fontWight: "200",
     fontSize: normalize(15),
     display: "flex",
-  //  flexDirection: 'row',
     alignSelf: 'flex-start',
     color: "#888888",
     width:normalize(210),
@@ -61,8 +54,8 @@ export const styles = StyleSheet.create({
     marginTop:normalize(-15) ,
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
-    
+    justifyContent: 'center',
+    marginTop:normalize(-5),
   },
 
   pos:{
@@ -78,32 +71,32 @@ export const styles = StyleSheet.create({
   },
 
   gradient: {
-    width:dim().width*1,
+     width:dim().width*1,
      minHeight: dim().height * 0.4,
      borderBottomLeftRadius: normalize(150),
      borderBottomRightRadius: normalize(150),
    },
 
-  njMartImage: {
+   njMartImage: {
     width: normalize(150),
     minHeight: dim().height * 0,
-     resizeMode: 'contain',
+    resizeMode: 'contain',
     alignSelf: 'center',
-    marginTop:normalize(10),
+    marginTop: normalize(10),
   },
-
+ 
   tableStyle: {
-     width: dim().width * 0.75,
+    width: dim().width * 0.75,
     minHeight: dim().height * 0.7,
     position:'absolute',
     alignItems:'center',
     alignSelf:'center',
     top:dim().height*0.2,
     backgroundColor: '#E8E8E8',
-   paddingBottom:normalize(10),
-   paddingTop:normalize(10),
-   flex:1,
-   borderRadius:normalize(40),
+    paddingBottom:normalize(10),
+    paddingTop:normalize(10),
+    flex:1,
+    borderRadius:normalize(40),
   },
 
   divStyle: {
@@ -140,6 +133,7 @@ export const styles = StyleSheet.create({
     fontSize: normalize(13),
     lineHeight: normalize(16),
     color: '#FD6510',
+    //marginRight:normalize(60),
   },
 
   personalInfoHeading: {
@@ -225,5 +219,6 @@ export const styles = StyleSheet.create({
     marginLeft: normalize(20),
     borderRadius: normalize(20),
     fontSize: normalize(10),
+    marginTop:normalize(20),
   },
 });

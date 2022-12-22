@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
 
     containerStyle: {
         minWidth: dim().width * 0.9,
-        minHeight: dim().height * 10,
+        minHeight: dim().height * 0.9,
         position: 'relative',
     },
 
@@ -149,6 +149,7 @@ export const styles = StyleSheet.create({
         marginLeft: normalize(20),
         borderRadius: normalize(20),
         fontSize: normalize(10),
+        marginTop:normalize(20),
     },
 
 });

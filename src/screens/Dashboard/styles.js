@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
         position: "relative",
         backgroundColor: "#FFFFFF",
         width: normalize(500),
-        minHeight: dim().height * 0.5,
+       // minHeight: dim().height *0.2,
         marginBottom:normalize(20),
     },
 
@@ -30,9 +30,7 @@ export const styles = StyleSheet.create({
     },
 
     menuContainer:{
-       // display: 'flex',
         flexDirection:'row',
-        //alignItems:'center',
          width: normalize(55),
          height: normalize(55),
          marginLeft: normalize(260),
@@ -52,7 +50,6 @@ export const styles = StyleSheet.create({
 
     menuStyle: {
         display: 'flex',
-       // float: 'right',
         justifyContent: 'space-between',
          width: normalize(37.61),
          height: normalize(35),
@@ -113,7 +110,6 @@ export const styles = StyleSheet.create({
     },
 
     rectangle1: {
-        //    position: "absolute",
         width: normalize(102),
         height: normalize(102),
         display: 'flex',

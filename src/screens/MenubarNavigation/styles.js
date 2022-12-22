@@ -140,6 +140,7 @@ export const styles = StyleSheet.create({
             flexDirection:'row',
             justifyContent:'space-between',
         },
+
         refText:{
             fontFamily: 'Inter',
             fontStyle: 'normal',
@@ -148,8 +149,7 @@ export const styles = StyleSheet.create({
             marginTop:normalize(25),
             marginLeft:normalize(30),
             color: "black",   
-
-        }
+        },
 
  });
 

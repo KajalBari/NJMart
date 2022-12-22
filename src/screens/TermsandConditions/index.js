@@ -59,8 +59,10 @@ return(
     style={styles.gradient}  
     start={{x: 1, y: 0.5}} 
     end={{x: 0, y: 0.5}} >
-    
+
+
     <SMImage source={NJMartLogo}  style={styles.njMartImage} />   
+    </LinearGradient>
      <SMView style={[styles.tableStyle,styles.elevation]}>
 
           <SMText style={styles.registerStyle}>
@@ -133,7 +135,7 @@ return(
           /> 
          
      </SMView>
-          </LinearGradient>
+         
           </SMView>
 );
 }

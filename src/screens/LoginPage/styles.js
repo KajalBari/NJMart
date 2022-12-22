@@ -26,14 +26,12 @@ export const styles = StyleSheet.create({
 
     tableStyle: {
         width: dim().width * 0.70,
-        //height:normalize(300),
-        minHeight: dim().height * 0.5,
+        height: dim().height * 0.50,
         position: 'absolute',
         alignItems: 'center',
         alignSelf: 'center',
         top: dim().height * 0.2,
         backgroundColor: '#E8E8E8',
-      //  paddingBottom: normalize(10),
         paddingTop: normalize(10),
         flex: 1,
         borderRadius: normalize(40),
@@ -82,9 +80,6 @@ export const styles = StyleSheet.create({
       },
 
     forgetPassStyle: {
-        // display: 'flex',
-        //  flexDirection: 'row',
-        //alignItems: 'flex-end',
         marginLeft: normalize(103),
         marginTop: normalize(10),
         fontFamily: 'Inter',
@@ -104,16 +99,15 @@ export const styles = StyleSheet.create({
         fontSize: normalize(10),
         marginTop: normalize(20),
     },
+
     signUpDiv: {
         display: 'flex',
         flexDirectonrow: 'row',
         justifyContent: 'space-between',
-        // position: 'absolute',
-        // marginTop:normalize(-30),
+        marginTop:normalize(5),
     },
 
     userStyle: {
-        // marginTop: normalize(290),
         fontFamily: 'Inter',
         fontStyle: "normal",
         fontWeight: "200",
@@ -123,12 +117,13 @@ export const styles = StyleSheet.create({
 
     signUpStyle: {
         marginLeft: normalize(133),
-        marginTop: normalize(-18),
+        marginTop: normalize(-17),
         fontFamily: 'Inter',
         fontStyle: "normal",
         fontWeight: "200",
         fontSize: normalize(15),
         color: "#FD6510",
+        marginRight:normalize(-10)
     },
 
     nextButtonStyle: {

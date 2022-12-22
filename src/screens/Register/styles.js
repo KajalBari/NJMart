@@ -29,13 +29,14 @@ export const styles = StyleSheet.create({
     borderRadius: normalize(15),
     justifyContent: 'center',
     alignItems: 'center',
+    marginLeft:normalize(10),
   },
 
   textPos: {
     marginLeft: normalize(40),
     marginTop: normalize(10),
     fontFamily: 'Inter',
-    fonetStyle: "normal",
+    fontStyle: "normal",
     fontWight: "200",
     fontSize: normalize(15),
     display: "flex",
@@ -48,12 +49,16 @@ export const styles = StyleSheet.create({
   Wrapper: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    marginTop: normalize(-15)
+    marginTop: normalize(0),
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
 
   pos: {
     marginHorizontal: normalize(15),
     alignItems: 'center',
+    flexDirection:'row', 
   },
 
   position1: {
@@ -117,6 +122,7 @@ export const styles = StyleSheet.create({
     fontSize: normalize(13),
     lineHeight: normalize(16),
     color: '#FD6510',
+   // marginRight:normalize(60),
   },
 
   sponsorHeading: {

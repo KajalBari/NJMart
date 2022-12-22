@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
         display:'flex',
         flexDirection:'column',
         width: normalize(500),
-        minHeight: dim().height * 0.4,
+        minHeight: dim().height * 0,
         marginLeft: normalize(-10),
     },
 
@@ -33,15 +33,15 @@ export const styles = StyleSheet.create({
     },
     
 contentRectangleStyle: {
-    // paddingTop:dim().width*0.4,
-   // width:dim().width*0.10,1
-     width: normalize(365),
-    minHeight:dim().height*1,
+     //paddingTop:dim().width*0.4,
+     //width: normalize(365),
+    width:dim().width*1.05,
+    height:dim().height*0.8,
      // height: normalize(500),
       marginTop: normalize(20),
       backgroundColor: '#FFFCF8',
      borderTopLeftRadius: normalize(60),
-     borderTopRightRadius: normalize(60),   
+     borderTopRightRadius: normalize(60),  
  },
 
 nameStylee: {

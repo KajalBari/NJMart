@@ -8,7 +8,6 @@ import LinearGradient from 'react-native-linear-gradient';
 import { ScrollView } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import { bankValidator } from './bankValidator';
-import { loginValidator } from '../LoginPage/loginValidator';
 
 function RegisterBankInfoPage(props) {
   const { navigation } = props;
@@ -35,7 +34,7 @@ function RegisterBankInfoPage(props) {
     });
   };
   const handleRegisterSecurityInfoPage = () => {
-    const validatedData  = loginValidator({...bankInfo});
+    const validatedData  = bankValidator({...bankInfo});
     if (validatedData.valid) {
       clearErrorMessageObj();
       navigation.navigate('RegisterSecurityInfoPage');
@@ -120,7 +119,6 @@ function RegisterBankInfoPage(props) {
                 buttonText="Next"
                 type="nextbutton"
                 buttonStyle={styles.nextButtonStyle}
-                // onPress={() =>handleRegisterSecurityInfoPage()}}
                 onPress={() =>handleRegisterSecurityInfoPage()}
               />
 

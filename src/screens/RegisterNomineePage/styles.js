@@ -29,17 +29,17 @@ export const styles = StyleSheet.create({
     borderRadius: normalize(15),
     justifyContent: 'center',
     alignItems: 'center',
+    marginLeft:normalize(10),
   },
 
   textPos: {
     marginLeft: normalize(30),
     marginTop: normalize(10),
     fontFamily: 'Inter',
-    fonetStyle: "normal",
+    fontStyle: 'normal',
     fontWight: "200",
     fontSize: normalize(15),
     display: "flex",
-    //  flexDirection: 'row',
     alignSelf: 'flex-start',
     color: "#888888",
     width: normalize(210),
@@ -48,13 +48,17 @@ export const styles = StyleSheet.create({
 
   Wrapper: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    marginTop: normalize(-15)
+    justifyContent: 'space-between',
+    marginTop: normalize(0),
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
 
   pos: {
     marginHorizontal: normalize(15),
     alignItems: 'center',
+    flexDirection:'row', 
   },
 
   position1: {
@@ -151,14 +155,13 @@ export const styles = StyleSheet.create({
     color: '#888888',
     width: normalize(210),
     height: normalize(40),
+    marginTop:normalize(25),
   },
 
   applicantRelationView: {
-    //flex: 1,
-   // flexDirection: 'column',
     alignItems: 'center',
-    //justifyContent: 'center',
     zIndex: normalize(5),
+    marginTop:normalize(10),
   },
 
   applicantRelationText: {
@@ -170,7 +173,6 @@ export const styles = StyleSheet.create({
     marginBottom: normalize(40),
     alignSelf: 'flex-start',
     marginLeft: normalize(30),
-  
   },
 
   applicantRelationTextBoxStyle: {
@@ -178,8 +180,7 @@ export const styles = StyleSheet.create({
     height: normalize(35),
     marginTop: normalize(-1),
     alignSelf: 'flex-start',
-    marginLeft: normalize(0),
-    
+    marginLeft: normalize(0),  
   },
 
   applicantRelationPlaceholder: {

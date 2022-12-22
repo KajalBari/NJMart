@@ -23,17 +23,7 @@ email: {
       //       message: 'Enter a valid password',
       //     },
   },
-  panNum:{
-    required: true,
-    presence: {
-      message: 'Enter the PAN Card Number',
-    },
-    // valid: {
-    //   rule: panNumber => panValidator(panNumber),
-    //   message: 'Enter a valid PAN Card Number',
-    // },
-  }
-};
+}
 
   export const loginValidator = (loginObj) => {
   return objValidator(loginObj, validationRules);

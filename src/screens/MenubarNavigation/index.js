@@ -13,18 +13,19 @@ import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 import { TouchableOpacity, TextInput } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { normalize } from '../../constants/Platform';
+// import { normalize } from '../../constants/Platform';
 import Clipboard from '@react-native-community/clipboard';
 
 function MenubarNavigation(props) {
 
     const [refLink, setRefLink] = useState('')
     const { navigation } = props;
-    const handleProfileMenuBar = () => {
-        navigation.navigate('ProfileMenuBar');
-    };
+    // const handleProfileMenuBar = () => {
+    //     navigation.navigate('ProfileMenuBar');
+    // };
     const handleCopy = () => {
         Clipboard.setString(refLink)
+        navigation.navigate('ProfileMenuBar');
     }
 
     return (
@@ -33,19 +34,18 @@ function MenubarNavigation(props) {
             // extraScrollHeight={normalize(80)}
             nestedScrollEnabled>
 
-
             <SMView style={styles.containerStyle}>
                 <LinearGradient colors={["#FD6510", "#FFBF43"]}
                     style={styles.gradient}
                     start={{ x: 1, y: 0.5 }}
                     end={{ x: 0, y: 0.5 }} >
 
-                        
-          <TouchableOpacity onPress={() => navigation.navigate('Dashboard', { name: 'Dashboard' })} >
-            <SMView style={styles.headerStyle}>
-              <SMImage source={arrow} style={styles.arrowStyle} />
-            </SMView>
-          </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => navigation.navigate('Dashboard', { name: 'Dashboard' })} >
+                        <SMView style={styles.headerStyle}>
+                            <SMImage source={arrow} style={styles.arrowStyle} />
+                        </SMView>
+                    </TouchableOpacity>
 
                     <SMView style={styles.iconNameStyle}>
                         <SMImage source={Profile} style={styles.profileStyle} />
@@ -83,7 +83,6 @@ function MenubarNavigation(props) {
                         Referral Link
                     </SMText>
                     <SMView style={styles.ButtonStyle}>
-
                         <SMTextInput
                             style={styles.addressStyle}
                             placeholder={"Referral Link"}
@@ -97,8 +96,6 @@ function MenubarNavigation(props) {
                             onPress={handleCopy}
                         />
                     </SMView>
-
-
 
                 </SMView>
             </SMView>

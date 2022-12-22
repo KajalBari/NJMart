@@ -62,7 +62,7 @@ function Register(props) {
             />
 
             <SMView style={styles.containerRadio}>
-              <SMText style={styles.textPos}>Your Position</SMText>
+              <SMText style={styles.textPos}>Your Position:</SMText>
 
               <SMView style={styles.Wrapper}>
                 {['Left', 'Right'].map(position =>

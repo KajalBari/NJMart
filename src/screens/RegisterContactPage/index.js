@@ -1,21 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { SMText, SMView, SMImage, SMContainer, SMButton, SMTextInput, SMCheckBox ,SMPicker} from '../../elements';
 import {
   NJMartLogo,
 } from '../../assets';
 import { styles } from './styles';
-import { FlatList, TextInput } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { ScrollView } from 'react-native';
-import { useState } from "react";
 import {normalize} from '../../constants/Platform';
 import { contactValidation } from './contactValidation';
-
-//import { TextInput } from "react-native-paper";
 
 function RegisterContactPage(props) {
   const { navigation } = props;
 
+  const [contactInfo, setContactInfo] = useState({
+    postalAdd: '',
+    country: '',
+    district: '',
+    pin: '',
+    mobile:'',
+    email: '',
+  })
 
   const [errorMessageObj, seterrorMessageObj] = useState({
     valid: false,
@@ -26,19 +30,16 @@ function RegisterContactPage(props) {
     });
   };
 
-  const [loginState, setloginState] = useState({
-    mobile: '',
-  })
 
   const handleOnChange = (key, value) => {
-    setloginState({
-      ...loginState,
+    setContactInfo({
+      ...contactInfo,
       [key]:value,
     });
   };
 
   const submit = () => {
-    const validatedData  = contactValidation({...loginState});
+    const validatedData  = contactValidation({...contactInfo});
       // console.log("otpValidator",otpValidator.valid);
       if (validatedData.valid) {
         clearErrorMessageObj();
@@ -48,21 +49,13 @@ function RegisterContactPage(props) {
       }
     }
 
-    const [countryCodePickerItems, setCountryCodePickerItems] = useState([
-      {label: '+91', value: '+91'},
-      {label: '+1', value: '+1'},
-    ]);
-//console.log(loginValidator);
-
-
-
-  const [postalAdd, setPostalAdd] = useState('')
-  const [country, setCountry] = useState('')
- // const [state, setState] = useState('')
-  const [district, setDistrict] = useState('')
-  const [pin, setPin] = useState('')
-  const [mobile, setMobile] = useState('')
-  const [email, setEmail] = useState('')
+//   const [postalAdd, setPostalAdd] = useState('')
+//   const [country, setCountry] = useState('')
+//  // const [state, setState] = useState('')
+//   const [district, setDistrict] = useState('')
+//   const [pin, setPin] = useState('')
+//  // const [mobile, setMobile] = useState('')
+//   const [email, setEmail] = useState('')
 
   const [applicantRelation, setApplicantRelation] = useState('Select');
   const [openApplicantRelationPicker, setOpenApplicantRelationPicker] = useState(false);
@@ -71,7 +64,6 @@ function RegisterContactPage(props) {
     {label: 'Uttar Pradesh', value: 'uttarPradesh'},
     {label: 'Gujarat', value: 'gujarat'},
     {label: 'Punjab', value: 'punjab'},
-    // {label: 'Madhya Pardesh', value: 'madhyaPardesh'},
     {label: 'Orrisa', value: 'orrisa'},
     {label: 'Goa', value: 'goa'},
   ]);
@@ -110,15 +102,21 @@ function RegisterContactPage(props) {
               <SMTextInput
                 style={styles.addressStyle}
                 placeholder={"Postal Address"}
-                value={postalAdd}
-                onChangeText={value => setPostalAdd(value)}
+                value={contactInfo.postalAdd}
+                // onChangeText={value => setPostalAdd(value)}
+                onChangeText={value => {
+                  handleOnChange('postalAdd', value);
+                }}
               />
 
               <SMTextInput
                 style={styles.countryStyle}
                 placeholder={"Country"}
-                value={country}
-                onChangeText={value => setCountry(value)}
+                value={contactInfo.country}
+                //onChangeText={value => setCountry(value)}
+                onChangeText={value => {
+                  handleOnChange('country', value);
+                }}
               />
 
               <SMView style={styles.applicantRelationView}>
@@ -139,31 +137,33 @@ function RegisterContactPage(props) {
                 placeholderStyle={styles.applicantRelationPlaceholder}
                 ArrowUpIconComponentSize={normalize(14)}
                 ArrowDownIconComponentSize={normalize(14)}
-                //textStyle={styles.accountTypeTextStyle}
-              //disabled={bankDetails.length >= 5}
               />
               </SMView>
 
               <SMTextInput
                 style={styles.districtStyle}
                 placeholder={"District"}
-                value={district}
-                onChangeText={value => setDistrict(value)}
+                value={contactInfo.district}
+               // onChangeText={value => setDistrict(value)}
+               onChangeText={value => {
+                handleOnChange('district', value);
+              }}
               />
 
               <SMTextInput
                 style={styles.pincodeStyle}
                 placeholder={"Pin Code"}
-                value={pin}
-                onChangeText={value => setPin(value)}
+                value={contactInfo.pin}
+               //onChangeText={value => setPin(value)}
+               onChangeText={value => {
+                handleOnChange('pin', value);
+              }}
               />
 
               <SMTextInput
                 style={styles.mobileStyle}
                 placeholder={"Mobile*"}
-                value={loginState.mobile}
-                items={countryCodePickerItems}
-                setItems={setCountryCodePickerItems}
+                value={contactInfo.mobile}
                 onChangeText={value =>{
                   handleOnChange('mobile',value);
                 }}
@@ -173,16 +173,17 @@ function RegisterContactPage(props) {
               <SMTextInput
                 style={styles.emailStyle}
                 placeholder={"Email"}
-                value={email}
-                onChangeText={value => setEmail(value)}
-  
+                value={contactInfo.email}
+                //onChangeText={value => setEmail(value)}
+                onChangeText={value => {
+                  handleOnChange('email', value);
+                }}
               />
 
               <SMButton
                 buttonText="Next"
                 type="nextbutton"
                 buttonStyle={styles.nextButtonStyle}
-               // onPress={handleRegisterNomineePage}
                 onPress={() => {submit()}}
               />
             </SMView>
