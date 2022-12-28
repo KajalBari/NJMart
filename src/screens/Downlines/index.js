@@ -90,13 +90,6 @@ function Downlines(props) {
                 </SMView>
               </SMView>
 
-              {/* <SMButton
-                  buttonText="Next"
-                  type="nextbutton"
-                  buttonStyle={styles.nextButtonStyle}
-                  onPress={handleProfileMenuBar}
-              />  
-               */}
           </SMView>
         </SMView>
 

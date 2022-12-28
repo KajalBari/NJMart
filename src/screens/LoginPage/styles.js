@@ -26,7 +26,7 @@ export const styles = StyleSheet.create({
 
     tableStyle: {
         width: dim().width * 0.70,
-        height: dim().height * 0.50,
+       height: dim().height * 0.5,
         position: 'absolute',
         alignItems: 'center',
         alignSelf: 'center',
@@ -104,7 +104,7 @@ export const styles = StyleSheet.create({
         display: 'flex',
         flexDirectonrow: 'row',
         justifyContent: 'space-between',
-        marginTop:normalize(5),
+        //marginTop:normalize(5),
     },
 
     userStyle: {

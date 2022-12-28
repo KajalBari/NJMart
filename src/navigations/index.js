@@ -45,7 +45,7 @@ export default function MainContainer(props) {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="LoginPage"
+        initialRouteName="Splash"
         screenOptions={{
           headerShown: false,
           headerBackTitleVisible: false,
@@ -57,11 +57,11 @@ export default function MainContainer(props) {
           ),
           headerShadowVisible: false,
         }}>
-        {/* <Stack.Screen
+        <Stack.Screen
           name="Splash"
           component={Splash}
           options={{headerShown: false}}
-        /> */}
+        />
         <Stack.Screen
           name="Login"
           component={Login}

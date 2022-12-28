@@ -9,7 +9,6 @@ import { styles } from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 import { SliderComponent, TouchableOpacity, Alert ,Pressable} from 'react-native';
 import { loginValidator } from './loginValidator';
-import { Button } from 'react-native-paper';
 
 
 function LoginPage(props) {
@@ -22,10 +21,6 @@ function LoginPage(props) {
       valid: false,
     });
   };
-
-  // const [password, setPassword] = useState('')
-  // const [email, setEmail] = useState('')
-  // // console.log(email);
 
   const [loginState, setloginState] = useState({
     email: '',

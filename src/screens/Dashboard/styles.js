@@ -9,7 +9,8 @@ export const styles = StyleSheet.create({
         position: "relative",
         backgroundColor: "#FFFFFF",
         width: normalize(500),
-       // minHeight: dim().height *0.2,
+        //minWidth:dim().width*0.5,
+       // height: dim().height *0.9,
         marginBottom:normalize(20),
     },
 
@@ -106,6 +107,7 @@ export const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         paddingTop: dim().width * 0.08,
+        
         justifyContent: 'space-evenly',
     },
 
@@ -157,11 +159,10 @@ export const styles = StyleSheet.create({
     
     contentRectangleStyle: {
         width: normalize(355),
-       minHeight: dim().height*0.9,
+       maxHeight: dim().height*0.9,
         display:'flex',
         paddingTop:dim().width*0.4,
         marginBottom:normalize(0),
-        width: normalize(355),
         borderTopLeftRadius: normalize(65),
         borderTopRightRadius: normalize(50),
         backgroundColor: '#FFFCF8',
@@ -174,13 +175,10 @@ export const styles = StyleSheet.create({
         marginTop:normalize(-100),
         left:normalize(50),
        backgroundColor: '#FFFCF8',
-      //backgroundColor: 'red',
         borderRadius: normalize(15),
         alignItems: 'center',
         display:'flex',
     },
- 
-
 
     profileImageStyle: {
         width: normalize(52.88),

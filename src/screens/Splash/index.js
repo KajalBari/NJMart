@@ -21,30 +21,30 @@ function Splash(props) {
     handleNavigation();
   }, []);
 
+  useEffect(() => {
+     setTimeout(() => {
+       navigation.navigate('LoginPage');
+    }, 1000);
+   }, []);
+
+
   const handleNavigation = async () => {
-    navigation.navigate('LoginPage');
+    //navigation.navigate('LoginPage');
   };
 
   return (
+
     <LinearGradient colors={["#FD6510","#FFBF43"]} 
     style={styles.gradient}  
     start={{x: 0.5, y: 0}} 
     end={{x: 1, y: 0.5}}>
-   
-      <SMImage source={NJMartLogo} style={styles.njMartImage} />
 
-      {/* <SMView style={styles.bottomImageText}>
-        <SMImage
-          source={splashBottomVectorPNG}
-          style={styles.bottomVectorImage}
-        />
-        <SMImage source={splashIndiaFlagPNG} style={styles.bottomIndiaFlag} />
-        <SMText type="Paragraph" style={styles.bottomText}>
-          Made In India 
-        </SMText>
-      </SMView> */}
-    
+      <SMImage 
+      source={NJMartLogo} 
+      style={styles.njMartImage} />
+
     </LinearGradient>
+   
   );
 }
 
