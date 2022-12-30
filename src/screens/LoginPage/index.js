@@ -34,7 +34,6 @@ function LoginPage(props) {
       [key]:value,
     });
   };
-  //console.log("errorMessageObj",errorMessageObj);
 
   const submit = () => {
     const validatedData  = loginValidator({...loginState});
@@ -111,7 +110,7 @@ function LoginPage(props) {
           <SMText style={styles.userStyle}>
             are you a new user?
           </SMText>
-          <TouchableOpacity onPress={() => navigation.navigate('Register', { name: 'Register' })} >
+          <TouchableOpacity onPress={() => navigation.navigate('Register', { name: 'Register' })}>
             <SMText style={styles.signUpStyle}>
               Sign Up
             </SMText>

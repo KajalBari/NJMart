@@ -159,13 +159,13 @@ export const styles = StyleSheet.create({
     
     contentRectangleStyle: {
         width: normalize(355),
-       maxHeight: dim().height*0.9,
+       maxHeight: dim().height*1, 
         display:'flex',
         paddingTop:dim().width*0.4,
         marginBottom:normalize(0),
         borderTopLeftRadius: normalize(65),
         borderTopRightRadius: normalize(50),
-        backgroundColor: '#FFFCF8',
+       backgroundColor: '#FFFCF8',
         marginTop:normalize(-40),
     },
 

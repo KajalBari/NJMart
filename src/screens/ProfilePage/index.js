@@ -26,7 +26,7 @@ function ProfilePage(props) {
   return (
    
     <KeyboardAwareScrollView
-     extraScrollHeight={normalize(100)}
+    // extraScrollHeight={normalize(100)}
    nestedScrollEnabled>
 
   <SMView style={styles.containerStyle}>
